@@ -20,6 +20,11 @@
 		DD641ED02031760A0094B7A2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641ECF2031760A0094B7A2 /* InterfaceController.swift */; };
 		DD641ED22031760A0094B7A2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641ED12031760A0094B7A2 /* ExtensionDelegate.swift */; };
 		DD641ED42031760A0094B7A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD641ED32031760A0094B7A2 /* Assets.xcassets */; };
+		DD641EEA20318EFE0094B7A2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EE920318EFE0094B7A2 /* Request.swift */; };
+		DD641EEC203190430094B7A2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EEB203190430094B7A2 /* HTTPMethod.swift */; };
+		DD641EF1203191770094B7A2 /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EF0203191770094B7A2 /* CompanyInfo.swift */; };
+		DD641EF3203192B90094B7A2 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EF2203192B90094B7A2 /* Address.swift */; };
+		DD641EF520319C7D0094B7A2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EF420319C7D0094B7A2 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +96,11 @@
 		DD641ED12031760A0094B7A2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		DD641ED32031760A0094B7A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD641ED52031760A0094B7A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD641EE920318EFE0094B7A2 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		DD641EEB203190430094B7A2 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		DD641EF0203191770094B7A2 /* CompanyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
+		DD641EF2203192B90094B7A2 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		DD641EF420319C7D0094B7A2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +131,7 @@
 		DD641E952031760A0094B7A2 = {
 			isa = PBXGroup;
 			children = (
+				DD641EE8203179140094B7A2 /* Networking */,
 				DD641EA02031760A0094B7A2 /* SpaceX Data */,
 				DD641EB52031760A0094B7A2 /* SpaceX DataTests */,
 				DD641EBF2031760A0094B7A2 /* SpaceX Data WatchKit App */,
@@ -181,6 +192,26 @@
 				DD641ED52031760A0094B7A2 /* Info.plist */,
 			);
 			path = "SpaceX Data WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		DD641EE8203179140094B7A2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DD641EEF203191630094B7A2 /* Models */,
+				DD641EE920318EFE0094B7A2 /* Request.swift */,
+				DD641EEB203190430094B7A2 /* HTTPMethod.swift */,
+				DD641EF420319C7D0094B7A2 /* Endpoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DD641EEF203191630094B7A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD641EF0203191770094B7A2 /* CompanyInfo.swift */,
+				DD641EF2203192B90094B7A2 /* Address.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,7 +380,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD641EF3203192B90094B7A2 /* Address.swift in Sources */,
+				DD641EEC203190430094B7A2 /* HTTPMethod.swift in Sources */,
+				DD641EF1203191770094B7A2 /* CompanyInfo.swift in Sources */,
+				DD641EF520319C7D0094B7A2 /* Endpoint.swift in Sources */,
 				DD641EA42031760A0094B7A2 /* ViewController.swift in Sources */,
+				DD641EEA20318EFE0094B7A2 /* Request.swift in Sources */,
 				DD641EA22031760A0094B7A2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
