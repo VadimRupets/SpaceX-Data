@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Endpoint: String {
+public enum Endpoint: String {
     case
     companyInfo = "info"
 }

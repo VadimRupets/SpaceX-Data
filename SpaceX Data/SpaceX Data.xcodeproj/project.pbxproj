@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC1A5CDE203430D7000A3618 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A5CDD203430D7000A3618 /* Response.swift */; };
+		AC1A5CE0203430F2000A3618 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A5CDF203430F2000A3618 /* NetworkError.swift */; };
+		AC47C1C820AD83D5004C2D74 /* CompanyInfoRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC47C1C720AD83D5004C2D74 /* CompanyInfoRequests.swift */; };
+		ACDA35052034B71000A06795 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA35042034B71000A06795 /* Dispatcher.swift */; };
+		ACE3C89E2107224900C9EEE7 /* CompanyInfoDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C89D2107224900C9EEE7 /* CompanyInfoDispatcher.swift */; };
 		DD641EA22031760A0094B7A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EA12031760A0094B7A2 /* AppDelegate.swift */; };
 		DD641EA42031760A0094B7A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EA32031760A0094B7A2 /* ViewController.swift */; };
 		DD641EA72031760A0094B7A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD641EA52031760A0094B7A2 /* Main.storyboard */; };
@@ -21,10 +26,8 @@
 		DD641ED22031760A0094B7A2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641ED12031760A0094B7A2 /* ExtensionDelegate.swift */; };
 		DD641ED42031760A0094B7A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD641ED32031760A0094B7A2 /* Assets.xcassets */; };
 		DD641EEA20318EFE0094B7A2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EE920318EFE0094B7A2 /* Request.swift */; };
-		DD641EEC203190430094B7A2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EEB203190430094B7A2 /* HTTPMethod.swift */; };
 		DD641EF1203191770094B7A2 /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EF0203191770094B7A2 /* CompanyInfo.swift */; };
 		DD641EF3203192B90094B7A2 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EF2203192B90094B7A2 /* Address.swift */; };
-		DD641EF520319C7D0094B7A2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EF420319C7D0094B7A2 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC1A5CDD203430D7000A3618 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		AC1A5CDF203430F2000A3618 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AC47C1C720AD83D5004C2D74 /* CompanyInfoRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoRequests.swift; sourceTree = "<group>"; };
+		ACDA35042034B71000A06795 /* Dispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		ACE3C89D2107224900C9EEE7 /* CompanyInfoDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoDispatcher.swift; sourceTree = "<group>"; };
 		DD641E9E2031760A0094B7A2 /* SpaceX Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD641EA12031760A0094B7A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD641EA32031760A0094B7A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,10 +105,8 @@
 		DD641ED32031760A0094B7A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD641ED52031760A0094B7A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD641EE920318EFE0094B7A2 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		DD641EEB203190430094B7A2 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		DD641EF0203191770094B7A2 /* CompanyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
 		DD641EF2203192B90094B7A2 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		DD641EF420319C7D0094B7A2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +134,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ACE3C89C2107223600C9EEE7 /* Company Info */ = {
+			isa = PBXGroup;
+			children = (
+				AC47C1C720AD83D5004C2D74 /* CompanyInfoRequests.swift */,
+				ACE3C89D2107224900C9EEE7 /* CompanyInfoDispatcher.swift */,
+			);
+			path = "Company Info";
+			sourceTree = "<group>";
+		};
 		DD641E952031760A0094B7A2 = {
 			isa = PBXGroup;
 			children = (
+				DD641EEF203191630094B7A2 /* Models */,
 				DD641EE8203179140094B7A2 /* Networking */,
 				DD641EA02031760A0094B7A2 /* SpaceX Data */,
 				DD641EB52031760A0094B7A2 /* SpaceX DataTests */,
@@ -197,10 +213,11 @@
 		DD641EE8203179140094B7A2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				DD641EEF203191630094B7A2 /* Models */,
+				ACE3C89C2107223600C9EEE7 /* Company Info */,
+				ACDA35042034B71000A06795 /* Dispatcher.swift */,
 				DD641EE920318EFE0094B7A2 /* Request.swift */,
-				DD641EEB203190430094B7A2 /* HTTPMethod.swift */,
-				DD641EF420319C7D0094B7A2 /* Endpoint.swift */,
+				AC1A5CDD203430D7000A3618 /* Response.swift */,
+				AC1A5CDF203430F2000A3618 /* NetworkError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -295,7 +312,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Vadim Rupets";
 				TargetAttributes = {
 					DD641E9D2031760A0094B7A2 = {
@@ -380,13 +397,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1A5CDE203430D7000A3618 /* Response.swift in Sources */,
 				DD641EF3203192B90094B7A2 /* Address.swift in Sources */,
-				DD641EEC203190430094B7A2 /* HTTPMethod.swift in Sources */,
 				DD641EF1203191770094B7A2 /* CompanyInfo.swift in Sources */,
-				DD641EF520319C7D0094B7A2 /* Endpoint.swift in Sources */,
+				ACDA35052034B71000A06795 /* Dispatcher.swift in Sources */,
 				DD641EA42031760A0094B7A2 /* ViewController.swift in Sources */,
+				AC1A5CE0203430F2000A3618 /* NetworkError.swift in Sources */,
+				ACE3C89E2107224900C9EEE7 /* CompanyInfoDispatcher.swift in Sources */,
 				DD641EEA20318EFE0094B7A2 /* Request.swift in Sources */,
 				DD641EA22031760A0094B7A2 /* AppDelegate.swift in Sources */,
+				AC47C1C820AD83D5004C2D74 /* CompanyInfoRequests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +489,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -476,6 +497,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -526,6 +548,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -533,6 +556,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

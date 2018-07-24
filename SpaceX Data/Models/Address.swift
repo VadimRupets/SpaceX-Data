@@ -23,7 +23,7 @@ struct Address {
 
 extension Address: Decodable {
     
-    private enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case
         address,
         city,

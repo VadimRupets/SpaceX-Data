@@ -8,21 +8,14 @@
 
 import Foundation
 
-protocol RequestProtocol {
-    
+public protocol Request {
     var httpMethod: HTTPMethod { get }
-    var endpoint: Endpoint { get }
-    
+    var endpoint: String { get }
+    var parameters: [String: Any]? { get }
 }
 
-final class Request: RequestProtocol {
-    
-    var httpMethod: HTTPMethod
-    var endpoint: Endpoint
-    
-    init(endpoint: Endpoint, httpMethod: HTTPMethod) {
-        self.endpoint = endpoint
-        self.httpMethod = httpMethod
-    }
-    
+public enum HTTPMethod: String {
+    case
+    get = "GET",
+    post = "POST"
 }
