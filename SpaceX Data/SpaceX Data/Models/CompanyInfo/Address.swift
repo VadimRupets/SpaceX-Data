@@ -9,16 +9,9 @@
 import Foundation
 
 struct Address {
-    
     let address: String
     let city: String
     let state: String
-    
-    init(address: String, city: String, state: String) {
-        self.address = address
-        self.city = city
-        self.state = state
-    }
 }
 
 extension Address: Decodable {

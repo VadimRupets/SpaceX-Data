@@ -13,10 +13,10 @@ public enum Response<T> where T: Decodable {
     data(T),
     error(Error?)
     
-    init(response: HTTPURLResponse?, data: Data?, error: Error?) {
-        print("Request response: \(response.debugDescription)")
+    init(response: HTTPURLResponse? = nil, data: Data? = nil, error: Error? = nil) {
+        print(response?.shortDescription ?? "")
         guard response?.statusCode == 200, error == nil else {
-            self = .error(error)
+            self = .error(error ?? NetworkError.noData)
             return
         }
         

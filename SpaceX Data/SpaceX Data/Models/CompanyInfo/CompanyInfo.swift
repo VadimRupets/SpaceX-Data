@@ -25,23 +25,6 @@ struct CompanyInfo {
     let headquarters: Address
     let summary: String
  
-//    init(name: String, founder: String, yearOfFoundation: Int, employees: Int, vehicles: Int, launchSites: Int, testSites: Int, ceo: String, cto: String, coo: String, ctoPropulsion: String, valuation: Int, headquaters: Address, summary: String) {
-//        self.name = name
-//        self.founder = founder
-//        self.yearOfFoundation = yearOfFoundation
-//        self.employees = employees
-//        self.vehicles = vehicles
-//        self.launchSites = launchSites
-//        self.testSites = testSites
-//        self.ceo = ceo
-//        self.cto = cto
-//        self.coo = coo
-//        self.ctoPropulsion = ctoPropulsion
-//        self.valuation = valuation
-//        self.headquaters = headquaters
-//        self.summary = summary
-//    }
-    
 }
 
 extension CompanyInfo: Decodable {
