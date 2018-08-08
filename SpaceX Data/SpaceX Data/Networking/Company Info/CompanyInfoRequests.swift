@@ -9,26 +9,17 @@
 import Foundation
 
 public enum CompanyInfoRequests: Request {
-    case companyInfo
+    case `default`
     
     public var httpMethod: HTTPMethod {
-        switch self {
-        case .companyInfo:
-            return .get
-        }
+        return .get
     }
     
     public var endpoint: String {
-        switch self {
-        case .companyInfo:
-            return "info"
-        }
+        return "info"
     }
     
     public var parameters: [String : Any]? {
-        switch self {
-        case .companyInfo:
-            return nil
-        }
+        return nil
     }
 }

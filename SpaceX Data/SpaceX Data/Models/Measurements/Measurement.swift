@@ -9,6 +9,6 @@
 import Foundation
 
 protocol Measurement {
-    var metric: Float { get }
-    var imperial: Float  { get }
+    var metric: Double { get }
+    var imperial: Double  { get }
 }

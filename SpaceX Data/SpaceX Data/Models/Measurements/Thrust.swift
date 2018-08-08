@@ -9,18 +9,13 @@
 import Foundation
 
 struct Thrust: Measurement {
-    let metric: Float
-    let imperial: Float
+    let metric: Double
+    let imperial: Double
     
     enum Units: String, CodingKey {
         case
         metric = "kN",
         imperial = "lbf"
-    }
-    
-    init(metric: Float, imperial: Float) {
-        self.metric = metric
-        self.imperial = imperial
     }
 }
 
@@ -29,8 +24,8 @@ extension Thrust: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: Units.self)
         
-        self.metric = try values.decode(Float.self, forKey: .metric)
-        self.imperial = try values.decode(Float.self, forKey: .imperial)
+        self.metric = try values.decode(Double.self, forKey: .metric)
+        self.imperial = try values.decode(Double.self, forKey: .imperial)
     }
     
 }

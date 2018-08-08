@@ -9,13 +9,18 @@
 import Foundation
 
 struct Distance: Measurement {
-    let metric: Float
-    let imperial: Float
+    let metric: Double
+    let imperial: Double
     
     enum Units: String, CodingKey {
         case
         metric = "meters",
         imperial = "feet"
+    }
+    
+    init(metric: Double, imperial: Double) {
+        self.metric = metric
+        self.imperial = imperial
     }
 }
 
@@ -24,8 +29,8 @@ extension Distance: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: Units.self)
         
-        self.metric = try values.decodeIfPresent(Float.self, forKey: .metric) ?? 0
-        self.imperial = try values.decodeIfPresent(Float.self, forKey: .imperial) ?? 0
+        self.metric = try values.decodeIfPresent(Double.self, forKey: .metric) ?? 0
+        self.imperial = try values.decodeIfPresent(Double.self, forKey: .imperial) ?? 0
     }
     
 }

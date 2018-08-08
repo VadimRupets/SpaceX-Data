@@ -11,22 +11,4 @@ import Foundation
 public class CompanyInfoDispatcher: Dispatcher {
     typealias ResponseObject = CompanyInfo
     typealias APIRequest = CompanyInfoRequests
-    
-    func executeRequest(_ request: CompanyInfoRequests, responseHandler: @escaping ((Response<CompanyInfo>) -> ())) {
-        do {
-            let urlRequest = try prepareURLRequest(request)
-            let urlSession = URLSession(configuration: .default)
-            
-            let dataTask = urlSession.dataTask(with: urlRequest, completionHandler: { (data, urlResponse, error) in
-                let response = Response<CompanyInfo>(response: urlResponse as? HTTPURLResponse, data: data, error: error)
-                
-                responseHandler(response)
-            })
-            
-            print("Request resumed: \(urlRequest.description)")
-            dataTask.resume()
-        } catch {
-            responseHandler(Response.error(error))
-        }
-    }
 }
