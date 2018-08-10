@@ -48,6 +48,9 @@ extension Dispatcher {
     }
     
     func executeRequest(_ request: APIRequest, responseHandler: @escaping ((Response<ResponseObject>) -> ())) {
+        let requestUUID = UUID()
+        NetworkActivityIndicatorManager.registerNetworkRequestUUID(requestUUID)
+        
         do {
             let urlRequest = try prepareURLRequest(request)
             let urlSession = URLSession(configuration: .default)
@@ -55,12 +58,14 @@ extension Dispatcher {
             let dataTask = urlSession.dataTask(with: urlRequest, completionHandler: { (data, urlResponse, error) in
                 let response = Response<ResponseObject>(response: urlResponse as? HTTPURLResponse, data: data, error: error)
                 
+                NetworkActivityIndicatorManager.unregisterNetworkRequestUUID(requestUUID)
                 responseHandler(response)
             })
             
             print("Request resumed: \(urlRequest.description)")
             dataTask.resume()
         } catch {
+            NetworkActivityIndicatorManager.unregisterNetworkRequestUUID(requestUUID)
             responseHandler(Response.error(error))
         }
     }
