@@ -10,7 +10,7 @@ import Foundation
 
 public enum RocketsRequests: Request {
     case
-    allRockets
+    `default`
     
     public var httpMethod: HTTPMethod {
         return .get
