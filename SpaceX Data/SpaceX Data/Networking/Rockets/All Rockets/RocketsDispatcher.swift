@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class RocketsDispatcher: Dispatcher {
+class RocketsDispatcher: Dispatcher {
     typealias ResponseObject = [Rocket]
     typealias APIRequest = RocketsRequests
 }

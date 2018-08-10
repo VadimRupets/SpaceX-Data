@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum NetworkError: Error {
+enum NetworkError: Error {
     case
     noData,
     corruptedData,

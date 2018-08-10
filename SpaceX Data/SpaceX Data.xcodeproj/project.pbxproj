@@ -18,6 +18,7 @@
 		AC75037B2119B70D00AED17B /* RocketsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75037A2119B70D00AED17B /* RocketsRequests.swift */; };
 		AC75037D2119B74700AED17B /* RocketsDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75037C2119B74700AED17B /* RocketsDispatcher.swift */; };
 		AC7503802119D93600AED17B /* HTTPURLResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75037F2119D93600AED17B /* HTTPURLResponse+Extensions.swift */; };
+		AC88C8CC211DCB860093A813 /* DetailedItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88C8CB211DCB860093A813 /* DetailedItemRequest.swift */; };
 		AC8FA092211DA8D3009F5D9C /* SynchronizedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA091211DA8D3009F5D9C /* SynchronizedArray.swift */; };
 		AC9380FC2107674A00880E07 /* RocketRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9380FB2107674A00880E07 /* RocketRequests.swift */; };
 		AC9380FE21076A3C00880E07 /* RocketDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9380FD21076A3C00880E07 /* RocketDispatcher.swift */; };
@@ -41,7 +42,7 @@
 		ACF3F678211D94D1007E738E /* LaunchpadsDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F677211D94D1007E738E /* LaunchpadsDispatcher.swift */; };
 		ACF3F67B211D951C007E738E /* Launchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F67A211D951C007E738E /* Launchpad.swift */; };
 		ACF3F67F211D9666007E738E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F67E211D9666007E738E /* Location.swift */; };
-		ACF3F684211D9949007E738E /* LaunchpadRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F683211D9949007E738E /* LaunchpadRequests.swift */; };
+		ACF3F684211D9949007E738E /* LaunchpadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F683211D9949007E738E /* LaunchpadRequest.swift */; };
 		ACF3F686211D9ED8007E738E /* LaunchpadDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F685211D9ED7007E738E /* LaunchpadDispatcher.swift */; };
 		ACF3F689211DA2F9007E738E /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F688211DA2F9007E738E /* NetworkActivityIndicatorManager.swift */; };
 		DD641EA22031760A0094B7A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EA12031760A0094B7A2 /* AppDelegate.swift */; };
@@ -123,6 +124,7 @@
 		AC75037A2119B70D00AED17B /* RocketsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsRequests.swift; sourceTree = "<group>"; };
 		AC75037C2119B74700AED17B /* RocketsDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsDispatcher.swift; sourceTree = "<group>"; };
 		AC75037F2119D93600AED17B /* HTTPURLResponse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Extensions.swift"; sourceTree = "<group>"; };
+		AC88C8CB211DCB860093A813 /* DetailedItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedItemRequest.swift; sourceTree = "<group>"; };
 		AC8FA091211DA8D3009F5D9C /* SynchronizedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedArray.swift; sourceTree = "<group>"; };
 		AC9380FB2107674A00880E07 /* RocketRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketRequests.swift; sourceTree = "<group>"; };
 		AC9380FD21076A3C00880E07 /* RocketDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDispatcher.swift; sourceTree = "<group>"; };
@@ -146,7 +148,7 @@
 		ACF3F677211D94D1007E738E /* LaunchpadsDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadsDispatcher.swift; sourceTree = "<group>"; };
 		ACF3F67A211D951C007E738E /* Launchpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launchpad.swift; sourceTree = "<group>"; };
 		ACF3F67E211D9666007E738E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		ACF3F683211D9949007E738E /* LaunchpadRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchpadRequests.swift; path = "SpaceX Data/Models/Common models/Geographic models/LaunchpadRequests.swift"; sourceTree = SOURCE_ROOT; };
+		ACF3F683211D9949007E738E /* LaunchpadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchpadRequest.swift; path = "SpaceX Data/Models/Common models/Geographic models/LaunchpadRequest.swift"; sourceTree = SOURCE_ROOT; };
 		ACF3F685211D9ED7007E738E /* LaunchpadDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchpadDispatcher.swift; path = "SpaceX Data/Models/Common models/Geographic models/LaunchpadDispatcher.swift"; sourceTree = SOURCE_ROOT; };
 		ACF3F688211DA2F9007E738E /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		DD641E9E2031760A0094B7A2 /* SpaceX Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +233,7 @@
 			children = (
 				ACDA35042034B71000A06795 /* Dispatcher.swift */,
 				DD641EE920318EFE0094B7A2 /* Request.swift */,
+				AC88C8CB211DCB860093A813 /* DetailedItemRequest.swift */,
 				AC1A5CDD203430D7000A3618 /* Response.swift */,
 				AC1A5CDF203430F2000A3618 /* NetworkError.swift */,
 			);
@@ -355,7 +358,7 @@
 		ACF3F682211D993C007E738E /* Single Launchpad */ = {
 			isa = PBXGroup;
 			children = (
-				ACF3F683211D9949007E738E /* LaunchpadRequests.swift */,
+				ACF3F683211D9949007E738E /* LaunchpadRequest.swift */,
 				ACF3F685211D9ED7007E738E /* LaunchpadDispatcher.swift */,
 			);
 			path = "Single Launchpad";
@@ -642,12 +645,13 @@
 				ACD76E3F2108C88700F4CD14 /* CompositeFairing.swift in Sources */,
 				AC7503802119D93600AED17B /* HTTPURLResponse+Extensions.swift in Sources */,
 				ACF3F678211D94D1007E738E /* LaunchpadsDispatcher.swift in Sources */,
-				ACF3F684211D9949007E738E /* LaunchpadRequests.swift in Sources */,
+				ACF3F684211D9949007E738E /* LaunchpadRequest.swift in Sources */,
 				AC93810221076A8B00880E07 /* Rocket.swift in Sources */,
 				ACD76E3B2108C7D700F4CD14 /* RocketSecondStage.swift in Sources */,
 				ACF3F689211DA2F9007E738E /* NetworkActivityIndicatorManager.swift in Sources */,
 				AC750373211859D100AED17B /* String+Extensions.swift in Sources */,
 				ACD76E312108B8F700F4CD14 /* Measurement.swift in Sources */,
+				AC88C8CC211DCB860093A813 /* DetailedItemRequest.swift in Sources */,
 				AC93810521076C7400880E07 /* Distance.swift in Sources */,
 				DD641EF3203192B90094B7A2 /* Address.swift in Sources */,
 				ACF3F686211D9ED8007E738E /* LaunchpadDispatcher.swift in Sources */,

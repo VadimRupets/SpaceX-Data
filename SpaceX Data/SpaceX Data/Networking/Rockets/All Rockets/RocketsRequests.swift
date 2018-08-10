@@ -8,19 +8,19 @@
 
 import Foundation
 
-public enum RocketsRequests: Request {
+enum RocketsRequests: Request {
     case
     `default`
     
-    public var httpMethod: HTTPMethod {
+    var httpMethod: HTTPMethod {
         return .get
     }
     
-    public var endpoint: String {
+    var endpoint: String {
         return "rockets"
     }
     
-    public var parameters: [String : Any]? {
+    var parameters: [String : Any]? {
         return nil
     }
 }

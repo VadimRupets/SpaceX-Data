@@ -1,5 +1,5 @@
 //
-//  RocketRequests.swift
+//  RocketRequest.swift
 //  SpaceX Data
 //
 //  Created by Vadim Rupets on 7/24/18.
@@ -8,22 +8,22 @@
 
 import Foundation
 
-public enum RocketRequests: String, Request {
-    case
-    falcon1,
-    falcon9,
-    falconHeavy,
-    bfr
+struct RocketRequest: DetailedItemRequest {
+    internal let itemID: String
     
-    public var httpMethod: HTTPMethod {
+    init(rocketID: String) {
+        itemID = rocketID
+    }
+    
+    var httpMethod: HTTPMethod {
         return .get
     }
     
-    public var endpoint: String {
-        return "rockets/".appending(rawValue)
+    var endpoint: String {
+        return "rockets/".appending(itemID)
     }
     
-    public var parameters: [String : Any]? {
+    var parameters: [String : Any]? {
         return nil
     }
 }

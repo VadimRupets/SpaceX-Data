@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Response<T> where T: Decodable {
+enum Response<T> where T: Decodable {
     case
     data(T),
     error(Error?)

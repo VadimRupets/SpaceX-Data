@@ -8,13 +8,13 @@
 
 import Foundation
 
-public protocol Request {
+protocol Request {
     var httpMethod: HTTPMethod { get }
     var endpoint: String { get }
     var parameters: [String: Any]? { get }
 }
 
-public enum HTTPMethod: String {
+enum HTTPMethod: String {
     case
     get = "GET",
     post = "POST"

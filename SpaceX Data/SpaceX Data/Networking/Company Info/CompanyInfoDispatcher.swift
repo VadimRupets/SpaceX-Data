@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class CompanyInfoDispatcher: Dispatcher {
+class CompanyInfoDispatcher: Dispatcher {
     typealias ResponseObject = CompanyInfo
     typealias APIRequest = CompanyInfoRequests
 }
