@@ -20,7 +20,7 @@ extension Dispatcher {
         return "https://api.spacexdata.com/v2/"
     }
     
-    func prepareURLRequest(_ request: Request) throws -> URLRequest {
+    private func prepareURLRequest(_ request: Request) throws -> URLRequest {
         guard let url = URL(string: host + request.endpoint) else {
             throw NetworkError.badInput
         }

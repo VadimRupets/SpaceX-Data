@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC18E547211D94420065FBBC /* LaunchpadsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18E546211D94420065FBBC /* LaunchpadsRequests.swift */; };
 		AC1A5CDE203430D7000A3618 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A5CDD203430D7000A3618 /* Response.swift */; };
 		AC1A5CE0203430F2000A3618 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A5CDF203430F2000A3618 /* NetworkError.swift */; };
 		AC47C1C820AD83D5004C2D74 /* CompanyInfoRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC47C1C720AD83D5004C2D74 /* CompanyInfoRequests.swift */; };
@@ -36,6 +37,11 @@
 		ACE20868211B233000F27DC5 /* RoadsterInfoRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE20867211B233000F27DC5 /* RoadsterInfoRequests.swift */; };
 		ACE2086A211B239200F27DC5 /* RoadsterInfoDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE20869211B239200F27DC5 /* RoadsterInfoDispatcher.swift */; };
 		ACE3C89E2107224900C9EEE7 /* CompanyInfoDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C89D2107224900C9EEE7 /* CompanyInfoDispatcher.swift */; };
+		ACF3F678211D94D1007E738E /* LaunchpadsDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F677211D94D1007E738E /* LaunchpadsDispatcher.swift */; };
+		ACF3F67B211D951C007E738E /* Launchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F67A211D951C007E738E /* Launchpad.swift */; };
+		ACF3F67F211D9666007E738E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F67E211D9666007E738E /* Location.swift */; };
+		ACF3F684211D9949007E738E /* LaunchpadRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F683211D9949007E738E /* LaunchpadRequests.swift */; };
+		ACF3F686211D9ED8007E738E /* LaunchpadDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F685211D9ED7007E738E /* LaunchpadDispatcher.swift */; };
 		DD641EA22031760A0094B7A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EA12031760A0094B7A2 /* AppDelegate.swift */; };
 		DD641EA42031760A0094B7A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EA32031760A0094B7A2 /* ViewController.swift */; };
 		DD641EA72031760A0094B7A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD641EA52031760A0094B7A2 /* Main.storyboard */; };
@@ -104,6 +110,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC18E546211D94420065FBBC /* LaunchpadsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadsRequests.swift; sourceTree = "<group>"; };
 		AC1A5CDD203430D7000A3618 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AC1A5CDF203430F2000A3618 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AC47C1C720AD83D5004C2D74 /* CompanyInfoRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoRequests.swift; sourceTree = "<group>"; };
@@ -133,6 +140,11 @@
 		ACE20867211B233000F27DC5 /* RoadsterInfoRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadsterInfoRequests.swift; sourceTree = "<group>"; };
 		ACE20869211B239200F27DC5 /* RoadsterInfoDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadsterInfoDispatcher.swift; sourceTree = "<group>"; };
 		ACE3C89D2107224900C9EEE7 /* CompanyInfoDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoDispatcher.swift; sourceTree = "<group>"; };
+		ACF3F677211D94D1007E738E /* LaunchpadsDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadsDispatcher.swift; sourceTree = "<group>"; };
+		ACF3F67A211D951C007E738E /* Launchpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launchpad.swift; sourceTree = "<group>"; };
+		ACF3F67E211D9666007E738E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		ACF3F683211D9949007E738E /* LaunchpadRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchpadRequests.swift; path = "SpaceX Data/Models/Common models/Geographic models/LaunchpadRequests.swift"; sourceTree = SOURCE_ROOT; };
+		ACF3F685211D9ED7007E738E /* LaunchpadDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchpadDispatcher.swift; path = "SpaceX Data/Models/Common models/Geographic models/LaunchpadDispatcher.swift"; sourceTree = SOURCE_ROOT; };
 		DD641E9E2031760A0094B7A2 /* SpaceX Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD641EA12031760A0094B7A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD641EA32031760A0094B7A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +194,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC18E545211D94020065FBBC /* All Launchpads */ = {
+			isa = PBXGroup;
+			children = (
+				AC18E546211D94420065FBBC /* LaunchpadsRequests.swift */,
+				ACF3F677211D94D1007E738E /* LaunchpadsDispatcher.swift */,
+			);
+			path = "All Launchpads";
+			sourceTree = "<group>";
+		};
 		AC750371211859C200AED17B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,20 +233,19 @@
 			path = "Base abstractions";
 			sourceTree = "<group>";
 		};
-		AC9380FA2107673700880E07 /* Rockets */ = {
+		AC9380FA2107673700880E07 /* All Rockets */ = {
 			isa = PBXGroup;
 			children = (
 				AC75037A2119B70D00AED17B /* RocketsRequests.swift */,
 				AC75037C2119B74700AED17B /* RocketsDispatcher.swift */,
 			);
-			path = Rockets;
+			path = "All Rockets";
 			sourceTree = "<group>";
 		};
 		AC9380FF21076A6B00880E07 /* CompanyInfo */ = {
 			isa = PBXGroup;
 			children = (
 				DD641EF0203191770094B7A2 /* CompanyInfo.swift */,
-				DD641EF2203192B90094B7A2 /* Address.swift */,
 			);
 			path = CompanyInfo;
 			sourceTree = "<group>";
@@ -282,6 +302,59 @@
 				ACE3C89D2107224900C9EEE7 /* CompanyInfoDispatcher.swift */,
 			);
 			path = "Company Info";
+			sourceTree = "<group>";
+		};
+		ACF3F679211D9500007E738E /* Launchpad */ = {
+			isa = PBXGroup;
+			children = (
+				ACF3F67A211D951C007E738E /* Launchpad.swift */,
+			);
+			path = Launchpad;
+			sourceTree = "<group>";
+		};
+		ACF3F67C211D95F5007E738E /* Common models */ = {
+			isa = PBXGroup;
+			children = (
+				ACF3F67D211D9608007E738E /* Geographic models */,
+				AC93810321076C6300880E07 /* Measurements */,
+			);
+			path = "Common models";
+			sourceTree = "<group>";
+		};
+		ACF3F67D211D9608007E738E /* Geographic models */ = {
+			isa = PBXGroup;
+			children = (
+				DD641EF2203192B90094B7A2 /* Address.swift */,
+				ACF3F67E211D9666007E738E /* Location.swift */,
+			);
+			path = "Geographic models";
+			sourceTree = "<group>";
+		};
+		ACF3F680211D9918007E738E /* Rockets */ = {
+			isa = PBXGroup;
+			children = (
+				AC75037E2119B79B00AED17B /* Single Rocket */,
+				AC9380FA2107673700880E07 /* All Rockets */,
+			);
+			path = Rockets;
+			sourceTree = "<group>";
+		};
+		ACF3F681211D9930007E738E /* Launchpads */ = {
+			isa = PBXGroup;
+			children = (
+				ACF3F682211D993C007E738E /* Single Launchpad */,
+				AC18E545211D94020065FBBC /* All Launchpads */,
+			);
+			path = Launchpads;
+			sourceTree = "<group>";
+		};
+		ACF3F682211D993C007E738E /* Single Launchpad */ = {
+			isa = PBXGroup;
+			children = (
+				ACF3F683211D9949007E738E /* LaunchpadRequests.swift */,
+				ACF3F685211D9ED7007E738E /* LaunchpadDispatcher.swift */,
+			);
+			path = "Single Launchpad";
 			sourceTree = "<group>";
 		};
 		DD641E952031760A0094B7A2 = {
@@ -356,8 +429,8 @@
 			isa = PBXGroup;
 			children = (
 				AC7503812119DA5600AED17B /* Base abstractions */,
-				AC75037E2119B79B00AED17B /* Single Rocket */,
-				AC9380FA2107673700880E07 /* Rockets */,
+				ACF3F681211D9930007E738E /* Launchpads */,
+				ACF3F680211D9918007E738E /* Rockets */,
 				ACE3C89C2107223600C9EEE7 /* Company Info */,
 				ACE20866211B231A00F27DC5 /* Roadster Info */,
 			);
@@ -367,10 +440,11 @@
 		DD641EEF203191630094B7A2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AC93810321076C6300880E07 /* Measurements */,
+				ACF3F67C211D95F5007E738E /* Common models */,
 				AC93810021076A8100880E07 /* Rockets */,
 				ACE20861211B019400F27DC5 /* RoadsterInfo */,
 				AC9380FF21076A6B00880E07 /* CompanyInfo */,
+				ACF3F679211D9500007E738E /* Launchpad */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -544,15 +618,21 @@
 				AC1A5CDE203430D7000A3618 /* Response.swift in Sources */,
 				ACD76E3F2108C88700F4CD14 /* CompositeFairing.swift in Sources */,
 				AC7503802119D93600AED17B /* HTTPURLResponse+Extensions.swift in Sources */,
+				ACF3F678211D94D1007E738E /* LaunchpadsDispatcher.swift in Sources */,
+				ACF3F684211D9949007E738E /* LaunchpadRequests.swift in Sources */,
 				AC93810221076A8B00880E07 /* Rocket.swift in Sources */,
 				ACD76E3B2108C7D700F4CD14 /* RocketSecondStage.swift in Sources */,
 				AC750373211859D100AED17B /* String+Extensions.swift in Sources */,
 				ACD76E312108B8F700F4CD14 /* Measurement.swift in Sources */,
 				AC93810521076C7400880E07 /* Distance.swift in Sources */,
 				DD641EF3203192B90094B7A2 /* Address.swift in Sources */,
+				ACF3F686211D9ED8007E738E /* LaunchpadDispatcher.swift in Sources */,
 				ACD76E332108C15C00F4CD14 /* PayloadWeight.swift in Sources */,
 				DD641EF1203191770094B7A2 /* CompanyInfo.swift in Sources */,
+				AC18E547211D94420065FBBC /* LaunchpadsRequests.swift in Sources */,
 				AC93810721076C9B00880E07 /* Mass.swift in Sources */,
+				ACF3F67F211D9666007E738E /* Location.swift in Sources */,
+				ACF3F67B211D951C007E738E /* Launchpad.swift in Sources */,
 				AC75037B2119B70D00AED17B /* RocketsRequests.swift in Sources */,
 				ACD76E372108C3F700F4CD14 /* RocketStage.swift in Sources */,
 				ACD76E392108C62500F4CD14 /* RocketFirstStage.swift in Sources */,
