@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC10EEB5211DD71B0093D3BE /* CoreBoostersDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC10EEB4211DD71B0093D3BE /* CoreBoostersDispatcher.swift */; };
 		AC18E547211D94420065FBBC /* LaunchpadsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18E546211D94420065FBBC /* LaunchpadsRequests.swift */; };
 		AC1A5CDE203430D7000A3618 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A5CDD203430D7000A3618 /* Response.swift */; };
 		AC1A5CE0203430F2000A3618 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A5CDF203430F2000A3618 /* NetworkError.swift */; };
@@ -18,7 +19,12 @@
 		AC75037B2119B70D00AED17B /* RocketsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75037A2119B70D00AED17B /* RocketsRequests.swift */; };
 		AC75037D2119B74700AED17B /* RocketsDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75037C2119B74700AED17B /* RocketsDispatcher.swift */; };
 		AC7503802119D93600AED17B /* HTTPURLResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75037F2119D93600AED17B /* HTTPURLResponse+Extensions.swift */; };
+		AC7726B321216419000A3B5A /* QueryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7726B221216419000A3B5A /* QueryFilter.swift */; };
 		AC88C8CC211DCB860093A813 /* DetailedItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88C8CB211DCB860093A813 /* DetailedItemRequest.swift */; };
+		AC88C8D0211DCD500093A813 /* CoreBoosterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88C8CF211DCD500093A813 /* CoreBoosterRequest.swift */; };
+		AC88C8D2211DCDBB0093A813 /* CoreBoosterDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88C8D1211DCDBB0093A813 /* CoreBoosterDispatcher.swift */; };
+		AC88C8D5211DCE040093A813 /* CoreBooster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88C8D4211DCE040093A813 /* CoreBooster.swift */; };
+		AC88C8D8211DD4AF0093A813 /* CoreBoostersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88C8D7211DD4AF0093A813 /* CoreBoostersRequest.swift */; };
 		AC8FA092211DA8D3009F5D9C /* SynchronizedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA091211DA8D3009F5D9C /* SynchronizedArray.swift */; };
 		AC9380FC2107674A00880E07 /* RocketRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9380FB2107674A00880E07 /* RocketRequests.swift */; };
 		AC9380FE21076A3C00880E07 /* RocketDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9380FD21076A3C00880E07 /* RocketDispatcher.swift */; };
@@ -113,6 +119,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC10EEB4211DD71B0093D3BE /* CoreBoostersDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBoostersDispatcher.swift; sourceTree = "<group>"; };
 		AC18E546211D94420065FBBC /* LaunchpadsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadsRequests.swift; sourceTree = "<group>"; };
 		AC1A5CDD203430D7000A3618 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AC1A5CDF203430F2000A3618 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -124,7 +131,12 @@
 		AC75037A2119B70D00AED17B /* RocketsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsRequests.swift; sourceTree = "<group>"; };
 		AC75037C2119B74700AED17B /* RocketsDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsDispatcher.swift; sourceTree = "<group>"; };
 		AC75037F2119D93600AED17B /* HTTPURLResponse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Extensions.swift"; sourceTree = "<group>"; };
+		AC7726B221216419000A3B5A /* QueryFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryFilter.swift; sourceTree = "<group>"; };
 		AC88C8CB211DCB860093A813 /* DetailedItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedItemRequest.swift; sourceTree = "<group>"; };
+		AC88C8CF211DCD500093A813 /* CoreBoosterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBoosterRequest.swift; sourceTree = "<group>"; };
+		AC88C8D1211DCDBB0093A813 /* CoreBoosterDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBoosterDispatcher.swift; sourceTree = "<group>"; };
+		AC88C8D4211DCE040093A813 /* CoreBooster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBooster.swift; sourceTree = "<group>"; };
+		AC88C8D7211DD4AF0093A813 /* CoreBoostersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBoostersRequest.swift; sourceTree = "<group>"; };
 		AC8FA091211DA8D3009F5D9C /* SynchronizedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedArray.swift; sourceTree = "<group>"; };
 		AC9380FB2107674A00880E07 /* RocketRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketRequests.swift; sourceTree = "<group>"; };
 		AC9380FD21076A3C00880E07 /* RocketDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDispatcher.swift; sourceTree = "<group>"; };
@@ -236,8 +248,44 @@
 				AC88C8CB211DCB860093A813 /* DetailedItemRequest.swift */,
 				AC1A5CDD203430D7000A3618 /* Response.swift */,
 				AC1A5CDF203430F2000A3618 /* NetworkError.swift */,
+				AC7726B221216419000A3B5A /* QueryFilter.swift */,
 			);
 			path = "Base abstractions";
+			sourceTree = "<group>";
+		};
+		AC88C8CD211DCD340093A813 /* Core boosters */ = {
+			isa = PBXGroup;
+			children = (
+				AC88C8CE211DCD440093A813 /* Single core booster */,
+				AC88C8D6211DD4880093A813 /* Multiple core booster */,
+			);
+			path = "Core boosters";
+			sourceTree = "<group>";
+		};
+		AC88C8CE211DCD440093A813 /* Single core booster */ = {
+			isa = PBXGroup;
+			children = (
+				AC88C8CF211DCD500093A813 /* CoreBoosterRequest.swift */,
+				AC88C8D1211DCDBB0093A813 /* CoreBoosterDispatcher.swift */,
+			);
+			path = "Single core booster";
+			sourceTree = "<group>";
+		};
+		AC88C8D3211DCDF50093A813 /* Core booster */ = {
+			isa = PBXGroup;
+			children = (
+				AC88C8D4211DCE040093A813 /* CoreBooster.swift */,
+			);
+			path = "Core booster";
+			sourceTree = "<group>";
+		};
+		AC88C8D6211DD4880093A813 /* Multiple core booster */ = {
+			isa = PBXGroup;
+			children = (
+				AC88C8D7211DD4AF0093A813 /* CoreBoostersRequest.swift */,
+				AC10EEB4211DD71B0093D3BE /* CoreBoostersDispatcher.swift */,
+			);
+			path = "Multiple core booster";
 			sourceTree = "<group>";
 		};
 		AC9380FA2107673700880E07 /* All Rockets */ = {
@@ -458,6 +506,7 @@
 				ACF3F680211D9918007E738E /* Rockets */,
 				ACE3C89C2107223600C9EEE7 /* Company Info */,
 				ACE20866211B231A00F27DC5 /* Roadster Info */,
+				AC88C8CD211DCD340093A813 /* Core boosters */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -470,6 +519,7 @@
 				ACE20861211B019400F27DC5 /* RoadsterInfo */,
 				AC9380FF21076A6B00880E07 /* CompanyInfo */,
 				ACF3F679211D9500007E738E /* Launchpad */,
+				AC88C8D3211DCDF50093A813 /* Core booster */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -640,6 +690,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC88C8D5211DCE040093A813 /* CoreBooster.swift in Sources */,
 				AC1A5CDE203430D7000A3618 /* Response.swift in Sources */,
 				AC8FA092211DA8D3009F5D9C /* SynchronizedArray.swift in Sources */,
 				ACD76E3F2108C88700F4CD14 /* CompositeFairing.swift in Sources */,
@@ -650,16 +701,21 @@
 				ACD76E3B2108C7D700F4CD14 /* RocketSecondStage.swift in Sources */,
 				ACF3F689211DA2F9007E738E /* NetworkActivityIndicatorManager.swift in Sources */,
 				AC750373211859D100AED17B /* String+Extensions.swift in Sources */,
+				AC88C8D0211DCD500093A813 /* CoreBoosterRequest.swift in Sources */,
 				ACD76E312108B8F700F4CD14 /* Measurement.swift in Sources */,
 				AC88C8CC211DCB860093A813 /* DetailedItemRequest.swift in Sources */,
 				AC93810521076C7400880E07 /* Distance.swift in Sources */,
 				DD641EF3203192B90094B7A2 /* Address.swift in Sources */,
+				AC88C8D2211DCDBB0093A813 /* CoreBoosterDispatcher.swift in Sources */,
+				AC88C8D8211DD4AF0093A813 /* CoreBoostersRequest.swift in Sources */,
 				ACF3F686211D9ED8007E738E /* LaunchpadDispatcher.swift in Sources */,
 				ACD76E332108C15C00F4CD14 /* PayloadWeight.swift in Sources */,
 				DD641EF1203191770094B7A2 /* CompanyInfo.swift in Sources */,
 				AC18E547211D94420065FBBC /* LaunchpadsRequests.swift in Sources */,
 				AC93810721076C9B00880E07 /* Mass.swift in Sources */,
 				ACF3F67F211D9666007E738E /* Location.swift in Sources */,
+				AC10EEB5211DD71B0093D3BE /* CoreBoostersDispatcher.swift in Sources */,
+				AC7726B321216419000A3B5A /* QueryFilter.swift in Sources */,
 				ACF3F67B211D951C007E738E /* Launchpad.swift in Sources */,
 				AC75037B2119B70D00AED17B /* RocketsRequests.swift in Sources */,
 				ACD76E372108C3F700F4CD14 /* RocketStage.swift in Sources */,

@@ -15,36 +15,8 @@ protocol Dispatcher {
 }
 
 extension Dispatcher {
-    
     var host: String {
         return "https://api.spacexdata.com/v2/"
-    }
-    
-    private func prepareURLRequest(_ request: Request) throws -> URLRequest {
-        guard let url = URL(string: host + request.endpoint) else {
-            throw NetworkError.badInput
-        }
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = request.httpMethod.rawValue
-        
-        guard let parameters = request.parameters else { return urlRequest }
-        
-        guard request.httpMethod == .get else {
-            urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters)
-            return urlRequest
-        }
-        
-        guard let urlParameters = parameters as? [String: String] else { throw NetworkError.badInput }
-        
-        let queryItems = urlParameters.map { return URLQueryItem(name: $0.key, value: $0.value) }
-        
-        guard var components = URLComponents(string: url.absoluteString) else { throw NetworkError.badInput }
-        
-        components.queryItems = queryItems
-        urlRequest.url = components.url
-        
-        return urlRequest
     }
     
     func executeRequest(_ request: APIRequest, responseHandler: @escaping ((Response<ResponseObject>) -> ())) {
@@ -68,5 +40,54 @@ extension Dispatcher {
             NetworkActivityIndicatorManager.unregisterNetworkRequestUUID(requestUUID)
             responseHandler(Response.error(error))
         }
+    }
+}
+
+extension Dispatcher {
+    private func prepareURLRequest(_ request: Request) throws -> URLRequest {
+        guard let url = URL(string: host + request.endpoint) else {
+            throw NetworkError.badInput
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = request.httpMethod.rawValue
+        
+        guard let parameters = request.parameters else { return urlRequest }
+        
+        guard request.httpMethod == .get else {
+            urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters)
+            return urlRequest
+        }
+        
+        let queryItems = prepareURLQueryItems(for: request)
+        
+        guard var components = URLComponents(string: url.absoluteString) else { throw NetworkError.badInput }
+        
+        components.queryItems = queryItems
+        urlRequest.url = components.url
+        
+        return urlRequest
+    }
+    
+    private func prepareURLQueryItems(for request: Request) -> [URLQueryItem] {
+        guard let parameters = request.parameters else { return [] }
+        
+        var urlQueryItems = [URLQueryItem]()
+        parameters.forEach { key, value in
+            switch value {
+            case let arrayValue as [CustomStringConvertible]:
+                arrayValue.forEach {
+                    let stringValue = $0.description
+                    urlQueryItems.append(URLQueryItem(name: key, value: stringValue))
+                }
+            case let customStringConvertibleValue as CustomStringConvertible:
+                let stringValue = customStringConvertibleValue.description
+                urlQueryItems.append(URLQueryItem(name: key, value: stringValue))
+            default:
+                break
+            }
+        }
+        
+        return urlQueryItems
     }
 }

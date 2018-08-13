@@ -12,6 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CoreBoostersDispatcher().executeRequest(.filtered(by: [.missions(["SpaceX CRS-11", "SpaceX CRS-13"])])) { response in
+            print("Gotcha")
+        }
     }
 
 }
