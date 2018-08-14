@@ -14,15 +14,21 @@ enum Response<T> where T: Decodable {
     error(Error?)
     
     init(response: HTTPURLResponse? = nil, data: Data? = nil, error: Error? = nil) {
-        print(response?.shortDescription ?? "")
         guard response?.statusCode == 200, error == nil else {
-            self = .error(error ?? NetworkError.noData)
+            let responseError = error ?? NetworkError.noData
+            response?.printDescription(with: responseError)
+            self = .error(responseError)
             return
         }
         
         guard let data = data else {
+            response?.printDescription(with: NetworkError.noData)
             self = .error(NetworkError.noData)
             return
+        }
+        
+        if let jsonObject = try? JSONSerialization.jsonObject(with: data) {
+            response?.printDescription(with: jsonObject)
         }
         
         do {

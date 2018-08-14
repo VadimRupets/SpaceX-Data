@@ -9,13 +9,23 @@
 import Foundation
 
 extension HTTPURLResponse {
-    var shortDescription: String {
+    fileprivate var shortDescription: String {
         return """
         
         Request response
         URL: \(url?.absoluteString ?? "")
         Status Code: \(statusCode)
-        
         """
+    }
+    
+    func printDescription(with error: Error) {
+        print(shortDescription)
+        print("Error: \(error.localizedDescription)")
+    }
+    
+    func printDescription(with json: Any) {
+        print(shortDescription)
+        print("JSON")
+        print(json)
     }
 }
