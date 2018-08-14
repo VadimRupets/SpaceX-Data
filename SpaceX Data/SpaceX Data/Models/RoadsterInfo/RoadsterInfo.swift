@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RoadsterInfo {
+struct RoadsterInfo: CustomStringConvertible {
     let name: String
     let launchDate: Date
     let launchMass: Mass
@@ -27,7 +27,7 @@ struct RoadsterInfo {
     let distanceFromEarth: Distance
     let distanceFromMars: Distance
     let wikipediaURL: URL
-    private let _description: String
+    let description: String
 }
 
 extension RoadsterInfo: Decodable {
@@ -105,13 +105,7 @@ extension RoadsterInfo: Decodable {
         self.distanceFromMars = Distance(metric: distanceFromMarsInKilometers, imperial: distanceFromMarsInMiles)
         
         self.wikipediaURL = try values.decode(URL.self, forKey: .wikipediaURL)
-        self._description = try values.decode(String.self, forKey: .description)
+        self.description = try values.decode(String.self, forKey: .description)
     }
     
-}
-
-extension RoadsterInfo: CustomStringConvertible {
-    var description: String {
-        return _description
-    }
 }

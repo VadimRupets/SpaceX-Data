@@ -15,13 +15,13 @@ enum LaunchpadStatus: String, Decodable {
     underConstruction = "under construction"
 }
 
-struct Launchpad {
+struct Launchpad: CustomStringConvertible {
     let id: String
     let name: String
     let status: LaunchpadStatus
     let location: Location
     let launchedVehicles: [String]
-    let _description: String
+    let description: String
 }
 
 extension Launchpad: Decodable {
@@ -43,12 +43,6 @@ extension Launchpad: Decodable {
         self.status = try values.decode(LaunchpadStatus.self, forKey: .status)
         self.location = try values.decode(Location.self, forKey: .location)
         self.launchedVehicles = try values.decode([String].self, forKey: .launchedVehicles)
-        self._description = try values.decode(String.self, forKey: .description)
-    }
-}
-
-extension Launchpad: CustomStringConvertible {
-    var description: String {
-        return _description
+        self.description = try values.decode(String.self, forKey: .description)
     }
 }

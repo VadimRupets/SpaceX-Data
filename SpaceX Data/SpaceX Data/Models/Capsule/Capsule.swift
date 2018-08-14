@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Capsule {
+struct Capsule: CustomStringConvertible {
     let id: String
     let name: String
     let type: String
@@ -27,7 +27,7 @@ struct Capsule {
     let heightWithTrunk: Distance
     let diameter: Distance
     let wikipediaURL: URL
-    let _description: String
+    let description: String
 }
 
 extension Capsule: Decodable {
@@ -83,13 +83,7 @@ extension Capsule: Decodable {
         self.heightWithTrunk = try values.decode(Distance.self, forKey: .heigthWithTrunk)
         self.diameter = try values.decode(Distance.self, forKey: .diameter)
         self.wikipediaURL = try values.decode(URL.self, forKey: .wikipediaURL)
-        self._description = try values.decode(String.self, forKey: .description)
+        self.description = try values.decode(String.self, forKey: .description)
     }
     
-}
-
-extension Capsule: CustomStringConvertible {
-    var description: String {
-        return _description
-    }
 }

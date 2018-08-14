@@ -16,7 +16,7 @@ enum CoreBoosterStatus: String, Decodable {
     retired
 }
 
-struct CoreBooster {
+struct CoreBooster: CustomStringConvertible {
     let serialNumber: String
     let block: Int?
     let status: CoreBoosterStatus
@@ -27,7 +27,7 @@ struct CoreBooster {
     let asdsAttempt: Bool
     let asdsLandings: Int
     let waterLanding: Bool
-    private let _description: String?
+    let description: String
 }
 
 extension CoreBooster: Decodable {
@@ -69,12 +69,6 @@ extension CoreBooster: Decodable {
         self.asdsAttempt = try values.decode(Bool.self, forKey: .asdsAttempt)
         self.asdsLandings = try values.decode(Int.self, forKey: .asdsLandings)
         self.waterLanding = try values.decode(Bool.self, forKey: .waterLanding)
-        self._description = try values.decodeIfPresent(String.self, forKey: .description)
-    }
-}
-
-extension CoreBooster: CustomStringConvertible {
-    var description: String {
-        return _description ?? ""
+        self.description = try values.decodeIfPresent(String.self, forKey: .description) ?? ""
     }
 }

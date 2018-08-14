@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Rocket {
+struct Rocket: CustomStringConvertible {
     let id: String
     let name: String
     let type: String
@@ -28,7 +28,7 @@ struct Rocket {
     let secondStage: RocketSecondStage
     let engines: Engines
     let landingLegs: LandingLegs
-    private let _description: String
+    let description: String
 }
 
 extension Rocket: Decodable {
@@ -86,13 +86,7 @@ extension Rocket: Decodable {
         self.secondStage = try values.decode(RocketSecondStage.self, forKey: .secondStage)
         self.engines = try values.decode(Engines.self, forKey: .engines)
         self.landingLegs = try values.decode(LandingLegs.self, forKey: .landingLegs)
-        self._description = try values.decode(String.self, forKey: .description)
+        self.description = try values.decode(String.self, forKey: .description)
     }
     
-}
-
-extension Rocket: CustomStringConvertible {
-    var description: String {
-        return _description
-    }
 }
