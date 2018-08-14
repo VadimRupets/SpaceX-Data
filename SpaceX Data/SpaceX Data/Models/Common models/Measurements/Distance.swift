@@ -22,6 +22,11 @@ struct Distance: Measurement {
         self.metric = metric
         self.imperial = imperial
     }
+    
+    init(metric: Double) {
+        self.metric = metric
+        self.imperial = metric * 3.28084
+    }
 }
 
 extension Distance: Decodable {
