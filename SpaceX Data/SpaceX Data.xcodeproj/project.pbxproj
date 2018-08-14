@@ -11,6 +11,11 @@
 		AC18E547211D94420065FBBC /* LaunchpadsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18E546211D94420065FBBC /* LaunchpadsRequests.swift */; };
 		AC1A5CDE203430D7000A3618 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A5CDD203430D7000A3618 /* Response.swift */; };
 		AC1A5CE0203430F2000A3618 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A5CDF203430F2000A3618 /* NetworkError.swift */; };
+		AC1BDCD62122F95300148F31 /* CapsuleDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDCD52122F95300148F31 /* CapsuleDetails.swift */; };
+		AC1BDCDC2122FD8C00148F31 /* CapsuleDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDCDB2122FD8C00148F31 /* CapsuleDetailsRequest.swift */; };
+		AC1BDCDE2122FDDF00148F31 /* CapsuleDetailsDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDCDD2122FDDF00148F31 /* CapsuleDetailsDispatcher.swift */; };
+		AC1BDCE02122FE0C00148F31 /* CapsulesDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDCDF2122FE0C00148F31 /* CapsulesDetailsRequest.swift */; };
+		AC1BDCE22123003D00148F31 /* CapsulesDetailsDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDCE12123003D00148F31 /* CapsulesDetailsDispatcher.swift */; };
 		AC47C1C820AD83D5004C2D74 /* CompanyInfoRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC47C1C720AD83D5004C2D74 /* CompanyInfoRequests.swift */; };
 		AC750373211859D100AED17B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750372211859D100AED17B /* String+Extensions.swift */; };
 		AC75037521185DD500AED17B /* Engines.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75037421185DD500AED17B /* Engines.swift */; };
@@ -134,6 +139,11 @@
 		AC18E546211D94420065FBBC /* LaunchpadsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadsRequests.swift; sourceTree = "<group>"; };
 		AC1A5CDD203430D7000A3618 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AC1A5CDF203430F2000A3618 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AC1BDCD52122F95300148F31 /* CapsuleDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleDetails.swift; sourceTree = "<group>"; };
+		AC1BDCDB2122FD8C00148F31 /* CapsuleDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleDetailsRequest.swift; sourceTree = "<group>"; };
+		AC1BDCDD2122FDDF00148F31 /* CapsuleDetailsDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleDetailsDispatcher.swift; sourceTree = "<group>"; };
+		AC1BDCDF2122FE0C00148F31 /* CapsulesDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesDetailsRequest.swift; sourceTree = "<group>"; };
+		AC1BDCE12123003D00148F31 /* CapsulesDetailsDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesDetailsDispatcher.swift; sourceTree = "<group>"; };
 		AC47C1C720AD83D5004C2D74 /* CompanyInfoRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoRequests.swift; sourceTree = "<group>"; };
 		AC750372211859D100AED17B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		AC75037421185DD500AED17B /* Engines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engines.swift; sourceTree = "<group>"; };
@@ -243,6 +253,42 @@
 			path = "All Launchpads";
 			sourceTree = "<group>";
 		};
+		AC1BDCD72122FD4800148F31 /* Capsules */ = {
+			isa = PBXGroup;
+			children = (
+				ACF750772122F68500AC3E11 /* Single capsule */,
+				ACF750712122F60000AC3E11 /* Multiple capsules */,
+			);
+			path = Capsules;
+			sourceTree = "<group>";
+		};
+		AC1BDCD82122FD4C00148F31 /* Capsule Details */ = {
+			isa = PBXGroup;
+			children = (
+				AC1BDCDA2122FD6600148F31 /* Multiple capsule details */,
+				AC1BDCD92122FD6400148F31 /* Single capsule details */,
+			);
+			path = "Capsule Details";
+			sourceTree = "<group>";
+		};
+		AC1BDCD92122FD6400148F31 /* Single capsule details */ = {
+			isa = PBXGroup;
+			children = (
+				AC1BDCDB2122FD8C00148F31 /* CapsuleDetailsRequest.swift */,
+				AC1BDCDD2122FDDF00148F31 /* CapsuleDetailsDispatcher.swift */,
+			);
+			path = "Single capsule details";
+			sourceTree = "<group>";
+		};
+		AC1BDCDA2122FD6600148F31 /* Multiple capsule details */ = {
+			isa = PBXGroup;
+			children = (
+				AC1BDCDF2122FE0C00148F31 /* CapsulesDetailsRequest.swift */,
+				AC1BDCE12123003D00148F31 /* CapsulesDetailsDispatcher.swift */,
+			);
+			path = "Multiple capsule details";
+			sourceTree = "<group>";
+		};
 		AC750371211859C200AED17B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +329,7 @@
 				ACF750682122C39600AC3E11 /* Thruster.swift */,
 				ACF7506C2122CC8300AC3E11 /* Trunk.swift */,
 				ACF7506E2122CCC500AC3E11 /* Cargo.swift */,
+				AC1BDCD52122F95300148F31 /* CapsuleDetails.swift */,
 			);
 			path = Capsule;
 			sourceTree = "<group>";
@@ -464,13 +511,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		ACF750702122F5E900AC3E11 /* Capsule */ = {
+		ACF750702122F5E900AC3E11 /* Capsules */ = {
 			isa = PBXGroup;
 			children = (
-				ACF750772122F68500AC3E11 /* Single capsule */,
-				ACF750712122F60000AC3E11 /* Multiple capsules */,
+				AC1BDCD82122FD4C00148F31 /* Capsule Details */,
+				AC1BDCD72122FD4800148F31 /* Capsules */,
 			);
-			path = Capsule;
+			path = Capsules;
 			sourceTree = "<group>";
 		};
 		ACF750712122F60000AC3E11 /* Multiple capsules */ = {
@@ -570,7 +617,7 @@
 				ACE3C89C2107223600C9EEE7 /* Company Info */,
 				ACE20866211B231A00F27DC5 /* Roadster Info */,
 				AC88C8CD211DCD340093A813 /* Core boosters */,
-				ACF750702122F5E900AC3E11 /* Capsule */,
+				ACF750702122F5E900AC3E11 /* Capsules */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -777,11 +824,13 @@
 				ACF7506F2122CCC500AC3E11 /* Cargo.swift in Sources */,
 				AC88C8D8211DD4AF0093A813 /* CoreBoostersRequest.swift in Sources */,
 				ACF3F686211D9ED8007E738E /* LaunchpadDispatcher.swift in Sources */,
+				AC1BDCD62122F95300148F31 /* CapsuleDetails.swift in Sources */,
 				ACD76E332108C15C00F4CD14 /* PayloadWeight.swift in Sources */,
 				DD641EF1203191770094B7A2 /* CompanyInfo.swift in Sources */,
 				ACF750742122F62600AC3E11 /* CapsulesRequest.swift in Sources */,
 				AC18E547211D94420065FBBC /* LaunchpadsRequests.swift in Sources */,
 				AC78D5362121C1FE00D0EED6 /* Temperature.swift in Sources */,
+				AC1BDCDE2122FDDF00148F31 /* CapsuleDetailsDispatcher.swift in Sources */,
 				AC93810721076C9B00880E07 /* Mass.swift in Sources */,
 				ACF3F67F211D9666007E738E /* Location.swift in Sources */,
 				AC10EEB5211DD71B0093D3BE /* CoreBoostersDispatcher.swift in Sources */,
@@ -791,10 +840,12 @@
 				AC75037B2119B70D00AED17B /* RocketsRequests.swift in Sources */,
 				ACD76E372108C3F700F4CD14 /* RocketStage.swift in Sources */,
 				ACD76E392108C62500F4CD14 /* RocketFirstStage.swift in Sources */,
+				AC1BDCE02122FE0C00148F31 /* CapsulesDetailsRequest.swift in Sources */,
 				ACDA35052034B71000A06795 /* Dispatcher.swift in Sources */,
 				AC750377211866B300AED17B /* LandingLegs.swift in Sources */,
 				AC9380FE21076A3C00880E07 /* RocketDispatcher.swift in Sources */,
 				ACE2086A211B239200F27DC5 /* RoadsterInfoDispatcher.swift in Sources */,
+				AC1BDCE22123003D00148F31 /* CapsulesDetailsDispatcher.swift in Sources */,
 				DD641EA42031760A0094B7A2 /* ViewController.swift in Sources */,
 				AC7503792119A28F00AED17B /* DateFormatter+Extensions.swift in Sources */,
 				ACD76E352108C39000F4CD14 /* Thrust.swift in Sources */,
@@ -806,6 +857,7 @@
 				AC78D5322121BB1F00D0EED6 /* Capsule.swift in Sources */,
 				ACE3C89E2107224900C9EEE7 /* CompanyInfoDispatcher.swift in Sources */,
 				DD641EEA20318EFE0094B7A2 /* Request.swift in Sources */,
+				AC1BDCDC2122FD8C00148F31 /* CapsuleDetailsRequest.swift in Sources */,
 				ACD76E3D2108C86600F4CD14 /* Payloads.swift in Sources */,
 				AC75037521185DD500AED17B /* Engines.swift in Sources */,
 				AC9380FC2107674A00880E07 /* RocketRequests.swift in Sources */,

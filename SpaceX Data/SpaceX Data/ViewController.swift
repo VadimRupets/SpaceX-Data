@@ -12,6 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CapsulesDetailsDispatcher().executeRequest(.all) { response in
+            print("Gotcha")
+        }
     }
 
 }
