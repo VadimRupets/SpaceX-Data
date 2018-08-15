@@ -98,11 +98,11 @@ extension RoadsterInfo: Decodable {
         
         let distanceFromEarthInKilometers = try values.decode(Double.self, forKey: .distanceFromEarthInKilometers)
         let distanceFromEarthInMiles = try values.decode(Double.self, forKey: .distanceFromEarthInMiles)
-        self.distanceFromEarth = Distance(metric: distanceFromEarthInKilometers, imperial: distanceFromEarthInMiles)
+        self.distanceFromEarth = Distance(metric: distanceFromEarthInKilometers * 1000, imperial: distanceFromEarthInMiles * 5280)
         
         let distanceFromMarsInKilometers = try values.decode(Double.self, forKey: .distanceFromMarsInKilometers)
         let distanceFromMarsInMiles = try values.decode(Double.self, forKey: .distanceFromMarsInMiles)
-        self.distanceFromMars = Distance(metric: distanceFromMarsInKilometers, imperial: distanceFromMarsInMiles)
+        self.distanceFromMars = Distance(metric: distanceFromMarsInKilometers * 1000, imperial: distanceFromMarsInMiles * 5280)
         
         self.wikipediaURL = try values.decode(URL.self, forKey: .wikipediaURL)
         self.description = try values.decode(String.self, forKey: .description)

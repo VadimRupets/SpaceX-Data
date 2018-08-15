@@ -17,6 +17,11 @@ struct Mass: Measurement {
         metric = "kgs",
         imperial = "lbs"
     }
+    
+    init(metric: Double, imperial: Double) {
+        self.metric = metric
+        self.imperial = imperial
+    }
 }
 
 extension Mass: Decodable {
