@@ -53,6 +53,8 @@
 		AC93810521076C7400880E07 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC93810421076C7400880E07 /* Distance.swift */; };
 		AC93810721076C9B00880E07 /* Mass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC93810621076C9B00880E07 /* Mass.swift */; };
 		ACA87802212574F80020DE02 /* ComparisonResult+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA87801212574F80020DE02 /* ComparisonResult+Extensions.swift */; };
+		ACA878052125ABE90020DE02 /* LaunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA878042125ABE90020DE02 /* LaunchRequest.swift */; };
+		ACA878072125AC3A0020DE02 /* LaunchDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA878062125AC3A0020DE02 /* LaunchDispatcher.swift */; };
 		ACD76E312108B8F700F4CD14 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD76E302108B8F700F4CD14 /* Measurement.swift */; };
 		ACD76E332108C15C00F4CD14 /* PayloadWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD76E322108C15C00F4CD14 /* PayloadWeight.swift */; };
 		ACD76E352108C39000F4CD14 /* Thrust.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD76E342108C39000F4CD14 /* Thrust.swift */; };
@@ -195,6 +197,8 @@
 		AC93810421076C7400880E07 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		AC93810621076C9B00880E07 /* Mass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mass.swift; sourceTree = "<group>"; };
 		ACA87801212574F80020DE02 /* ComparisonResult+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComparisonResult+Extensions.swift"; sourceTree = "<group>"; };
+		ACA878042125ABE90020DE02 /* LaunchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRequest.swift; sourceTree = "<group>"; };
+		ACA878062125AC3A0020DE02 /* LaunchDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDispatcher.swift; sourceTree = "<group>"; };
 		ACD76E302108B8F700F4CD14 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		ACD76E322108C15C00F4CD14 /* PayloadWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadWeight.swift; sourceTree = "<group>"; };
 		ACD76E342108C39000F4CD14 /* Thrust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thrust.swift; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 		AC03BDA6212472F800FBA093 /* Launches */ = {
 			isa = PBXGroup;
 			children = (
+				ACA878032125ABD70020DE02 /* Single launch */,
 				AC03BDA72124730500FBA093 /* Multiple launches */,
 			);
 			path = Launches;
@@ -502,6 +507,15 @@
 				ACF7506A2122C68500AC3E11 /* Volume.swift */,
 			);
 			path = Measurements;
+			sourceTree = "<group>";
+		};
+		ACA878032125ABD70020DE02 /* Single launch */ = {
+			isa = PBXGroup;
+			children = (
+				ACA878042125ABE90020DE02 /* LaunchRequest.swift */,
+				ACA878062125AC3A0020DE02 /* LaunchDispatcher.swift */,
+			);
+			path = "Single launch";
 			sourceTree = "<group>";
 		};
 		ACE20861211B019400F27DC5 /* RoadsterInfo */ = {
@@ -910,6 +924,7 @@
 				AC750373211859D100AED17B /* String+Extensions.swift in Sources */,
 				AC88C8D0211DCD500093A813 /* CoreBoosterRequest.swift in Sources */,
 				ACD76E312108B8F700F4CD14 /* Measurement.swift in Sources */,
+				ACA878052125ABE90020DE02 /* LaunchRequest.swift in Sources */,
 				AC88C8CC211DCB860093A813 /* DetailedItemRequest.swift in Sources */,
 				AC93810521076C7400880E07 /* Distance.swift in Sources */,
 				DD641EF3203192B90094B7A2 /* Address.swift in Sources */,
@@ -931,6 +946,7 @@
 				AC78733821242CC2000F0DFC /* LaunchedRocketSecondStage.swift in Sources */,
 				AC7726B321216419000A3B5A /* QueryFilter.swift in Sources */,
 				ACF3F67B211D951C007E738E /* Launchpad.swift in Sources */,
+				ACA878072125AC3A0020DE02 /* LaunchDispatcher.swift in Sources */,
 				AC78D5342121BD2C00D0EED6 /* HeatShield.swift in Sources */,
 				AC75037B2119B70D00AED17B /* RocketsRequests.swift in Sources */,
 				ACD76E372108C3F700F4CD14 /* RocketStage.swift in Sources */,
