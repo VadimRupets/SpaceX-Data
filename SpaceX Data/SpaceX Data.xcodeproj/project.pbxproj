@@ -52,6 +52,7 @@
 		AC93810221076A8B00880E07 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC93810121076A8B00880E07 /* Rocket.swift */; };
 		AC93810521076C7400880E07 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC93810421076C7400880E07 /* Distance.swift */; };
 		AC93810721076C9B00880E07 /* Mass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC93810621076C9B00880E07 /* Mass.swift */; };
+		ACA87802212574F80020DE02 /* ComparisonResult+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA87801212574F80020DE02 /* ComparisonResult+Extensions.swift */; };
 		ACD76E312108B8F700F4CD14 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD76E302108B8F700F4CD14 /* Measurement.swift */; };
 		ACD76E332108C15C00F4CD14 /* PayloadWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD76E322108C15C00F4CD14 /* PayloadWeight.swift */; };
 		ACD76E352108C39000F4CD14 /* Thrust.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD76E342108C39000F4CD14 /* Thrust.swift */; };
@@ -193,6 +194,7 @@
 		AC93810121076A8B00880E07 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		AC93810421076C7400880E07 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		AC93810621076C9B00880E07 /* Mass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mass.swift; sourceTree = "<group>"; };
+		ACA87801212574F80020DE02 /* ComparisonResult+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComparisonResult+Extensions.swift"; sourceTree = "<group>"; };
 		ACD76E302108B8F700F4CD14 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		ACD76E322108C15C00F4CD14 /* PayloadWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadWeight.swift; sourceTree = "<group>"; };
 		ACD76E342108C39000F4CD14 /* Thrust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thrust.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				AC750372211859D100AED17B /* String+Extensions.swift */,
 				AC7503782119A28F00AED17B /* DateFormatter+Extensions.swift */,
 				AC75037F2119D93600AED17B /* HTTPURLResponse+Extensions.swift */,
+				ACA87801212574F80020DE02 /* ComparisonResult+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 				ACF7506B2122C68500AC3E11 /* Volume.swift in Sources */,
 				ACD76E3F2108C88700F4CD14 /* CompositeFairing.swift in Sources */,
 				AC7503802119D93600AED17B /* HTTPURLResponse+Extensions.swift in Sources */,
+				ACA87802212574F80020DE02 /* ComparisonResult+Extensions.swift in Sources */,
 				ACF3F678211D94D1007E738E /* LaunchpadsDispatcher.swift in Sources */,
 				ACF3F684211D9949007E738E /* LaunchpadRequest.swift in Sources */,
 				AC93810221076A8B00880E07 /* Rocket.swift in Sources */,

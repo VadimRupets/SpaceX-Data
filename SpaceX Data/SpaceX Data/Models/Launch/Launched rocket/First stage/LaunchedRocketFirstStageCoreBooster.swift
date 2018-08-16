@@ -17,7 +17,7 @@ enum LandingType: String, Decodable {
 
 struct LaunchedRocketFirstStageCoreBooster {
     let serialNumber: String?
-    let flight: Int?
+    let previousFlights: Int?
     let block: Int?
     let reused: Bool?
     let landed: Bool?
@@ -30,7 +30,7 @@ extension LaunchedRocketFirstStageCoreBooster: Decodable {
     private enum CodingKeys: String, CodingKey {
         case
         serialNumber = "core_serial",
-        flight,
+        previousFlights = "flight",
         block,
         reused,
         landed = "land_success",
@@ -42,7 +42,7 @@ extension LaunchedRocketFirstStageCoreBooster: Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         self.serialNumber = try values.decodeIfPresent(String.self, forKey: .serialNumber)
-        self.flight = try values.decodeIfPresent(Int.self, forKey: .flight)
+        self.previousFlights = try values.decodeIfPresent(Int.self, forKey: .previousFlights)
         self.block = try values.decodeIfPresent(Int.self, forKey: .block)
         self.reused = try values.decodeIfPresent(Bool.self, forKey: .reused)
         self.landed = try values.decodeIfPresent(Bool.self, forKey: .landed)
