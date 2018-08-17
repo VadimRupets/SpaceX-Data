@@ -55,6 +55,9 @@
 		ACA87802212574F80020DE02 /* ComparisonResult+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA87801212574F80020DE02 /* ComparisonResult+Extensions.swift */; };
 		ACA878052125ABE90020DE02 /* LaunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA878042125ABE90020DE02 /* LaunchRequest.swift */; };
 		ACA878072125AC3A0020DE02 /* LaunchDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA878062125AC3A0020DE02 /* LaunchDispatcher.swift */; };
+		ACA8780F2125BBC50020DE02 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA8780E2125BBC50020DE02 /* MockRequest.swift */; };
+		ACA878132125C1870020DE02 /* MockDecodableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA878122125C1870020DE02 /* MockDecodableObject.swift */; };
+		ACA878172125C7A20020DE02 /* ReponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA878162125C7A20020DE02 /* ReponseTests.swift */; };
 		ACD76E312108B8F700F4CD14 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD76E302108B8F700F4CD14 /* Measurement.swift */; };
 		ACD76E332108C15C00F4CD14 /* PayloadWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD76E322108C15C00F4CD14 /* PayloadWeight.swift */; };
 		ACD76E352108C39000F4CD14 /* Thrust.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD76E342108C39000F4CD14 /* Thrust.swift */; };
@@ -88,7 +91,6 @@
 		DD641EA72031760A0094B7A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD641EA52031760A0094B7A2 /* Main.storyboard */; };
 		DD641EA92031760A0094B7A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD641EA82031760A0094B7A2 /* Assets.xcassets */; };
 		DD641EAC2031760A0094B7A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD641EAA2031760A0094B7A2 /* LaunchScreen.storyboard */; };
-		DD641EB72031760A0094B7A2 /* SpaceX_DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EB62031760A0094B7A2 /* SpaceX_DataTests.swift */; };
 		DD641EBC2031760A0094B7A2 /* SpaceX Data WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DD641EBB2031760A0094B7A2 /* SpaceX Data WatchKit App.app */; };
 		DD641EC22031760A0094B7A2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD641EC02031760A0094B7A2 /* Interface.storyboard */; };
 		DD641EC42031760A0094B7A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD641EC32031760A0094B7A2 /* Assets.xcassets */; };
@@ -199,6 +201,9 @@
 		ACA87801212574F80020DE02 /* ComparisonResult+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComparisonResult+Extensions.swift"; sourceTree = "<group>"; };
 		ACA878042125ABE90020DE02 /* LaunchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRequest.swift; sourceTree = "<group>"; };
 		ACA878062125AC3A0020DE02 /* LaunchDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDispatcher.swift; sourceTree = "<group>"; };
+		ACA8780E2125BBC50020DE02 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
+		ACA878122125C1870020DE02 /* MockDecodableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDecodableObject.swift; sourceTree = "<group>"; };
+		ACA878162125C7A20020DE02 /* ReponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReponseTests.swift; sourceTree = "<group>"; };
 		ACD76E302108B8F700F4CD14 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		ACD76E322108C15C00F4CD14 /* PayloadWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadWeight.swift; sourceTree = "<group>"; };
 		ACD76E342108C39000F4CD14 /* Thrust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thrust.swift; sourceTree = "<group>"; };
@@ -235,7 +240,6 @@
 		DD641EAB2031760A0094B7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD641EAD2031760A0094B7A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD641EB22031760A0094B7A2 /* SpaceX DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SpaceX DataTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD641EB62031760A0094B7A2 /* SpaceX_DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceX_DataTests.swift; sourceTree = "<group>"; };
 		DD641EB82031760A0094B7A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD641EBB2031760A0094B7A2 /* SpaceX Data WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Data WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD641EC12031760A0094B7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -518,6 +522,15 @@
 			path = "Single launch";
 			sourceTree = "<group>";
 		};
+		ACA8780D2125BB840020DE02 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				ACA8780E2125BBC50020DE02 /* MockRequest.swift */,
+				ACA878122125C1870020DE02 /* MockDecodableObject.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		ACE20861211B019400F27DC5 /* RoadsterInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -682,7 +695,8 @@
 		DD641EB52031760A0094B7A2 /* SpaceX DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				DD641EB62031760A0094B7A2 /* SpaceX_DataTests.swift */,
+				ACA8780D2125BB840020DE02 /* Mocks */,
+				ACA878162125C7A20020DE02 /* ReponseTests.swift */,
 				DD641EB82031760A0094B7A2 /* Info.plist */,
 			);
 			path = "SpaceX DataTests";
@@ -994,7 +1008,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD641EB72031760A0094B7A2 /* SpaceX_DataTests.swift in Sources */,
+				ACA878172125C7A20020DE02 /* ReponseTests.swift in Sources */,
+				ACA878132125C1870020DE02 /* MockDecodableObject.swift in Sources */,
+				ACA8780F2125BBC50020DE02 /* MockRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
