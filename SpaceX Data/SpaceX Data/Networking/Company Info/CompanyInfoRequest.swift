@@ -1,5 +1,5 @@
 //
-//  CompanyInfoRequests.swift
+//  CompanyInfoRequest.swift
 //  SpaceX Data
 //
 //  Created by Vadim Rupets on 5/17/18.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum CompanyInfoRequests: Request {
-    case `default`
+enum CompanyInfoRequest: Request {
+    case companyInfo
     
     var httpMethod: HTTPMethod {
         return .get

@@ -9,10 +9,10 @@
 import Foundation
 
 struct CoreBoosterRequest: DetailedItemRequest {
-    internal let itemID: String
+    internal let itemId: String
     
     init(coreSerialNumber: String) {
-        itemID = coreSerialNumber
+        itemId = coreSerialNumber
     }
     
     var httpMethod: HTTPMethod {
@@ -20,7 +20,7 @@ struct CoreBoosterRequest: DetailedItemRequest {
     }
     
     var endpoint: String {
-        return "parts/cores/".appending(itemID)
+        return "parts/cores/".appending(itemId)
     }
     
     var parameters: [String : Any]? {

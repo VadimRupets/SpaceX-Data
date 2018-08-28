@@ -11,7 +11,7 @@ import Foundation
 enum CapsulesDetailsFilter: QueryFilter {
     case
     capsuleSerialNumber(String),
-    capsuleID(String),
+    capsuleId(String),
     status(CapsuleStatus),
     originalLaunchDate(Date),
     missions([String]),
@@ -22,7 +22,7 @@ enum CapsulesDetailsFilter: QueryFilter {
         switch self {
         case .capsuleSerialNumber(_):
             return "capsule_serial"
-        case .capsuleID(_):
+        case .capsuleId(_):
             return "capsule_id"
         case .status(_):
             return "status"
@@ -41,8 +41,8 @@ enum CapsulesDetailsFilter: QueryFilter {
         switch self {
         case .capsuleSerialNumber(let serialNumber):
             return serialNumber
-        case .capsuleID(let capsuleID):
-            return capsuleID
+        case .capsuleId(let capsuleId):
+            return capsuleId
         case .status(let status):
             return status.rawValue
         case .originalLaunchDate(let originalLaunchDate):
@@ -59,7 +59,7 @@ enum CapsulesDetailsFilter: QueryFilter {
 
 enum CapsulesDetailsRequest: Request {
     case
-    all,
+    allCapsules,
     filtered(by: [CapsulesDetailsFilter])
     
     var httpMethod: HTTPMethod {

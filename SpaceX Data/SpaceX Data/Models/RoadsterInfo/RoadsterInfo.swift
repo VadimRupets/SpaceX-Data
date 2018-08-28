@@ -73,15 +73,8 @@ extension RoadsterInfo: Decodable {
         let launchMassInKilograms = try values.decode(Double.self, forKey: .launchMassInKilograms)
         let launchMassInPounds = try values.decode(Double.self, forKey: .launchMassInPounds)
         self.launchMass = Mass(metric: launchMassInKilograms, imperial: launchMassInPounds)
-        
         self.noradId = try values.decode(Int.self, forKey: .noradId)
-        
-        let epochInJulianDaysStringValue = try values.decode(String.self, forKey: .epochInJulianDays)
-        guard let epochInJulianDays = Double(epochInJulianDaysStringValue) else {
-            throw DecodingError.dataCorruptedError(forKey: .epochInJulianDays, in: values, debugDescription: "Epoch string value can not be casted to Double.")
-        }
-        self.epochInJulianDays = epochInJulianDays
-        
+        self.epochInJulianDays = try values.decode(Double.self, forKey: .epochInJulianDays)
         self.orbitType = try values.decode(String.self, forKey: .orbitType)
         self.apoapsis = try values.decode(Double.self, forKey: .apoapsis)
         self.periapsis = try values.decode(Double.self, forKey: .periapsis)

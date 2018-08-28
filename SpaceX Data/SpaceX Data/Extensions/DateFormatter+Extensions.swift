@@ -10,14 +10,14 @@ import Foundation
 
 extension DateFormatter {
     static var yyyyMMdd: DateFormatter {
-        return createDateFormatter(with: "yyyy-MM-dd")
+        return dateFormatter(with: "yyyy-MM-dd")
     }
     
     static var ISO8601: DateFormatter {
-        return createDateFormatter(with: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+        return dateFormatter(with: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
     }
     
-    private static func createDateFormatter(with dateFormat: String, locale: Locale = Locale(identifier: "en_US_POSIX")) -> DateFormatter {
+    private static func dateFormatter(with dateFormat: String, locale: Locale = Locale(identifier: "en_US_POSIX")) -> DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
         dateFormatter.locale = locale

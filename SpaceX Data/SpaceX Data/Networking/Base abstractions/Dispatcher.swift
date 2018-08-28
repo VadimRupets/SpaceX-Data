@@ -43,8 +43,8 @@ extension Dispatcher {
     }
 }
 
-extension Dispatcher {
-    private func prepareURLRequest(_ request: Request) throws -> URLRequest {
+private extension Dispatcher {
+    func prepareURLRequest(_ request: Request) throws -> URLRequest {
         guard let url = URL(string: host + request.endpoint) else {
             throw NetworkError.badInput
         }
@@ -69,7 +69,7 @@ extension Dispatcher {
         return urlRequest
     }
     
-    private func prepareURLQueryItems(for request: Request) -> [URLQueryItem] {
+    func prepareURLQueryItems(for request: Request) -> [URLQueryItem] {
         guard let parameters = request.parameters else { return [] }
         
         var urlQueryItems = [URLQueryItem]()

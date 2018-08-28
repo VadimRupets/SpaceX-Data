@@ -10,5 +10,5 @@ import Foundation
 
 class CompanyInfoDispatcher: Dispatcher {
     typealias ResponseObject = CompanyInfo
-    typealias APIRequest = CompanyInfoRequests
+    typealias APIRequest = CompanyInfoRequest
 }

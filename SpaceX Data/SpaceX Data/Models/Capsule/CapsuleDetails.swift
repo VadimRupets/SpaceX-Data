@@ -18,9 +18,9 @@ enum CapsuleStatus: String, Decodable {
 
 enum CapsuleType: String, Decodable {
     case
-    dragon10 = "Dragon 1.0",
-    dragon11 = "Dragon 1.1",
-    dragon20 = "Dragon 2.0"
+    dragon1_0 = "Dragon 1.0",
+    dragon1_1 = "Dragon 1.1",
+    dragon2_0 = "Dragon 2.0"
 }
 
 struct CapsuleDetails: CustomStringConvertible {

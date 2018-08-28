@@ -74,7 +74,7 @@ enum CoreBoostersFilter: QueryFilter {
 
 enum CoreBoostersRequest: Request {
     case
-    all,
+    allCoreBoosters,
     filtered(by: [CoreBoostersFilter])
     
     var httpMethod: HTTPMethod {

@@ -49,7 +49,7 @@ class ResponseTests: XCTestCase {
         // When: initializing Response enum case with given HTTPURLResponse, nil data and nil error
         let response = Response<MockDecodableObject<Int>>(response: httpURLResponse, data: nil, error: nil)
         
-        // Then: response object can't be decoded, returned NetworkError.noData error
+        // Then: response object can't be decoded, returns NetworkError.noData error
         if case .error(let error) = response, let networkError = error as? NetworkError {
             XCTAssertEqual(networkError, NetworkError.noData)
         } else {
@@ -66,7 +66,7 @@ class ResponseTests: XCTestCase {
         // When: initializing Response enum case with with given HTTPURLResponse, nil data and NetworkError.notReachable error
         let response = Response<MockDecodableObject<Int>>(response: httpURLResponse, data: nil, error: NetworkError.notReachable)
         
-        // Then: response object can't be decoded, returned NetworkError.notReachable error
+        // Then: response object can't be decoded, returns NetworkError.notReachable error
         if case .error(let error) = response, let networkError = error as? NetworkError {
             XCTAssertEqual(networkError, NetworkError.notReachable)
         } else {
@@ -83,7 +83,7 @@ class ResponseTests: XCTestCase {
         // When: initializing Response enum case with given HTTPURLResponse, nil data and nil error
         let response = Response<MockDecodableObject<Int>>(response: httpURLResponse, data: validData, error: nil)
         
-        // Then: response object can't be decoded, returned NetworkError.noData error
+        // Then: response object can't be decoded, returns NetworkError.noData error
         if case .error(let error) = response, let networkError = error as? NetworkError {
             XCTAssertEqual(networkError, NetworkError.noData)
         } else {
@@ -100,7 +100,7 @@ class ResponseTests: XCTestCase {
         // When: initializing Response enum case with given HTTPURLResponse, invalid type data and nil error
         let response = Response<MockDecodableObject<Int>>(response: httpURLResponse, data: invalidTypeData, error: nil)
         
-        // Then: response object can't be decoded, returned DecodingError error
+        // Then: response object can't be decoded, returns DecodingError error
         if case .error(let error) = response {
             XCTAssertTrue(error is DecodingError)
         } else {
@@ -115,7 +115,7 @@ class ResponseTests: XCTestCase {
         // When: initializing Response enum case with given HTTPURLResponse, nil data and nil error
         let response = Response<MockDecodableObject<Int>>(response: httpURLResponse, data: nil, error: nil)
         
-        // Then: response object can't be decoded, returned NetworkError.noData error
+        // Then: response object can't be decoded, returns NetworkError.noData error
         if case .error(let error) = response, let networkError = error as? NetworkError {
             XCTAssertEqual(networkError, NetworkError.noData)
         } else {
@@ -130,7 +130,7 @@ class ResponseTests: XCTestCase {
         // When: initializing Response enum case with given HTTPURLResponse, nil data and NetworkError.notReachable error
         let response = Response<MockDecodableObject<Int>>(response: httpURLResponse, data: nil, error: NetworkError.notReachable)
         
-        // Then: response object can't be decoded, returned NetworkError.notReachable error
+        // Then: response object can't be decoded, returns NetworkError.notReachable error
         if case .error(let error) = response, let networkError = error as? NetworkError {
             XCTAssertEqual(networkError, NetworkError.notReachable)
         } else {

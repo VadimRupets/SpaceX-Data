@@ -9,10 +9,10 @@
 import Foundation
 
 struct RocketRequest: DetailedItemRequest {
-    internal let itemID: String
+    internal let itemId: String
     
-    init(rocketID: String) {
-        itemID = rocketID
+    init(rocketId: String) {
+        itemId = rocketId
     }
     
     var httpMethod: HTTPMethod {
@@ -20,7 +20,7 @@ struct RocketRequest: DetailedItemRequest {
     }
     
     var endpoint: String {
-        return "rockets/".appending(itemID)
+        return "rockets/".appending(itemId)
     }
     
     var parameters: [String : Any]? {

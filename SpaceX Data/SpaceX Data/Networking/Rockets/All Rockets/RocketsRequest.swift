@@ -1,5 +1,5 @@
 //
-//  RocketsRequests.swift
+//  RocketsRequest.swift
 //  SpaceX Data
 //
 //  Created by Vadim Rupets on 8/7/18.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum RocketsRequests: Request {
+enum RocketsRequest: Request {
     case
-    `default`
+    allRockets
     
     var httpMethod: HTTPMethod {
         return .get

@@ -9,10 +9,10 @@
 import Foundation
 
 struct LaunchpadRequest: DetailedItemRequest {
-    internal let itemID: String
+    internal let itemId: String
     
-    init(launchpadID: String) {
-        itemID = launchpadID
+    init(launchpadId: String) {
+        itemId = launchpadId
     }
     
     var httpMethod: HTTPMethod {
@@ -20,7 +20,7 @@ struct LaunchpadRequest: DetailedItemRequest {
     }
     
     var endpoint: String {
-        return "launchpads/".appending(itemID)
+        return "launchpads/".appending(itemId)
     }
     
     var parameters: [String : Any]? {

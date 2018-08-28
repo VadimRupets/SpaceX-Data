@@ -10,5 +10,5 @@ import Foundation
 
 class RoadsterInfoDispatcher: Dispatcher {
     typealias ResponseObject = RoadsterInfo
-    typealias APIRequest = RoadsterInfoRequests
+    typealias APIRequest = RoadsterInfoRequest
 }

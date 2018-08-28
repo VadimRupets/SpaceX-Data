@@ -10,5 +10,5 @@ import Foundation
 
 class LaunchpadsDispatcher: Dispatcher {
     typealias ResponseObject = [Launchpad]
-    typealias APIRequest = LaunchpadsRequests
+    typealias APIRequest = LaunchpadsRequest
 }

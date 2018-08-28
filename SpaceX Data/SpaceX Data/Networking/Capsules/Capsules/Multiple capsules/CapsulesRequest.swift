@@ -9,7 +9,7 @@
 import Foundation
 
 enum CapsulesRequest: Request {
-    case `default`
+    case allCapsules
     
     var httpMethod: HTTPMethod {
         return .get

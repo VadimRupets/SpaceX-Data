@@ -10,7 +10,7 @@ import Foundation
 
 struct LaunchedPayload {
     let id: String
-    let noradIDs: [Int]
+    let noradIds: [Int]?
     let capsuleSerialNumber: String?
     let reused: Bool
     let customers: [String]
@@ -30,7 +30,7 @@ extension LaunchedPayload: Decodable {
     private enum CodingKeys: String, CodingKey {
         case
         id = "payload_id",
-        noradIDs = "norad_id",
+        noradIds = "norad_id",
         capsuleSerialNumber = "cap_serial",
         reused,
         customers,
@@ -51,7 +51,7 @@ extension LaunchedPayload: Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         self.id = try values.decode(String.self, forKey: .id)
-        self.noradIDs = try values.decode([Int].self, forKey: .noradIDs)
+        self.noradIds = try values.decodeIfPresent([Int].self, forKey: .noradIds)
         self.capsuleSerialNumber = try values.decodeIfPresent(String.self, forKey: .capsuleSerialNumber)
         self.reused = try values.decode(Bool.self, forKey: .reused)
         self.customers = try values.decode([String].self, forKey: .customers)

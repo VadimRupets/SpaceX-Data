@@ -8,20 +8,14 @@
 
 import Foundation
 
-enum Order: String {
-    case
-    ascending,
-    descending
-}
-
 enum LaunchesFilter: QueryFilter {
     case
-    ordered(ComparisonResult),
+    order(ComparisonResult),
     dateRange((startDate: Date, endDate: Date)),
     flightNumber(Int),
     launchYear(Int),
     launchDate(Date),
-    rocketID(String),
+    rocketId(String),
     rocketName(String),
     rocketType(String),
     coreBoosterSerialNumber(String),
@@ -33,25 +27,25 @@ enum LaunchesFilter: QueryFilter {
     sideCoreBooster2Reused(Bool),
     fairingsReused(Bool),
     capsuleReused(Bool),
-    launchSiteID(String),
+    launchSiteId(String),
     launchSiteName(String),
     launchSiteLongName(String),
-    payloadID(String),
-    noradID(Int),
+    payloadId(String),
+    noradId(Int),
     customer(String),
     nationality(String),
     manufacturer(String),
     payloadType(String),
     orbit(String),
-    succeedLaunch(Bool),
+    successfulLaunch(Bool),
     reusedCores(Bool),
-    landed(Bool),
+    successfulLanding(Bool),
     landingType(LandingType),
     landingVehicle(String)
     
     var parameter: String {
         switch self {
-        case .ordered(_):
+        case .order(_):
             return "order"
         case .dateRange(startDate: _, endDate: _):
             return ""
@@ -61,7 +55,7 @@ enum LaunchesFilter: QueryFilter {
             return "launch_year"
         case .launchDate(_):
             return "launch_date_utc"
-        case .rocketID(_):
+        case .rocketId(_):
             return "rocket_id"
         case .rocketName(_):
             return "rocket_name"
@@ -70,7 +64,7 @@ enum LaunchesFilter: QueryFilter {
         case .coreBoosterSerialNumber(_):
             return "core_serial"
         case .capsuleSerialNumber(_):
-            return "core_serial"
+            return "cap_serial"
         case .numberOfPreviousCoreBoosterFlights(_):
             return "core_flight"
         case .coreBoosterBlockNumber(_):
@@ -85,15 +79,15 @@ enum LaunchesFilter: QueryFilter {
             return "fairings_reuse"
         case .capsuleReused(_):
             return "capsule_reuse"
-        case .launchSiteID(_):
+        case .launchSiteId(_):
             return "site_id"
         case .launchSiteName(_):
             return "site_name"
         case .launchSiteLongName(_):
             return "site_name_long"
-        case .payloadID(_):
+        case .payloadId(_):
             return "payload_id"
-        case .noradID(_):
+        case .noradId(_):
             return "norad_id"
         case .customer(_):
             return "customer"
@@ -105,11 +99,11 @@ enum LaunchesFilter: QueryFilter {
             return "payload_type"
         case .orbit(_):
             return "orbit"
-        case .succeedLaunch(_):
+        case .successfulLaunch(_):
             return "launch_success"
         case .reusedCores(_):
             return "reused"
-        case .landed(_):
+        case .successfulLanding(_):
             return "land_success"
         case .landingType(_):
             return "landing_type"
@@ -120,7 +114,7 @@ enum LaunchesFilter: QueryFilter {
     
     var value: Any {
         switch self {
-        case .ordered(let order):
+        case .order(let order):
             return order.requestParameterValue
         case .dateRange(startDate: _, endDate: _):
             return ""
@@ -130,8 +124,8 @@ enum LaunchesFilter: QueryFilter {
             return launchYear
         case .launchDate(let launchDate):
             return DateFormatter.ISO8601.string(from: launchDate)
-        case .rocketID(let rocketID):
-            return rocketID
+        case .rocketId(let rocketId):
+            return rocketId
         case .rocketName(let rocketName):
             return rocketName
         case .rocketType(let rocketType):
@@ -154,16 +148,16 @@ enum LaunchesFilter: QueryFilter {
             return fairingsReused
         case .capsuleReused(let capsuleReused):
             return capsuleReused
-        case .launchSiteID(let launchSiteID):
-            return launchSiteID
+        case .launchSiteId(let launchSiteId):
+            return launchSiteId
         case .launchSiteName(let launchSiteName):
             return launchSiteName
         case .launchSiteLongName(let launchSiteLongName):
             return launchSiteLongName
-        case .payloadID(let payloadID):
-            return payloadID
-        case .noradID(let noradID):
-            return noradID
+        case .payloadId(let payloadId):
+            return payloadId
+        case .noradId(let noradId):
+            return noradId
         case .customer(let customer):
             return customer
         case .nationality(let nationality):
@@ -174,12 +168,12 @@ enum LaunchesFilter: QueryFilter {
             return payloadType
         case .orbit(let orbit):
             return orbit
-        case .succeedLaunch(let succeedLaunch):
-            return succeedLaunch
+        case .successfulLaunch(let successfulLaunch):
+            return successfulLaunch
         case .reusedCores(let reusedCores):
             return reusedCores
-        case .landed(let landed):
-            return landed
+        case .successfulLanding(let successfulLanding):
+            return successfulLanding
         case .landingType(let landingType):
             return landingType.rawValue
         case .landingVehicle(let landingVehicle):
@@ -199,9 +193,9 @@ enum LaunchesFilter: QueryFilter {
 
 enum LaunchesRequest: Request {
     case
-    past,
-    upcoming,
-    all,
+    pastLaunches,
+    upcomingLaunches,
+    allLaunches,
     filtered(by: [LaunchesFilter])
     
     var httpMethod: HTTPMethod {
@@ -211,11 +205,11 @@ enum LaunchesRequest: Request {
     var endpoint: String {
         let endpoint = "launches"
         switch self {
-        case .past:
+        case .pastLaunches:
             return endpoint
-        case .upcoming:
+        case .upcomingLaunches:
             return endpoint.appending("/upcoming")
-        case .all:
+        case .allLaunches:
             return endpoint.appending("/all")
         case .filtered(by: _):
             return endpoint

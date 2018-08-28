@@ -9,10 +9,10 @@
 import Foundation
 
 struct CapsuleRequest: DetailedItemRequest {
-    internal let itemID: String
+    internal let itemId: String
     
-    init(capsuleID: String) {
-        self.itemID = capsuleID
+    init(capsuleId: String) {
+        self.itemId = capsuleId
     }
     
     var httpMethod: HTTPMethod {
@@ -20,7 +20,7 @@ struct CapsuleRequest: DetailedItemRequest {
     }
     
     var endpoint: String {
-        return "capsules/".appending(itemID)
+        return "capsules/".appending(itemId)
     }
     
     var parameters: [String : Any]? {

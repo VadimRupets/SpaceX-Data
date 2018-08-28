@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DetailedItemRequest: Request {
-    var itemID: String { get }
+    var itemId: String { get }
 }

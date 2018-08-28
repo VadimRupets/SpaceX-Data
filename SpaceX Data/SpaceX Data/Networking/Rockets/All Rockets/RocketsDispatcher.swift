@@ -10,5 +10,5 @@ import Foundation
 
 class RocketsDispatcher: Dispatcher {
     typealias ResponseObject = [Rocket]
-    typealias APIRequest = RocketsRequests
+    typealias APIRequest = RocketsRequest
 }
