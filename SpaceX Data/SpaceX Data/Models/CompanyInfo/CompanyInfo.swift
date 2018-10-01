@@ -9,7 +9,6 @@
 import Foundation
 
 struct CompanyInfo {
-    
     let name: String
     let founder: String
     let yearOfFoundation: Int
@@ -24,7 +23,6 @@ struct CompanyInfo {
     let valuation: Int
     let headquarters: Address
     let summary: String
- 
 }
 
 extension CompanyInfo: Decodable {

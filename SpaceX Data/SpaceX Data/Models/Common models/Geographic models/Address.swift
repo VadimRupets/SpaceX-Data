@@ -12,6 +12,10 @@ struct Address {
     let address: String
     let city: String
     let state: String
+    
+    var addressString: String {
+        return "\(address), \(city), \(state)"
+    }
 }
 
 extension Address: Decodable {
