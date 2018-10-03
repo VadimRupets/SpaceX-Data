@@ -14,4 +14,17 @@ enum NetworkError: Error {
     corruptedData,
     badInput,
     notReachable
+    
+    var localizedDescription: String {
+        switch self {
+        case .noData:
+            return "Server returned no data"
+        case .corruptedData:
+            return "Returned data is corrupted and can't be read"
+        case .badInput:
+            return "You sent a request that server could not understand"
+        case .notReachable:
+            return "Can not connect to server. Please check your internet connection"
+        }
+    }
 }

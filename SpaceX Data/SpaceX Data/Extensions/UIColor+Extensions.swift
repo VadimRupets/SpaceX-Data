@@ -1,5 +1,5 @@
 //
-//  UIColor+Extension.swift
+//  UIColor+Extensions.swift
 //  SpaceX Data
 //
 //  Created by Vadim Rupets on 8/29/18.

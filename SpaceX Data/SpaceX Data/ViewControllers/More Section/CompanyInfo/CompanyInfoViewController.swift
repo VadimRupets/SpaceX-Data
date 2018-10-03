@@ -22,23 +22,14 @@ class CompanyInfoViewController: UIViewController {
         }
     }
     
-    var companyInfo: CompanyInfo? {
-        didSet {
-            descriptionLabel.text = companyInfo?.summary
-            tableView.reloadData()
-        }
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+    var companyInfo: CompanyInfo?
 
     // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetchCompanyInfo()
+        descriptionLabel.text = companyInfo?.summary
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,29 +40,14 @@ class CompanyInfoViewController: UIViewController {
         }
     }
     
-    // MARK: - Fetching data
-    
-    private func fetchCompanyInfo() {
-        CompanyInfoDispatcher().executeRequest(.companyInfo) { [unowned self] (response) in
-            DispatchQueue.main.async {
-                switch response {
-                case let .data(companyInfo):
-                    self.companyInfo = companyInfo
-                case let .error(_):
-                    break
-                }
-            }
-        }
-    }
-    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == mapViewViewControllerSegueIdentifier, let mapViewViewController = segue.destination as? MapViewViewController, let address = sender as? String else {
+        guard segue.identifier == mapViewViewControllerSegueIdentifier, let mapViewViewController = segue.destination as? MapViewViewController, let address = sender as? Address else {
             return
         }
         
-        mapViewViewController.addressToShow = address
+        mapViewViewController.placemarkBlank = PlacemarkBlank(addressString: address.addressString)
     }
 
 }
@@ -119,7 +95,7 @@ extension CompanyInfoViewController: UITableViewDelegate {
             return
         }
         
-        performSegue(withIdentifier: mapViewViewControllerSegueIdentifier, sender: companyInfo.headquarters.addressString)
+        performSegue(withIdentifier: mapViewViewControllerSegueIdentifier, sender: companyInfo.headquarters)
     }
 }
 
@@ -139,7 +115,9 @@ fileprivate extension CompanyInfo {
         collectionViewData.append((title: "CTO", description: cto))
         collectionViewData.append((title: "COO", description: coo))
         collectionViewData.append((title: "CTO Propulsion", description: ctoPropulsion))
-        collectionViewData.append((title: "Valuation", description: "$\(valuation)"))
+        
+        let formattedValuation = NumberFormatter.dollarFormatter.string(from: NSNumber(value: valuation)) ?? "$\(valuation)"
+        collectionViewData.append((title: "Valuation", description: formattedValuation))
         collectionViewData.append((title: "Headquarters", description: ""))
         
         return collectionViewData

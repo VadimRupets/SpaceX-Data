@@ -11,7 +11,7 @@ import Foundation
 protocol Dispatcher {
     associatedtype ResponseObject: Decodable
     associatedtype APIRequest: Request
-    func executeRequest(_ request: APIRequest, responseHandler: @escaping ((Response<ResponseObject>) -> ()))
+    func executeRequest(_ request: APIRequest, shouldShowActivityIndicator: Bool, responseHandler: @escaping ((Response<ResponseObject>) -> ()))
 }
 
 extension Dispatcher {
@@ -19,7 +19,7 @@ extension Dispatcher {
         return "https://api.spacexdata.com/v2/"
     }
     
-    func executeRequest(_ request: APIRequest, responseHandler: @escaping ((Response<ResponseObject>) -> ())) {
+    func executeRequest(_ request: APIRequest, shouldShowActivityIndicator: Bool = true, responseHandler: @escaping ((Response<ResponseObject>) -> ())) {
         let requestUUID = UUID()
         NetworkActivityIndicatorManager.registerNetworkRequestUUID(requestUUID)
         
@@ -27,10 +27,12 @@ extension Dispatcher {
             let urlRequest = try prepareURLRequest(request)
             let urlSession = URLSession(configuration: .default)
             
+            ActivityIndicator.show()
             let dataTask = urlSession.dataTask(with: urlRequest, completionHandler: { (data, urlResponse, error) in
                 let response = Response<ResponseObject>(response: urlResponse as? HTTPURLResponse, data: data, error: error)
                 
                 NetworkActivityIndicatorManager.unregisterNetworkRequestUUID(requestUUID)
+                ActivityIndicator.hide()
                 responseHandler(response)
             })
             

@@ -11,7 +11,7 @@ import Foundation
 enum Response<T> where T: Decodable {
     case
     data(T),
-    error(Error?)
+    error(Error)
     
     init(response: HTTPURLResponse? = nil, data: Data? = nil, error: Error? = nil) {
         guard response?.statusCode == 200, error == nil else {
