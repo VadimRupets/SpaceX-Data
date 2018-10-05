@@ -102,3 +102,29 @@ extension RoadsterInfo: Decodable {
     }
     
 }
+
+extension RoadsterInfo {
+    var tableViewDataSource: [[String: Any]] {
+        var dataSource = [[String: Any]]()
+        
+        dataSource.append(tableViewData(with: .default, arguments: "Launch date", DateFormatter.yyyyMMddHHmmss.string(from: launchDate)))
+        dataSource.append(tableViewData(with: .measurement, arguments: "Launch mass", launchMass))
+        dataSource.append(tableViewData(with: .default, arguments: "NORAD id", noradId.description))
+        dataSource.append(tableViewData(with: .default, arguments: "Epoch in Julian days", epochInJulianDays.description))
+        dataSource.append(tableViewData(with: .default, arguments: "Orbit type", orbitType.capitalized))
+        dataSource.append(tableViewData(with: .default, arguments: "Apoapsis", apoapsis.description))
+        dataSource.append(tableViewData(with: .default, arguments: "Periapsis", periapsis.description))
+        dataSource.append(tableViewData(with: .default, arguments: "Semi-major axis", semiMajorAxis.description))
+        dataSource.append(tableViewData(with: .default, arguments: "Eccentricity", eccentricity.description))
+        dataSource.append(tableViewData(with: .default, arguments: "Inclination", inclination.description))
+        dataSource.append(tableViewData(with: .default, arguments: "Longitude", longitude.description))
+        dataSource.append(tableViewData(with: .default, arguments: "Argument of periapsis", periapsisArgument.description))
+        dataSource.append(tableViewData(with: .default, arguments: "Period", orbitalPeriodInDays.description))
+        dataSource.append(tableViewData(with: .measurement, arguments: "Speed", speed))
+        dataSource.append(tableViewData(with: .measurement, arguments: "Distance from Earth", distanceFromEarth))
+        dataSource.append(tableViewData(with: .measurement, arguments: "Distance from Mars", distanceFromMars))
+        dataSource.append(tableViewData(with: .url, arguments: "Wikipedia link", self.wikipediaURL))
+        
+        return dataSource
+    }
+}

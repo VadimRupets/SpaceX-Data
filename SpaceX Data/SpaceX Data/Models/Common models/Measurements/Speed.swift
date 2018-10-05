@@ -9,8 +9,8 @@
 import Foundation
 
 struct Speed: Measurement {
-    let metric: Double
-    let imperial: Double
+    let metric: MeasurementValue
+    let imperial: MeasurementValue
     
     enum Units: String {
         case
@@ -19,7 +19,7 @@ struct Speed: Measurement {
     }
     
     init(metric: Double, imperial: Double) {
-        self.metric = metric
-        self.imperial = imperial
+        self.metric = (unit: Units.metric.rawValue, value: metric)
+        self.imperial = (unit: Units.imperial.rawValue, value: imperial)
     }
 }

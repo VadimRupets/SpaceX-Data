@@ -9,8 +9,8 @@
 import Foundation
 
 struct Temperature: Measurement {
-    let metric: Double
-    let imperial: Double
+    let metric: MeasurementValue
+    let imperial: MeasurementValue
     
     enum Units: String {
         case
@@ -19,7 +19,9 @@ struct Temperature: Measurement {
     }
     
     init(metric: Double) {
-        self.metric = metric
-        self.imperial = metric * 9 / 5 + 32
+        self.metric = (unit: Units.metric.rawValue, value: metric)
+        
+        let imperial = metric * 9 / 5 + 32
+        self.imperial = (unit: Units.imperial.rawValue, value: imperial)
     }
 }

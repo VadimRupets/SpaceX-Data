@@ -65,3 +65,27 @@ extension CompanyInfo: Decodable {
     }
     
 }
+
+extension CompanyInfo {
+    
+    var tableViewData: [(title: String, description: String)] {
+        var collectionViewData = [(title: String, description: String)]()
+        collectionViewData.append((title: "Founder", description: founder))
+        collectionViewData.append((title: "Founded", description: String(yearOfFoundation)))
+        collectionViewData.append((title: "Employees", description: String(employees)))
+        collectionViewData.append((title: "Vehicles", description: String(vehicles)))
+        collectionViewData.append((title: "Launch sites", description: String(launchSites)))
+        collectionViewData.append((title: "Test sites", description: String(testSites)))
+        collectionViewData.append((title: "CEO", description: ceo))
+        collectionViewData.append((title: "CTO", description: cto))
+        collectionViewData.append((title: "COO", description: coo))
+        collectionViewData.append((title: "CTO Propulsion", description: ctoPropulsion))
+        
+        let formattedValuation = NumberFormatter.dollarFormatter.string(from: NSNumber(value: valuation)) ?? "$\(valuation)"
+        collectionViewData.append((title: "Valuation", description: formattedValuation))
+        collectionViewData.append((title: "Headquarters", description: ""))
+        
+        return collectionViewData
+    }
+    
+}

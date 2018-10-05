@@ -37,6 +37,9 @@
 		AC330A2F212D522400358467 /* LaunchesDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC330A2E212D522400358467 /* LaunchesDispatcherTests.swift */; };
 		AC43B00A215A6D8E007B7CD8 /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC43B009215A6D8E007B7CD8 /* MapViewViewController.swift */; };
 		AC47C1C820AD83D5004C2D74 /* CompanyInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC47C1C720AD83D5004C2D74 /* CompanyInfoRequest.swift */; };
+		AC541AAB21661CA1002220FE /* MeasurementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541AAA21661CA1002220FE /* MeasurementTableViewCell.swift */; };
+		AC541AAD2166276D002220FE /* TableViewDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541AAC2166276D002220FE /* TableViewDataType.swift */; };
+		AC541AAF216654B3002220FE /* URLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541AAE216654B3002220FE /* URLTableViewCell.swift */; };
 		AC750373211859D100AED17B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750372211859D100AED17B /* String+Extensions.swift */; };
 		AC75037521185DD500AED17B /* Engines.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75037421185DD500AED17B /* Engines.swift */; };
 		AC750377211866B300AED17B /* LandingLegs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750376211866B300AED17B /* LandingLegs.swift */; };
@@ -73,6 +76,7 @@
 		ACA878132125C1870020DE02 /* MockDecodableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA878122125C1870020DE02 /* MockDecodableObject.swift */; };
 		ACA878172125C7A20020DE02 /* ReponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA878162125C7A20020DE02 /* ReponseTests.swift */; };
 		ACB5EBEE2165064C004D9CC6 /* PlacemarkBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5EBED2165064C004D9CC6 /* PlacemarkBlank.swift */; };
+		ACB5EBF1216509EC004D9CC6 /* RoadsterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5EBF0216509EC004D9CC6 /* RoadsterInfoViewController.swift */; };
 		ACB97853212AC7B000645D0C /* CompanyInfoDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB97852212AC7B000645D0C /* CompanyInfoDispatcherTests.swift */; };
 		ACB97858212ACA3100645D0C /* LaunchpadDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB97857212ACA3100645D0C /* LaunchpadDispatcherTests.swift */; };
 		ACB9785A212ACDC800645D0C /* LaunchpadsDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB97859212ACDC800645D0C /* LaunchpadsDispatcherTests.swift */; };
@@ -206,6 +210,9 @@
 		AC330A2E212D522400358467 /* LaunchesDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesDispatcherTests.swift; sourceTree = "<group>"; };
 		AC43B009215A6D8E007B7CD8 /* MapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
 		AC47C1C720AD83D5004C2D74 /* CompanyInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoRequest.swift; sourceTree = "<group>"; };
+		AC541AAA21661CA1002220FE /* MeasurementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementTableViewCell.swift; sourceTree = "<group>"; };
+		AC541AAC2166276D002220FE /* TableViewDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataType.swift; sourceTree = "<group>"; };
+		AC541AAE216654B3002220FE /* URLTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTableViewCell.swift; sourceTree = "<group>"; };
 		AC750372211859D100AED17B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		AC75037421185DD500AED17B /* Engines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engines.swift; sourceTree = "<group>"; };
 		AC750376211866B300AED17B /* LandingLegs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingLegs.swift; sourceTree = "<group>"; };
@@ -242,6 +249,7 @@
 		ACA878122125C1870020DE02 /* MockDecodableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDecodableObject.swift; sourceTree = "<group>"; };
 		ACA878162125C7A20020DE02 /* ReponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReponseTests.swift; sourceTree = "<group>"; };
 		ACB5EBED2165064C004D9CC6 /* PlacemarkBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkBlank.swift; sourceTree = "<group>"; };
+		ACB5EBF0216509EC004D9CC6 /* RoadsterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadsterInfoViewController.swift; sourceTree = "<group>"; };
 		ACB97852212AC7B000645D0C /* CompanyInfoDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoDispatcherTests.swift; sourceTree = "<group>"; };
 		ACB97857212ACA3100645D0C /* LaunchpadDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadDispatcherTests.swift; sourceTree = "<group>"; };
 		ACB97859212ACDC800645D0C /* LaunchpadsDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadsDispatcherTests.swift; sourceTree = "<group>"; };
@@ -404,8 +412,9 @@
 		AC28445321639C7500DE335C /* More Section */ = {
 			isa = PBXGroup;
 			children = (
-				AC2844572163A0D900DE335C /* CompanyInfo */,
+				AC2844572163A0D900DE335C /* Company Info */,
 				AC2844562163A0D000DE335C /* Launchpads */,
+				ACB5EBEF2165099D004D9CC6 /* Roadster Info */,
 				AC2844482163664700DE335C /* MoreViewController.swift */,
 			);
 			path = "More Section";
@@ -420,13 +429,13 @@
 			path = Launchpads;
 			sourceTree = "<group>";
 		};
-		AC2844572163A0D900DE335C /* CompanyInfo */ = {
+		AC2844572163A0D900DE335C /* Company Info */ = {
 			isa = PBXGroup;
 			children = (
 				ACA5D096215A415100198669 /* CompanyInfoViewController.swift */,
 				AC43B009215A6D8E007B7CD8 /* MapViewViewController.swift */,
 			);
-			path = CompanyInfo;
+			path = "Company Info";
 			sourceTree = "<group>";
 		};
 		AC330A1E212C28C300358467 /* Capsules */ = {
@@ -463,6 +472,32 @@
 				AC330A2E212D522400358467 /* LaunchesDispatcherTests.swift */,
 			);
 			path = Launches;
+			sourceTree = "<group>";
+		};
+		AC541AA821661C4F002220FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC541AB021665C6C002220FE /* Activity Indicator */,
+				AC541AA921661C71002220FE /* TableView Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AC541AA921661C71002220FE /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AC541AAA21661CA1002220FE /* MeasurementTableViewCell.swift */,
+				AC541AAE216654B3002220FE /* URLTableViewCell.swift */,
+			);
+			path = "TableView Cells";
+			sourceTree = "<group>";
+		};
+		AC541AB021665C6C002220FE /* Activity Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				AC28444B2163861B00DE335C /* ActivityIndicator.swift */,
+			);
+			path = "Activity Indicator";
 			sourceTree = "<group>";
 		};
 		AC750371211859C200AED17B /* Extensions */ = {
@@ -652,6 +687,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		ACB5EBEF2165099D004D9CC6 /* Roadster Info */ = {
+			isa = PBXGroup;
+			children = (
+				ACB5EBF0216509EC004D9CC6 /* RoadsterInfoViewController.swift */,
+			);
+			path = "Roadster Info";
+			sourceTree = "<group>";
+		};
 		ACB97854212AC9D600645D0C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -818,8 +861,8 @@
 		ACF3F68A211DA863007E738E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				AC28444B2163861B00DE335C /* ActivityIndicator.swift */,
 				AC8FA091211DA8D3009F5D9C /* SynchronizedArray.swift */,
+				AC541AAC2166276D002220FE /* TableViewDataType.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -881,6 +924,7 @@
 				DD641EEF203191630094B7A2 /* Models */,
 				DD641EE8203179140094B7A2 /* Networking */,
 				ACA5D095215A413A00198669 /* ViewControllers */,
+				AC541AA821661C4F002220FE /* Views */,
 				DD641EA12031760A0094B7A2 /* AppDelegate.swift */,
 				DD641EA52031760A0094B7A2 /* Main.storyboard */,
 				DD641EAA2031760A0094B7A2 /* LaunchScreen.storyboard */,
@@ -1123,6 +1167,7 @@
 				AC1A5CDE203430D7000A3618 /* Response.swift in Sources */,
 				AC8FA092211DA8D3009F5D9C /* SynchronizedArray.swift in Sources */,
 				ACF7506B2122C68500AC3E11 /* Volume.swift in Sources */,
+				ACB5EBF1216509EC004D9CC6 /* RoadsterInfoViewController.swift in Sources */,
 				AC43B00A215A6D8E007B7CD8 /* MapViewViewController.swift in Sources */,
 				ACD76E3F2108C88700F4CD14 /* CompositeFairing.swift in Sources */,
 				AC2844592163A80200DE335C /* LaunchpadDetailViewController.swift in Sources */,
@@ -1192,13 +1237,16 @@
 				ACF750792122F69100AC3E11 /* CapsuleRequest.swift in Sources */,
 				AC78D5322121BB1F00D0EED6 /* Capsule.swift in Sources */,
 				ACE3C89E2107224900C9EEE7 /* CompanyInfoDispatcher.swift in Sources */,
+				AC541AAD2166276D002220FE /* TableViewDataType.swift in Sources */,
 				ACB5EBEE2165064C004D9CC6 /* PlacemarkBlank.swift in Sources */,
 				DD641EEA20318EFE0094B7A2 /* Request.swift in Sources */,
+				AC541AAB21661CA1002220FE /* MeasurementTableViewCell.swift in Sources */,
 				AC1BDCDC2122FD8C00148F31 /* CapsuleDetailsRequest.swift in Sources */,
 				ACD76E3D2108C86600F4CD14 /* Payloads.swift in Sources */,
 				AC75037521185DD500AED17B /* Engines.swift in Sources */,
 				AC28445221639BBB00DE335C /* NumberFormatter+Extensions.swift in Sources */,
 				AC1BDCE521231D3000148F31 /* Launch.swift in Sources */,
+				AC541AAF216654B3002220FE /* URLTableViewCell.swift in Sources */,
 				AC9380FC2107674A00880E07 /* RocketRequests.swift in Sources */,
 				ACF7507B2122F6F400AC3E11 /* CapsuleDispatcher.swift in Sources */,
 				ACF7506D2122CC8300AC3E11 /* Trunk.swift in Sources */,

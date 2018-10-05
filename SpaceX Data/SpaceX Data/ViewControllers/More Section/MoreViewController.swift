@@ -13,6 +13,7 @@ fileprivate let segueIdentifierKey = "segueIdentifier"
 
 fileprivate let aboutSpaceXSegueIdentifier = "AboutSpaceXSegue"
 fileprivate let launchpadsSegueIdentifier = "LaunchpadsSegue"
+fileprivate let roadsterInfoSegueIdentifier = "RoadsterInfoSegue"
 
 class MoreViewController: UIViewController {
     
@@ -26,7 +27,8 @@ class MoreViewController: UIViewController {
     
     private let tableViewData = [
         [titleKey: "About SpaceX", segueIdentifierKey: aboutSpaceXSegueIdentifier],
-        [titleKey: "Launchpads", segueIdentifierKey: launchpadsSegueIdentifier]
+        [titleKey: "Launchpads", segueIdentifierKey: launchpadsSegueIdentifier],
+        [titleKey: "Starman Roadster orbital data", segueIdentifierKey: roadsterInfoSegueIdentifier]
     ]
     
     // MARK: - View life cycle
@@ -55,6 +57,12 @@ class MoreViewController: UIViewController {
             }
             
             launchpadsViewController.launchpads = launchpads
+        case roadsterInfoSegueIdentifier:
+            guard let roadsterInfoViewController = segue.destination as? RoadsterInfoViewController, let roadsterInfo = sender as? RoadsterInfo else {
+                return
+            }
+            
+            roadsterInfoViewController.roadsterInfo = roadsterInfo
         default:
             return
         }
@@ -108,6 +116,17 @@ extension MoreViewController: UITableViewDelegate {
                     switch response {
                     case .data(let launchpads):
                         self.performSegue(withIdentifier: segueIdentifier, sender: launchpads)
+                    case .error(let error):
+                        self.presentAlertController(with: error)
+                    }
+                }
+            }
+        case roadsterInfoSegueIdentifier:
+            RoadsterInfoDispatcher().executeRequest(.roadsterInfo) { (response) in
+                DispatchQueue.main.async { [unowned self] in
+                    switch response {
+                    case .data(let roadsterInfo):
+                        self.performSegue(withIdentifier: segueIdentifier, sender: roadsterInfo)
                     case .error(let error):
                         self.presentAlertController(with: error)
                     }

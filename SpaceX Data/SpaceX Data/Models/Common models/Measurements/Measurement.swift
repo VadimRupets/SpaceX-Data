@@ -9,6 +9,8 @@
 import Foundation
 
 protocol Measurement {
-    var metric: Double { get }
-    var imperial: Double  { get }
+    typealias MeasurementValue = (unit: String, value: Double)
+    
+    var metric: MeasurementValue { get }
+    var imperial: MeasurementValue  { get }
 }

@@ -17,6 +17,10 @@ extension DateFormatter {
         return dateFormatter(with: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
     }
     
+    static var yyyyMMddHHmmss: DateFormatter {
+        return dateFormatter(with: "yyyy-MM-dd HH:mm:ss")
+    }
+    
     private static func dateFormatter(with dateFormat: String, locale: Locale = Locale(identifier: "en_US_POSIX")) -> DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat

@@ -9,8 +9,8 @@
 import Foundation
 
 struct Mass: Measurement {
-    let metric: Double
-    let imperial: Double
+    let metric: MeasurementValue
+    let imperial: MeasurementValue
     
     enum Units: String {
         case
@@ -19,8 +19,8 @@ struct Mass: Measurement {
     }
     
     init(metric: Double, imperial: Double) {
-        self.metric = metric
-        self.imperial = imperial
+        self.metric = (unit: Units.metric.rawValue, value: metric)
+        self.imperial = (unit: Units.imperial.rawValue, value: imperial)
     }
 }
 
@@ -35,8 +35,11 @@ extension Mass: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.metric = try values.decode(Double.self, forKey: .metric)
-        self.imperial = try values.decode(Double.self, forKey: .imperial)
+        let metric = try values.decode(Double.self, forKey: .metric)
+        self.metric = (unit: Units.metric.rawValue, value: metric)
+        
+        let imperial = try values.decode(Double.self, forKey: .imperial)
+        self.imperial = (unit: Units.imperial.rawValue, value: imperial)
     }
     
 }
