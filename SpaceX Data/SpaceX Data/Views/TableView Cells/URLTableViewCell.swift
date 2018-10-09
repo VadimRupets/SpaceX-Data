@@ -9,12 +9,14 @@
 import UIKit
 
 class URLTableViewCell: UITableViewCell {
-
-    var url: URL?
+    static let identifier = "URLTableViewCell"
     
-    func configure(with title: String, url: URL) {
-        textLabel?.text = title
-        self.url = url
-    }
+    var url: URL?
+}
 
+extension URLTableViewCell: TableViewDataConfigurable {
+    func configure(with tableViewData: [String : Any]) {
+        textLabel?.text = tableViewData[TableViewDataKeys.title.rawValue] as? String
+        url = tableViewData[TableViewDataKeys.url.rawValue] as? URL
+    }
 }

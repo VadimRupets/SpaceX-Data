@@ -22,6 +22,12 @@ class LaunchpadsViewController: UIViewController {
     
     var launchpads: [Launchpad] = []
     
+    lazy var tableViewData: [[String: Any]] = {
+        var tableViewData = [[String: Any]]()
+        launchpads.forEach({ tableViewData.append(contentsOf: $0.tableViewData) })
+        return tableViewData
+    }()
+    
     // MARK: - View life cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,17 +55,19 @@ class LaunchpadsViewController: UIViewController {
 extension LaunchpadsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return launchpads.count
+        return tableViewData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let launchpad = launchpads[indexPath.row]
+        let cellData = tableViewData[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = launchpad.name
-        cell.detailTextLabel?.text = "Status: \(launchpad.status.rawValue)"
+        guard let type = cellData[TableViewDataKeys.type.rawValue] as? TableViewDataType, let configurableCell = tableView.dequeueReusableCell(withIdentifier: type.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
+            return UITableViewCell()
+        }
         
-        return cell
+        configurableCell.configure(with: cellData)
+        
+        return configurableCell
     }
     
 }

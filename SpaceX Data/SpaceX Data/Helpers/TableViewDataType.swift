@@ -10,9 +10,23 @@ import Foundation
 
 enum TableViewDataType {
     case
-    `default`,
+    subtitle,
+    rightDisclosure,
     url,
     measurement
+    
+    var cellIdentifier: String {
+        switch self {
+        case .subtitle:
+            return SubtitleTableViewCell.identifier
+        case .rightDisclosure:
+            return RightDisclosureTableViewCell.identifier
+        case .url:
+            return URLTableViewCell.identifier
+        case .measurement:
+            return MeasurementTableViewCell.identifier
+        }
+    }
 }
 
 enum TableViewDataKeys: String {
@@ -22,30 +36,4 @@ enum TableViewDataKeys: String {
     subtitle,
     measurement,
     url
-}
-
-func tableViewData(with type: TableViewDataType, arguments: Any...) -> [String: Any] {
-    var tableViewData = [String: Any]()
-    
-    tableViewData[TableViewDataKeys.type.rawValue] = type
-    
-    switch arguments.first {
-    case let string as String:
-        tableViewData[TableViewDataKeys.title.rawValue] = string
-    default:
-        break
-    }
-    
-    switch arguments.last {
-    case let string as String:
-        tableViewData[TableViewDataKeys.subtitle.rawValue] = string
-    case let measurement as Measurement:
-        tableViewData[TableViewDataKeys.measurement.rawValue] = measurement
-    case let url as URL:
-        tableViewData[TableViewDataKeys.url.rawValue] = url
-    default:
-        break
-    }
-    
-    return tableViewData
 }

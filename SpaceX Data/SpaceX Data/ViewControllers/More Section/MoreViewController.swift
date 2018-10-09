@@ -8,9 +8,6 @@
 
 import UIKit
 
-fileprivate let titleKey = "title"
-fileprivate let segueIdentifierKey = "segueIdentifier"
-
 fileprivate let aboutSpaceXSegueIdentifier = "AboutSpaceXSegue"
 fileprivate let launchpadsSegueIdentifier = "LaunchpadsSegue"
 fileprivate let roadsterInfoSegueIdentifier = "RoadsterInfoSegue"
@@ -25,11 +22,7 @@ class MoreViewController: UIViewController {
         }
     }
     
-    private let tableViewData = [
-        [titleKey: "About SpaceX", segueIdentifierKey: aboutSpaceXSegueIdentifier],
-        [titleKey: "Launchpads", segueIdentifierKey: launchpadsSegueIdentifier],
-        [titleKey: "Starman Roadster orbital data", segueIdentifierKey: roadsterInfoSegueIdentifier]
-    ]
+    let segueIdentifiers = [aboutSpaceXSegueIdentifier, launchpadsSegueIdentifier, roadsterInfoSegueIdentifier]
     
     // MARK: - View life cycle
     
@@ -78,11 +71,15 @@ extension MoreViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        let cellText = tableViewData[indexPath.row][titleKey]
-        cell.textLabel?.text = cellText
+        let cellData = tableViewData[indexPath.row]
         
-        return cell
+        guard let type = cellData[TableViewDataKeys.type.rawValue] as? TableViewDataType, let configurableCell = tableView.dequeueReusableCell(withIdentifier: type.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
+            return UITableViewCell()
+        }
+        
+        configurableCell.configure(with: cellData)
+        
+        return configurableCell
     }
     
 }
@@ -92,12 +89,12 @@ extension MoreViewController: UITableViewDataSource {
 extension MoreViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let segueIdentifier = tableViewData[indexPath.row][segueIdentifierKey] else {
+        defer {
             tableView.deselectRow(at: indexPath, animated: true)
-            return
         }
         
-        tableView.deselectRow(at: indexPath, animated: true)
+        let segueIdentifier = segueIdentifiers[indexPath.row]
+        
         switch segueIdentifier {
         case aboutSpaceXSegueIdentifier:
             CompanyInfoDispatcher().executeRequest(.companyInfo) { (response) in
@@ -137,4 +134,18 @@ extension MoreViewController: UITableViewDelegate {
         }
     }
     
+}
+
+// MARK: - TableViewDataRepresentable
+
+extension MoreViewController: TableViewDataRepresentable {
+    var tableViewData: [[String : Any]] {
+        var _tableViewData = [[String: Any]]()
+        
+        _tableViewData.append(tableViewData(with: .rightDisclosure, arguments: "About SpaceX"))
+        _tableViewData.append(tableViewData(with: .rightDisclosure, arguments: "Launchpads"))
+        _tableViewData.append(tableViewData(with: .rightDisclosure, arguments: "Starman Roadster orbital data"))
+        
+        return _tableViewData
+    }
 }

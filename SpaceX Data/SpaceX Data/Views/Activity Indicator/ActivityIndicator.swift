@@ -26,7 +26,7 @@ class ActivityIndicator {
         rectangleView.layer.cornerRadius = 15
         rectangleView.backgroundColor = UIColor.lightGray
         
-        let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        let activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
         activityIndicatorView.startAnimating()
         activityIndicatorView.center = CGPoint(x:screenBounds.width * 0.175, y: screenBounds.width * 0.175)
         activityIndicatorView.color = UIColor.spaceXDarkGray

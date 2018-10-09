@@ -38,7 +38,7 @@ extension Distance: Decodable {
         self.metric = (unit: Units.metric.rawValue, value: metric)
         
         let imperial = try values.decodeIfPresent(Double.self, forKey: .imperial) ?? 0
-        self.imperial = (unit: Units.imperial.rawValue, value: metric * 3.28084)
+        self.imperial = (unit: Units.imperial.rawValue, value: imperial)
     }
     
 }

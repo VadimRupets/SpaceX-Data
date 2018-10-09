@@ -103,28 +103,30 @@ extension RoadsterInfo: Decodable {
     
 }
 
-extension RoadsterInfo {
-    var tableViewDataSource: [[String: Any]] {
-        var dataSource = [[String: Any]]()
+extension RoadsterInfo: TableViewDataRepresentable {
+    
+    var tableViewData: [[String: Any]] {
+        var _tableViewData = [[String: Any]]()
         
-        dataSource.append(tableViewData(with: .default, arguments: "Launch date", DateFormatter.yyyyMMddHHmmss.string(from: launchDate)))
-        dataSource.append(tableViewData(with: .measurement, arguments: "Launch mass", launchMass))
-        dataSource.append(tableViewData(with: .default, arguments: "NORAD id", noradId.description))
-        dataSource.append(tableViewData(with: .default, arguments: "Epoch in Julian days", epochInJulianDays.description))
-        dataSource.append(tableViewData(with: .default, arguments: "Orbit type", orbitType.capitalized))
-        dataSource.append(tableViewData(with: .default, arguments: "Apoapsis", apoapsis.description))
-        dataSource.append(tableViewData(with: .default, arguments: "Periapsis", periapsis.description))
-        dataSource.append(tableViewData(with: .default, arguments: "Semi-major axis", semiMajorAxis.description))
-        dataSource.append(tableViewData(with: .default, arguments: "Eccentricity", eccentricity.description))
-        dataSource.append(tableViewData(with: .default, arguments: "Inclination", inclination.description))
-        dataSource.append(tableViewData(with: .default, arguments: "Longitude", longitude.description))
-        dataSource.append(tableViewData(with: .default, arguments: "Argument of periapsis", periapsisArgument.description))
-        dataSource.append(tableViewData(with: .default, arguments: "Period", orbitalPeriodInDays.description))
-        dataSource.append(tableViewData(with: .measurement, arguments: "Speed", speed))
-        dataSource.append(tableViewData(with: .measurement, arguments: "Distance from Earth", distanceFromEarth))
-        dataSource.append(tableViewData(with: .measurement, arguments: "Distance from Mars", distanceFromMars))
-        dataSource.append(tableViewData(with: .url, arguments: "Wikipedia link", self.wikipediaURL))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Launch date", DateFormatter.yyyyMMddHHmmss.string(from: launchDate)))
+        _tableViewData.append(tableViewData(with: .measurement, arguments: "Launch mass", launchMass))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "NORAD id", noradId.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Epoch in Julian days", epochInJulianDays.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Orbit type", orbitType.capitalized))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Apoapsis", apoapsis.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Periapsis", periapsis.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Semi-major axis", semiMajorAxis.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Eccentricity", eccentricity.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Inclination", inclination.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Longitude", longitude.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Argument of periapsis", periapsisArgument.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Period", orbitalPeriodInDays.description))
+        _tableViewData.append(tableViewData(with: .measurement, arguments: "Speed", speed))
+        _tableViewData.append(tableViewData(with: .measurement, arguments: "Distance from Earth", distanceFromEarth))
+        _tableViewData.append(tableViewData(with: .measurement, arguments: "Distance from Mars", distanceFromMars))
+        _tableViewData.append(tableViewData(with: .url, arguments: "Wikipedia link", self.wikipediaURL))
         
-        return dataSource
+        return _tableViewData
     }
+    
 }

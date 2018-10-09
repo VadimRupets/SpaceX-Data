@@ -9,8 +9,10 @@
 import UIKit
 
 class MeasurementTableViewCell: UITableViewCell {
+    
+    static let identifier = "MeasurementTableViewCell"
 
-    enum MeasurementSystem {
+    private enum MeasurementSystem {
         case
         metric,
         imperial
@@ -18,16 +20,6 @@ class MeasurementTableViewCell: UITableViewCell {
     
     var measurement: Measurement?
     private var measurementSystem: MeasurementSystem = .metric
-    
-    func configure(with title: String, measurement: Measurement) {
-        self.measurement = measurement
-        self.measurementSystem = .metric
-        
-        textLabel?.text = title
-        
-        let valueString = String(format: "%.2f", measurement.metric.value)
-        detailTextLabel?.text = "\(valueString) \(measurement.metric.unit)"
-    }
     
     func toggle() {
         guard let measurement = measurement else {
@@ -41,9 +33,25 @@ class MeasurementTableViewCell: UITableViewCell {
         
         let valueString = String(format: "%.2f", value)
         
-        UIView.transition(with: self, duration: 0.5, options: UIViewAnimationOptions.transitionCrossDissolve, animations: {
+        UIView.transition(with: self, duration: 0.5, options: UIView.AnimationOptions.transitionCrossDissolve, animations: {
             self.detailTextLabel?.text = "\(valueString) \(unit)"
         })
     }
 
+}
+
+extension MeasurementTableViewCell: TableViewDataConfigurable {
+    func configure(with tableViewData: [String : Any]) {
+        guard let measurement = tableViewData[TableViewDataKeys.measurement.rawValue] as? Measurement else {
+            return
+        }
+        
+        self.measurement = measurement
+        self.measurementSystem = .metric
+        
+        textLabel?.text = tableViewData[TableViewDataKeys.title.rawValue] as? String
+        
+        let valueString = String(format: "%.2f", measurement.metric.value)
+        detailTextLabel?.text = "\(valueString) \(measurement.metric.unit)"
+    }
 }

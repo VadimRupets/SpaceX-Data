@@ -46,3 +46,9 @@ extension Launchpad: Decodable {
         self.description = try values.decode(String.self, forKey: .description)
     }
 }
+
+extension Launchpad: TableViewDataRepresentable {
+    var tableViewData: [[String : Any]] {
+        return [tableViewData(with: .subtitle, arguments: name, "Status: \(status.rawValue)")]
+    }
+}

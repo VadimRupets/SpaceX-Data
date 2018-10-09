@@ -66,26 +66,26 @@ extension CompanyInfo: Decodable {
     
 }
 
-extension CompanyInfo {
-    
-    var tableViewData: [(title: String, description: String)] {
-        var collectionViewData = [(title: String, description: String)]()
-        collectionViewData.append((title: "Founder", description: founder))
-        collectionViewData.append((title: "Founded", description: String(yearOfFoundation)))
-        collectionViewData.append((title: "Employees", description: String(employees)))
-        collectionViewData.append((title: "Vehicles", description: String(vehicles)))
-        collectionViewData.append((title: "Launch sites", description: String(launchSites)))
-        collectionViewData.append((title: "Test sites", description: String(testSites)))
-        collectionViewData.append((title: "CEO", description: ceo))
-        collectionViewData.append((title: "CTO", description: cto))
-        collectionViewData.append((title: "COO", description: coo))
-        collectionViewData.append((title: "CTO Propulsion", description: ctoPropulsion))
+extension CompanyInfo: TableViewDataRepresentable {
+    var tableViewData: [[String : Any]] {
+        var _tableViewData = [[String: Any]]()
+        
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Founder", founder))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Founded", yearOfFoundation.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Employees", employees.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Vehicles", founder))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Launch sites", launchSites.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Test sites", testSites.description))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "CEO", ceo))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "CTO", cto))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "COO", coo))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "CTO Propulsion", ctoPropulsion))
         
         let formattedValuation = NumberFormatter.dollarFormatter.string(from: NSNumber(value: valuation)) ?? "$\(valuation)"
-        collectionViewData.append((title: "Valuation", description: formattedValuation))
-        collectionViewData.append((title: "Headquarters", description: ""))
+        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Valuation", formattedValuation))
+        _tableViewData.append(tableViewData(with: .rightDisclosure, arguments: "Headquarters"))
         
-        return collectionViewData
+        
+        return _tableViewData
     }
-    
 }

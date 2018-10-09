@@ -10,10 +10,6 @@ import UIKit
 import SafariServices
 
 class RoadsterInfoViewController: UIViewController {
-
-    private let defaultCellIdentifier = "RoadsterInfoTableViewCell"
-    private let measurementCellIdentifier = "MeasurementTableViewCell"
-    private let urlCellIdentifier = "URLTableViewCell"
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -42,46 +38,17 @@ class RoadsterInfoViewController: UIViewController {
 extension RoadsterInfoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return roadsterInfo?.tableViewDataSource.count ?? 0
+        return roadsterInfo?.tableViewData.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let roadsterInfo = roadsterInfo else {
+        guard let cellData = roadsterInfo?.tableViewData[indexPath.row], let type = cellData[TableViewDataKeys.type.rawValue] as? TableViewDataType, let configurableCell = tableView.dequeueReusableCell(withIdentifier: type.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
             return UITableViewCell()
         }
         
-        let cellData = roadsterInfo.tableViewDataSource[indexPath.row]
+        configurableCell.configure(with: cellData)
         
-        guard let type = cellData[TableViewDataKeys.type.rawValue] as? TableViewDataType else {
-            return UITableViewCell()
-        }
-        
-        let cell: UITableViewCell
-        
-        switch type {
-        case .default:
-            cell = tableView.dequeueReusableCell(withIdentifier: defaultCellIdentifier, for: indexPath)
-            cell.textLabel?.text = cellData[TableViewDataKeys.title.rawValue] as? String
-            cell.detailTextLabel?.text = cellData[TableViewDataKeys.subtitle.rawValue] as? String
-        case .measurement:
-            guard let measurementCell = tableView.dequeueReusableCell(withIdentifier: measurementCellIdentifier, for: indexPath) as? MeasurementTableViewCell, let title = cellData[TableViewDataKeys.title.rawValue] as? String, let measurement = cellData[TableViewDataKeys.measurement.rawValue] as? Measurement else {
-                return UITableViewCell()
-            }
-            
-            measurementCell.configure(with: title, measurement: measurement)
-            
-            cell = measurementCell
-        case .url:
-            guard let urlCell = tableView.dequeueReusableCell(withIdentifier: urlCellIdentifier, for: indexPath) as? URLTableViewCell, let title = cellData[TableViewDataKeys.title.rawValue] as? String, let url = cellData[TableViewDataKeys.url.rawValue] as? URL else {
-                return UITableViewCell()
-            }
-            
-            urlCell.configure(with: title, url: url)
-            
-            cell = urlCell
-        }
-        
-        return cell
+        return configurableCell
     }
     
 }

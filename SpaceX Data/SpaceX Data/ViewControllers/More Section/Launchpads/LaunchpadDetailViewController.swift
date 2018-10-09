@@ -38,7 +38,7 @@ class LaunchpadDetailViewController: UIViewController {
     }
     
     func setupChildViewController() {
-        guard let mapViewViewController = childViewControllers.first as? MapViewViewController, let launchpad = launchpad else {
+        guard let mapViewViewController = children.first as? MapViewViewController, let launchpad = launchpad else {
             return
         }
         

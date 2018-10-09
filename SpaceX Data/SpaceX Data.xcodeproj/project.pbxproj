@@ -115,6 +115,10 @@
 		ACF750762122F65C00AC3E11 /* CapsulesDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF750752122F65C00AC3E11 /* CapsulesDispatcher.swift */; };
 		ACF750792122F69100AC3E11 /* CapsuleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF750782122F69100AC3E11 /* CapsuleRequest.swift */; };
 		ACF7507B2122F6F400AC3E11 /* CapsuleDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7507A2122F6F400AC3E11 /* CapsuleDispatcher.swift */; };
+		ACF8C7892167A4FD0003E8FC /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF8C7882167A4FD0003E8FC /* SubtitleTableViewCell.swift */; };
+		ACF8C78B2167A5200003E8FC /* RightDisclosureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF8C78A2167A5200003E8FC /* RightDisclosureTableViewCell.swift */; };
+		ACF8C7902167A6430003E8FC /* TableViewDataRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF8C78F2167A6430003E8FC /* TableViewDataRepresentable.swift */; };
+		ACF8C7922167A8170003E8FC /* TableViewDataConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF8C7912167A8170003E8FC /* TableViewDataConfigurable.swift */; };
 		DD641EA22031760A0094B7A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD641EA12031760A0094B7A2 /* AppDelegate.swift */; };
 		DD641EA72031760A0094B7A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD641EA52031760A0094B7A2 /* Main.storyboard */; };
 		DD641EAC2031760A0094B7A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD641EAA2031760A0094B7A2 /* LaunchScreen.storyboard */; };
@@ -288,6 +292,10 @@
 		ACF750752122F65C00AC3E11 /* CapsulesDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesDispatcher.swift; sourceTree = "<group>"; };
 		ACF750782122F69100AC3E11 /* CapsuleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleRequest.swift; sourceTree = "<group>"; };
 		ACF7507A2122F6F400AC3E11 /* CapsuleDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleDispatcher.swift; sourceTree = "<group>"; };
+		ACF8C7882167A4FD0003E8FC /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		ACF8C78A2167A5200003E8FC /* RightDisclosureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDisclosureTableViewCell.swift; sourceTree = "<group>"; };
+		ACF8C78F2167A6430003E8FC /* TableViewDataRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataRepresentable.swift; sourceTree = "<group>"; };
+		ACF8C7912167A8170003E8FC /* TableViewDataConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataConfigurable.swift; sourceTree = "<group>"; };
 		DD641E9E2031760A0094B7A2 /* SpaceX Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD641EA12031760A0094B7A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD641EA62031760A0094B7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -486,6 +494,8 @@
 		AC541AA921661C71002220FE /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
+				ACF8C7882167A4FD0003E8FC /* SubtitleTableViewCell.swift */,
+				ACF8C78A2167A5200003E8FC /* RightDisclosureTableViewCell.swift */,
 				AC541AAA21661CA1002220FE /* MeasurementTableViewCell.swift */,
 				AC541AAE216654B3002220FE /* URLTableViewCell.swift */,
 			);
@@ -894,6 +904,15 @@
 			path = "Single capsule";
 			sourceTree = "<group>";
 		};
+		ACF8C78E2167A6120003E8FC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ACF8C78F2167A6430003E8FC /* TableViewDataRepresentable.swift */,
+				ACF8C7912167A8170003E8FC /* TableViewDataConfigurable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		DD641E952031760A0094B7A2 = {
 			isa = PBXGroup;
 			children = (
@@ -919,6 +938,7 @@
 		DD641EA02031760A0094B7A2 /* SpaceX Data */ = {
 			isa = PBXGroup;
 			children = (
+				ACF8C78E2167A6120003E8FC /* Protocols */,
 				ACF3F68A211DA863007E738E /* Helpers */,
 				AC750371211859C200AED17B /* Extensions */,
 				DD641EEF203191630094B7A2 /* Models */,
@@ -1081,10 +1101,12 @@
 				TargetAttributes = {
 					DD641E9D2031760A0094B7A2 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					DD641EB12031760A0094B7A2 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DD641E9D2031760A0094B7A2;
 					};
@@ -1094,6 +1116,7 @@
 					};
 					DD641EC92031760A0094B7A2 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1188,6 +1211,7 @@
 				AC88C8CC211DCB860093A813 /* DetailedItemRequest.swift in Sources */,
 				AC2844492163664700DE335C /* MoreViewController.swift in Sources */,
 				AC93810521076C7400880E07 /* Distance.swift in Sources */,
+				ACF8C7892167A4FD0003E8FC /* SubtitleTableViewCell.swift in Sources */,
 				DD641EF3203192B90094B7A2 /* Address.swift in Sources */,
 				AC88C8D2211DCDBB0093A813 /* CoreBoosterDispatcher.swift in Sources */,
 				ACF7506F2122CCC500AC3E11 /* Cargo.swift in Sources */,
@@ -1226,11 +1250,14 @@
 				AC1BDCE22123003D00148F31 /* CapsulesDetailsDispatcher.swift in Sources */,
 				AC787336212413D7000F0DFC /* LaunchedRocketFirstStageCoreBooster.swift in Sources */,
 				AC7873342124138D000F0DFC /* LaunchedRocketFirstStage.swift in Sources */,
+				ACF8C7922167A8170003E8FC /* TableViewDataConfigurable.swift in Sources */,
 				AC7503792119A28F00AED17B /* DateFormatter+Extensions.swift in Sources */,
 				ACD76E352108C39000F4CD14 /* Thrust.swift in Sources */,
 				ACE20863211B01C200F27DC5 /* RoadsterInfo.swift in Sources */,
 				ACE20868211B233000F27DC5 /* RoadsterInfoRequest.swift in Sources */,
 				AC1A5CE0203430F2000A3618 /* NetworkError.swift in Sources */,
+				ACF8C78B2167A5200003E8FC /* RightDisclosureTableViewCell.swift in Sources */,
+				ACF8C7902167A6430003E8FC /* TableViewDataRepresentable.swift in Sources */,
 				AC03BDA121245A1600FBA093 /* LaunchedRocketReusedParts.swift in Sources */,
 				ACE20865211B038B00F27DC5 /* Speed.swift in Sources */,
 				AC03BDAA2124732E00FBA093 /* LaunchesRequest.swift in Sources */,
@@ -1462,7 +1489,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.2;
 			};
@@ -1480,7 +1507,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.2;
 			};
@@ -1534,7 +1561,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vadimrupets.SpaceX-Data";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1549,7 +1576,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vadimrupets.SpaceX-Data";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1565,7 +1592,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vadimrupets.SpaceX-DataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceX Data.app/SpaceX Data";
 			};
@@ -1582,7 +1609,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vadimrupets.SpaceX-DataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceX Data.app/SpaceX Data";
 			};

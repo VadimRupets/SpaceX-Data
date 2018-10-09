@@ -10,9 +10,6 @@ import UIKit
 
 class CompanyInfoViewController: UIViewController {
     
-    private let subtitleCellIdentifier = "CompanyInfoSubtitleCell"
-    private let rightDetailCellIdentifier = "CompanyInfoRightDetailCell"
-    
     private let mapViewViewControllerSegueIdentifier = "MapViewViewControllerSegue"
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -65,24 +62,13 @@ extension CompanyInfoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let companyInfo = companyInfo else {
+        guard let cellData = companyInfo?.tableViewData[indexPath.row], let type = cellData[TableViewDataKeys.type.rawValue] as? TableViewDataType, let configurableCell = tableView.dequeueReusableCell(withIdentifier: type.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
             return UITableViewCell()
         }
         
-        var cell: UITableViewCell
+        configurableCell.configure(with: cellData)
         
-        if indexPath.row == companyInfo.tableViewData.count - 1 {
-            cell = tableView.dequeueReusableCell(withIdentifier: rightDetailCellIdentifier, for: indexPath)
-        } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: subtitleCellIdentifier, for: indexPath)
-            cell.selectionStyle = .none
-        }
-        
-        let data = companyInfo.tableViewData[indexPath.row]
-        cell.textLabel?.text = data.title
-        cell.detailTextLabel?.text = data.description
-        
-        return cell
+        return configurableCell
     }
     
 }
