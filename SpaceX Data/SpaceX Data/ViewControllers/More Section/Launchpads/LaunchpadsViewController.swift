@@ -63,13 +63,3 @@ extension LaunchpadsViewController: UITableViewDataSource {
     }
     
 }
-
-// MARK: - UITableViewDelegate
-
-extension LaunchpadsViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: detailSegueIdentifier, sender: launchpads[indexPath.row])
-    }
-    
-}
