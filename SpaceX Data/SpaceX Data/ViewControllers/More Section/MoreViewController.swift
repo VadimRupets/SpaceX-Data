@@ -14,8 +14,6 @@ fileprivate let roadsterInfoSegueIdentifier = "RoadsterInfoSegue"
 
 class MoreViewController: UIViewController {
     
-    private let cellIdentifier = "MoreTableViewCell"
-    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.tableFooterView = UIView()

@@ -10,8 +10,6 @@ import UIKit
 
 class LaunchpadsViewController: UIViewController {
     
-    private let cellIdentifier = "LaunchpadsTableViewCell"
-    
     private let detailSegueIdentifier = "LaunchpadDetailSegue"
     
     @IBOutlet weak var tableView: UITableView! {
@@ -21,12 +19,6 @@ class LaunchpadsViewController: UIViewController {
     }
     
     var launchpads: [Launchpad] = []
-    
-    lazy var tableViewData: [[String: Any]] = {
-        var tableViewData = [[String: Any]]()
-        launchpads.forEach({ tableViewData.append(contentsOf: $0.tableViewData) })
-        return tableViewData
-    }()
     
     // MARK: - View life cycle
     
@@ -55,11 +47,11 @@ class LaunchpadsViewController: UIViewController {
 extension LaunchpadsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewData.count
+        return launchpads.tableViewData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellData = tableViewData[indexPath.row]
+        let cellData = launchpads.tableViewData[indexPath.row]
         
         guard let type = cellData[TableViewDataKeys.type.rawValue] as? TableViewDataType, let configurableCell = tableView.dequeueReusableCell(withIdentifier: type.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
             return UITableViewCell()
