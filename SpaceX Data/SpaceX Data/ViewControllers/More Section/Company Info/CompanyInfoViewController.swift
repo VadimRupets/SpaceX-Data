@@ -53,16 +53,12 @@ class CompanyInfoViewController: UIViewController {
 
 extension CompanyInfoViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return companyInfo?.tableViewData.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellData = companyInfo?.tableViewData[indexPath.row], let type = cellData[TableViewDataKeys.type.rawValue] as? TableViewDataType, let configurableCell = tableView.dequeueReusableCell(withIdentifier: type.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
+        guard let cellData = companyInfo?.tableViewData[indexPath.row], let configurableCell = tableView.dequeueReusableCell(withIdentifier: cellData.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
             return UITableViewCell()
         }
         

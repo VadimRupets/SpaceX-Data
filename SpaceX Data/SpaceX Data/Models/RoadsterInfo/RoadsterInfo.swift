@@ -103,30 +103,28 @@ extension RoadsterInfo: Decodable {
     
 }
 
-extension RoadsterInfo: TableViewDataRepresentable {
-    
-    var tableViewData: [[String: Any]] {
-        var _tableViewData = [[String: Any]]()
+extension RoadsterInfo: TableViewDataFullyRepresentable {
+    var tableViewData: [TableViewCellData] {
+        var tableViewData: [TableViewCellData] = []
         
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Launch date", DateFormatter.yyyyMMddHHmmss.string(from: launchDate)))
-        _tableViewData.append(tableViewData(with: .measurement, arguments: "Launch mass", launchMass))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "NORAD id", noradId.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Epoch in Julian days", epochInJulianDays.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Orbit type", orbitType.capitalized))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Apoapsis", apoapsis.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Periapsis", periapsis.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Semi-major axis", semiMajorAxis.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Eccentricity", eccentricity.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Inclination", inclination.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Longitude", longitude.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Argument of periapsis", periapsisArgument.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Period", orbitalPeriodInDays.description))
-        _tableViewData.append(tableViewData(with: .measurement, arguments: "Speed", speed))
-        _tableViewData.append(tableViewData(with: .measurement, arguments: "Distance from Earth", distanceFromEarth))
-        _tableViewData.append(tableViewData(with: .measurement, arguments: "Distance from Mars", distanceFromMars))
-        _tableViewData.append(tableViewData(with: .url, arguments: "Wikipedia link", self.wikipediaURL))
+        tableViewData.append(.subtitle((title: "Launch date", subtitle: DateFormatter.yyyyMMddHHmmss.string(from: launchDate))))
+        tableViewData.append(.measurement((title: "Launch mass", measurement: launchMass)))
+        tableViewData.append(.subtitle((title: "NORAD id", subtitle: noradId.description)))
+        tableViewData.append(.subtitle((title: "Epoch in Julian days", subtitle: epochInJulianDays.description)))
+        tableViewData.append(.subtitle((title: "Orbit type", subtitle: orbitType.capitalized)))
+        tableViewData.append(.subtitle((title: "Apoapsis", subtitle: apoapsis.description)))
+        tableViewData.append(.subtitle((title: "Periapsis", subtitle: periapsis.description)))
+        tableViewData.append(.subtitle((title: "Semi-major axis", subtitle: semiMajorAxis.description)))
+        tableViewData.append(.subtitle((title: "Eccentricity", subtitle: eccentricity.description)))
+        tableViewData.append(.subtitle((title: "Inclination", subtitle: inclination.description)))
+        tableViewData.append(.subtitle((title: "Longitude", subtitle: longitude.description)))
+        tableViewData.append(.subtitle((title: "Argument of periapsis", subtitle: periapsisArgument.description)))
+        tableViewData.append(.subtitle((title: "Period", subtitle: orbitalPeriodInDays.description)))
+        tableViewData.append(.measurement((title: "Speed", measurement: speed)))
+        tableViewData.append(.measurement((title: "Distance from Earth", measurement: distanceFromEarth)))
+        tableViewData.append(.measurement((title: "Distance from Mars", measurement: distanceFromMars)))
+        tableViewData.append(.url((title: "Wikipedia link", url: wikipediaURL)))
         
-        return _tableViewData
+        return tableViewData
     }
-    
 }

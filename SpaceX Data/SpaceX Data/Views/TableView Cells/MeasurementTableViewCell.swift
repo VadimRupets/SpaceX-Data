@@ -41,15 +41,15 @@ class MeasurementTableViewCell: UITableViewCell {
 }
 
 extension MeasurementTableViewCell: TableViewDataConfigurable {
-    func configure(with tableViewData: [String : Any]) {
-        guard let measurement = tableViewData[TableViewDataKeys.measurement.rawValue] as? Measurement else {
+    func configure(with tableViewData: TableViewCellData) {
+        guard case let .measurement(title, measurement) = tableViewData else {
             return
         }
         
         self.measurement = measurement
         self.measurementSystem = .metric
         
-        textLabel?.text = tableViewData[TableViewDataKeys.title.rawValue] as? String
+        textLabel?.text = title
         
         let valueString = String(format: "%.2f", measurement.metric.value)
         detailTextLabel?.text = "\(valueString) \(measurement.metric.unit)"

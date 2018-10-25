@@ -71,7 +71,7 @@ extension MoreViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = tableViewData[indexPath.row]
         
-        guard let type = cellData[TableViewDataKeys.type.rawValue] as? TableViewDataType, let configurableCell = tableView.dequeueReusableCell(withIdentifier: type.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
+        guard let configurableCell = tableView.dequeueReusableCell(withIdentifier: cellData.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
             return UITableViewCell()
         }
         
@@ -136,14 +136,14 @@ extension MoreViewController: UITableViewDelegate {
 
 // MARK: - TableViewDataRepresentable
 
-extension MoreViewController: TableViewDataRepresentable {
-    var tableViewData: [[String : Any]] {
-        var _tableViewData = [[String: Any]]()
+extension MoreViewController: TableViewDataFullyRepresentable {
+    var tableViewData: [TableViewCellData] {
+        var tableViewData: [TableViewCellData] = []
         
-        _tableViewData.append(tableViewData(with: .rightDisclosure, arguments: "About SpaceX"))
-        _tableViewData.append(tableViewData(with: .rightDisclosure, arguments: "Launchpads"))
-        _tableViewData.append(tableViewData(with: .rightDisclosure, arguments: "Starman Roadster orbital data"))
+        tableViewData.append(.rightDisclosure("About SpaceX"))
+        tableViewData.append(.rightDisclosure("Launchpads"))
+        tableViewData.append(.rightDisclosure("Starman Roadster orbital data"))
         
-        return _tableViewData
+        return tableViewData
     }
 }

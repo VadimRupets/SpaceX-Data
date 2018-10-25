@@ -13,7 +13,11 @@ class RightDisclosureTableViewCell: UITableViewCell {
 }
 
 extension RightDisclosureTableViewCell: TableViewDataConfigurable {
-    func configure(with tableViewData: [String : Any]) {
-        textLabel?.text = tableViewData[TableViewDataKeys.title.rawValue] as? String
+    func configure(with tableViewData: TableViewCellData) {
+        guard case let .rightDisclosure(title) = tableViewData else {
+            return
+        }
+        
+        textLabel?.text = title
     }
 }

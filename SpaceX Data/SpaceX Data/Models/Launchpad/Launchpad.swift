@@ -47,8 +47,8 @@ extension Launchpad: Decodable {
     }
 }
 
-extension Array: TableViewDataRepresentable where Array.Element == Launchpad {
-    var tableViewData: [[String : Any]] {
-        return map({ tableViewData(with: .subtitle, arguments: $0.name, "Status: \($0.status.rawValue)") })
+extension Launchpad: TableViewDataEssentiallyRepresentable {
+    var essentialData: TableViewCellData {
+        return .subtitle((title: name, subtitle: "Status: \(status.rawValue)"))
     }
 }

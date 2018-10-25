@@ -15,8 +15,12 @@ class URLTableViewCell: UITableViewCell {
 }
 
 extension URLTableViewCell: TableViewDataConfigurable {
-    func configure(with tableViewData: [String : Any]) {
-        textLabel?.text = tableViewData[TableViewDataKeys.title.rawValue] as? String
-        url = tableViewData[TableViewDataKeys.url.rawValue] as? URL
+    func configure(with tableViewData: TableViewCellData) {
+        guard case let .url(title, url) = tableViewData else {
+            return
+        }
+        
+        textLabel?.text = title
+        self.url = url
     }
 }

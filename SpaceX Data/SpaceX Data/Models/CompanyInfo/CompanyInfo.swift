@@ -66,26 +66,25 @@ extension CompanyInfo: Decodable {
     
 }
 
-extension CompanyInfo: TableViewDataRepresentable {
-    var tableViewData: [[String : Any]] {
-        var _tableViewData = [[String: Any]]()
+extension CompanyInfo: TableViewDataFullyRepresentable {
+    var tableViewData: [TableViewCellData] {
+        var tableViewData: [TableViewCellData] = []
         
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Founder", founder))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Founded", yearOfFoundation.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Employees", employees.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Vehicles", founder))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Launch sites", launchSites.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Test sites", testSites.description))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "CEO", ceo))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "CTO", cto))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "COO", coo))
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "CTO Propulsion", ctoPropulsion))
+        tableViewData.append(.subtitle((title: "Founder", subtitle: founder)))
+        tableViewData.append(.subtitle((title: "Founded", subtitle: yearOfFoundation.description)))
+        tableViewData.append(.subtitle((title: "Employees", subtitle: employees.description)))
+        tableViewData.append(.subtitle((title: "Vehicles", subtitle: vehicles.description)))
+        tableViewData.append(.subtitle((title: "Launch sites", subtitle: launchSites.description)))
+        tableViewData.append(.subtitle((title: "Test sites", subtitle: testSites.description)))
+        tableViewData.append(.subtitle((title: "CEO", subtitle: ceo)))
+        tableViewData.append(.subtitle((title: "CTO", subtitle: cto)))
+        tableViewData.append(.subtitle((title: "COO", subtitle: coo)))
+        tableViewData.append(.subtitle((title: "CTO Propulsion", subtitle: ctoPropulsion)))
         
         let formattedValuation = NumberFormatter.dollarFormatter.string(from: NSNumber(value: valuation)) ?? "$\(valuation)"
-        _tableViewData.append(tableViewData(with: .subtitle, arguments: "Valuation", formattedValuation))
-        _tableViewData.append(tableViewData(with: .rightDisclosure, arguments: "Headquarters"))
+        tableViewData.append(.subtitle((title: "Valuation", subtitle: formattedValuation)))
+        tableViewData.append(.rightDisclosure("Headquarters"))        
         
-        
-        return _tableViewData
+        return tableViewData
     }
 }

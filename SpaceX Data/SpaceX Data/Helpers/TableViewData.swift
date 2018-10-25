@@ -1,19 +1,19 @@
 //
-//  TableViewDataType.swift
+//  TableViewData.swift
 //  SpaceX Data
 //
-//  Created by Vadim Rupets on 10/4/18.
+//  Created by Vadim Rupets on 10/25/18.
 //  Copyright © 2018 Vadim Rupets. All rights reserved.
 //
 
 import Foundation
 
-enum TableViewDataType {
+enum TableViewCellData {
     case
-    subtitle,
-    rightDisclosure,
-    url,
-    measurement
+    subtitle((title: String, subtitle: String)),
+    rightDisclosure(String),
+    url((title: String, url: URL)),
+    measurement((title: String, measurement: Measurement))
     
     var cellIdentifier: String {
         switch self {
@@ -27,13 +27,4 @@ enum TableViewDataType {
             return MeasurementTableViewCell.identifier
         }
     }
-}
-
-enum TableViewDataKeys: String {
-    case
-    type,
-    title,
-    subtitle,
-    measurement,
-    url
 }

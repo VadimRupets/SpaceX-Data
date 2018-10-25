@@ -13,9 +13,10 @@ class SubtitleTableViewCell: UITableViewCell {
 }
 
 extension SubtitleTableViewCell: TableViewDataConfigurable {
-    func configure(with tableViewData: [String : Any]) {
-        let title = tableViewData[TableViewDataKeys.title.rawValue] as? String
-        let subtitle = tableViewData[TableViewDataKeys.subtitle.rawValue] as? String
+    func configure(with tableViewData: TableViewCellData) {
+        guard case let .subtitle(title, subtitle) = tableViewData else {
+            return
+        }
         
         self.textLabel?.text = title
         self.detailTextLabel?.text = subtitle

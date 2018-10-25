@@ -38,8 +38,8 @@
 		AC43B00A215A6D8E007B7CD8 /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC43B009215A6D8E007B7CD8 /* MapViewViewController.swift */; };
 		AC47C1C820AD83D5004C2D74 /* CompanyInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC47C1C720AD83D5004C2D74 /* CompanyInfoRequest.swift */; };
 		AC541AAB21661CA1002220FE /* MeasurementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541AAA21661CA1002220FE /* MeasurementTableViewCell.swift */; };
-		AC541AAD2166276D002220FE /* TableViewDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541AAC2166276D002220FE /* TableViewDataType.swift */; };
 		AC541AAF216654B3002220FE /* URLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541AAE216654B3002220FE /* URLTableViewCell.swift */; };
+		AC6E46A92181F003002C8433 /* TableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E46A82181F003002C8433 /* TableViewData.swift */; };
 		AC750373211859D100AED17B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750372211859D100AED17B /* String+Extensions.swift */; };
 		AC75037521185DD500AED17B /* Engines.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75037421185DD500AED17B /* Engines.swift */; };
 		AC750377211866B300AED17B /* LandingLegs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750376211866B300AED17B /* LandingLegs.swift */; };
@@ -215,8 +215,8 @@
 		AC43B009215A6D8E007B7CD8 /* MapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
 		AC47C1C720AD83D5004C2D74 /* CompanyInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoRequest.swift; sourceTree = "<group>"; };
 		AC541AAA21661CA1002220FE /* MeasurementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementTableViewCell.swift; sourceTree = "<group>"; };
-		AC541AAC2166276D002220FE /* TableViewDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataType.swift; sourceTree = "<group>"; };
 		AC541AAE216654B3002220FE /* URLTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTableViewCell.swift; sourceTree = "<group>"; };
+		AC6E46A82181F003002C8433 /* TableViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewData.swift; sourceTree = "<group>"; };
 		AC750372211859D100AED17B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		AC75037421185DD500AED17B /* Engines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engines.swift; sourceTree = "<group>"; };
 		AC750376211866B300AED17B /* LandingLegs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingLegs.swift; sourceTree = "<group>"; };
@@ -872,7 +872,7 @@
 			isa = PBXGroup;
 			children = (
 				AC8FA091211DA8D3009F5D9C /* SynchronizedArray.swift */,
-				AC541AAC2166276D002220FE /* TableViewDataType.swift */,
+				AC6E46A82181F003002C8433 /* TableViewData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1264,13 +1264,13 @@
 				ACF750792122F69100AC3E11 /* CapsuleRequest.swift in Sources */,
 				AC78D5322121BB1F00D0EED6 /* Capsule.swift in Sources */,
 				ACE3C89E2107224900C9EEE7 /* CompanyInfoDispatcher.swift in Sources */,
-				AC541AAD2166276D002220FE /* TableViewDataType.swift in Sources */,
 				ACB5EBEE2165064C004D9CC6 /* PlacemarkBlank.swift in Sources */,
 				DD641EEA20318EFE0094B7A2 /* Request.swift in Sources */,
 				AC541AAB21661CA1002220FE /* MeasurementTableViewCell.swift in Sources */,
 				AC1BDCDC2122FD8C00148F31 /* CapsuleDetailsRequest.swift in Sources */,
 				ACD76E3D2108C86600F4CD14 /* Payloads.swift in Sources */,
 				AC75037521185DD500AED17B /* Engines.swift in Sources */,
+				AC6E46A92181F003002C8433 /* TableViewData.swift in Sources */,
 				AC28445221639BBB00DE335C /* NumberFormatter+Extensions.swift in Sources */,
 				AC1BDCE521231D3000148F31 /* Launch.swift in Sources */,
 				AC541AAF216654B3002220FE /* URLTableViewCell.swift in Sources */,

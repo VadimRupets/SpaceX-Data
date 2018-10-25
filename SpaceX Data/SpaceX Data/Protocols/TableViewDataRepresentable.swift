@@ -8,34 +8,18 @@
 
 import Foundation
 
-protocol TableViewDataRepresentable {
-    var tableViewData: [[String: Any]] { get }
+protocol TableViewDataFullyRepresentable {
+    var tableViewData: [TableViewCellData] { get }
 }
 
-extension TableViewDataRepresentable {
-    func tableViewData(with type: TableViewDataType, arguments: Any...) -> [String: Any] {
-        var tableViewData = [String: Any]()
-        
-        tableViewData[TableViewDataKeys.type.rawValue] = type
-        
-        switch arguments.first {
-        case let string as String:
-            tableViewData[TableViewDataKeys.title.rawValue] = string
-        default:
-            break
-        }
-        
-        switch arguments.last {
-        case let string as String:
-            tableViewData[TableViewDataKeys.subtitle.rawValue] = string
-        case let measurement as Measurement:
-            tableViewData[TableViewDataKeys.measurement.rawValue] = measurement
-        case let url as URL:
-            tableViewData[TableViewDataKeys.url.rawValue] = url
-        default:
-            break
-        }
-        
+protocol TableViewDataEssentiallyRepresentable {
+    var essentialData: TableViewCellData { get }
+}
+
+extension Array: TableViewDataFullyRepresentable where Array.Element: TableViewDataEssentiallyRepresentable {
+    var tableViewData: [TableViewCellData] {
+        var tableViewData: [TableViewCellData] = []
+        forEach({ tableViewData.append($0.essentialData) })
         return tableViewData
     }
 }

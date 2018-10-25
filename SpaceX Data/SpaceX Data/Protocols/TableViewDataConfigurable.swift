@@ -9,5 +9,5 @@
 import UIKit
 
 protocol TableViewDataConfigurable where Self: UITableViewCell {
-    func configure(with tableViewData: [String: Any])
+    func configure(with tableViewData: TableViewCellData)
 }
