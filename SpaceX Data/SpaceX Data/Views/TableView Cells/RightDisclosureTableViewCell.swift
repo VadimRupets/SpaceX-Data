@@ -12,7 +12,7 @@ class RightDisclosureTableViewCell: UITableViewCell {
     static let identifier = "RightDisclosureTableViewCell"
 }
 
-extension RightDisclosureTableViewCell: TableViewDataConfigurable {
+extension RightDisclosureTableViewCell: TableViewCellDataConfigurable {
     func configure(with tableViewData: TableViewCellData) {
         guard case let .rightDisclosure(title) = tableViewData else {
             return

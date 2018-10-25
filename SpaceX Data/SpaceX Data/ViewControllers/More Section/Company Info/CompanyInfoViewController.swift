@@ -58,7 +58,7 @@ extension CompanyInfoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellData = companyInfo?.tableViewData[indexPath.row], let configurableCell = tableView.dequeueReusableCell(withIdentifier: cellData.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
+        guard let cellData = companyInfo?.tableViewData[indexPath.row], let configurableCell = tableView.dequeueReusableCell(withIdentifier: cellData.cellIdentifier, for: indexPath) as? (TableViewCellDataConfigurable & UITableViewCell) else {
             return UITableViewCell()
         }
         

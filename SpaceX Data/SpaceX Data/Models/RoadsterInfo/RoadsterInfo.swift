@@ -103,7 +103,7 @@ extension RoadsterInfo: Decodable {
     
 }
 
-extension RoadsterInfo: TableViewDataFullyRepresentable {
+extension RoadsterInfo: TableViewCellDataFullyRepresentable {
     var tableViewData: [TableViewCellData] {
         var tableViewData: [TableViewCellData] = []
         

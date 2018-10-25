@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol TableViewDataFullyRepresentable {
+protocol TableViewCellDataFullyRepresentable {
     var tableViewData: [TableViewCellData] { get }
 }
 
-protocol TableViewDataEssentiallyRepresentable {
+protocol TableViewCellDataEssentiallyRepresentable {
     var essentialData: TableViewCellData { get }
 }
 
-extension Array: TableViewDataFullyRepresentable where Array.Element: TableViewDataEssentiallyRepresentable {
+extension Array: TableViewCellDataFullyRepresentable where Array.Element: TableViewCellDataEssentiallyRepresentable {
     var tableViewData: [TableViewCellData] {
         var tableViewData: [TableViewCellData] = []
         forEach({ tableViewData.append($0.essentialData) })

@@ -71,7 +71,7 @@ extension MoreViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = tableViewData[indexPath.row]
         
-        guard let configurableCell = tableView.dequeueReusableCell(withIdentifier: cellData.cellIdentifier, for: indexPath) as? (TableViewDataConfigurable & UITableViewCell) else {
+        guard let configurableCell = tableView.dequeueReusableCell(withIdentifier: cellData.cellIdentifier, for: indexPath) as? (TableViewCellDataConfigurable & UITableViewCell) else {
             return UITableViewCell()
         }
         
@@ -136,7 +136,7 @@ extension MoreViewController: UITableViewDelegate {
 
 // MARK: - TableViewDataRepresentable
 
-extension MoreViewController: TableViewDataFullyRepresentable {
+extension MoreViewController: TableViewCellDataFullyRepresentable {
     var tableViewData: [TableViewCellData] {
         var tableViewData: [TableViewCellData] = []
         

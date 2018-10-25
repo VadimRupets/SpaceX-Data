@@ -12,7 +12,7 @@ class SubtitleTableViewCell: UITableViewCell {
     static let identifier = "SubtitleTableViewCell"
 }
 
-extension SubtitleTableViewCell: TableViewDataConfigurable {
+extension SubtitleTableViewCell: TableViewCellDataConfigurable {
     func configure(with tableViewData: TableViewCellData) {
         guard case let .subtitle(title, subtitle) = tableViewData else {
             return

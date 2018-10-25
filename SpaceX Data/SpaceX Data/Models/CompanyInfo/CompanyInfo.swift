@@ -66,7 +66,7 @@ extension CompanyInfo: Decodable {
     
 }
 
-extension CompanyInfo: TableViewDataFullyRepresentable {
+extension CompanyInfo: TableViewCellDataFullyRepresentable {
     var tableViewData: [TableViewCellData] {
         var tableViewData: [TableViewCellData] = []
         

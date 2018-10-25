@@ -47,7 +47,7 @@ extension Launchpad: Decodable {
     }
 }
 
-extension Launchpad: TableViewDataEssentiallyRepresentable {
+extension Launchpad: TableViewCellDataEssentiallyRepresentable {
     var essentialData: TableViewCellData {
         return .subtitle((title: name, subtitle: "Status: \(status.rawValue)"))
     }

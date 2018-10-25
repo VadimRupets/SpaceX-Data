@@ -14,7 +14,7 @@ class URLTableViewCell: UITableViewCell {
     var url: URL?
 }
 
-extension URLTableViewCell: TableViewDataConfigurable {
+extension URLTableViewCell: TableViewCellDataConfigurable {
     func configure(with tableViewData: TableViewCellData) {
         guard case let .url(title, url) = tableViewData else {
             return

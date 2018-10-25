@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol TableViewDataConfigurable where Self: UITableViewCell {
+protocol TableViewCellDataConfigurable where Self: UITableViewCell {
     func configure(with tableViewData: TableViewCellData)
 }

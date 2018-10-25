@@ -40,7 +40,7 @@ class MeasurementTableViewCell: UITableViewCell {
 
 }
 
-extension MeasurementTableViewCell: TableViewDataConfigurable {
+extension MeasurementTableViewCell: TableViewCellDataConfigurable {
     func configure(with tableViewData: TableViewCellData) {
         guard case let .measurement(title, measurement) = tableViewData else {
             return
