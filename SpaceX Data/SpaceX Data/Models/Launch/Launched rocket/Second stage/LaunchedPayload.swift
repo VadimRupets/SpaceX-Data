@@ -16,7 +16,7 @@ struct LaunchedPayload {
     let customers: [String]
     let nationality: String?
     let manufacturer: String?
-    let type: String
+    let type: String?
     let mass: Mass?
     let orbit: String
     let orbitParameters: OrbitParameters
@@ -57,7 +57,7 @@ extension LaunchedPayload: Decodable {
         self.customers = try values.decode([String].self, forKey: .customers)
         self.nationality = try values.decodeIfPresent(String.self, forKey: .nationality)
         self.manufacturer = try values.decodeIfPresent(String.self, forKey: .manufacturer)
-        self.type = try values.decode(String.self, forKey: .type)
+        self.type = try values.decodeIfPresent(String.self, forKey: .type)
         
         if let massInKilograms = try values.decodeIfPresent(Double.self, forKey: .massInKilograms), let massInPounds = try values.decodeIfPresent(Double.self, forKey: .massInPounds) {
             self.mass = Mass(metric: massInKilograms, imperial: massInPounds)

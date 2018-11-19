@@ -9,7 +9,7 @@
 import Foundation
 
 struct OrbitParameters {
-    let referenceSystem: String
+    let referenceSystem: String?
     let regime: String?
     let longitude: Double?
     let semiMajorAxis: Distance?
@@ -18,7 +18,7 @@ struct OrbitParameters {
     let apoapsis: Distance?
     let inclinationDegree: Double?
     let periodInMinutes: Double?
-    let lifespanInYears: Int?
+    let lifespanInYears: Double?
     let epoch: Date?
     let meanMotion: Double?
     let raan: Double?
@@ -46,7 +46,7 @@ extension OrbitParameters: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.referenceSystem = try values.decode(String.self, forKey: .referenceSystem)
+        self.referenceSystem = try values.decodeIfPresent(String.self, forKey: .referenceSystem)
         self.regime = try values.decodeIfPresent(String.self, forKey: .regime)
         self.longitude = try values.decodeIfPresent(Double.self, forKey: .longitude)
         
@@ -72,7 +72,7 @@ extension OrbitParameters: Decodable {
         
         self.inclinationDegree = try values.decodeIfPresent(Double.self, forKey: .inclinationDegree)
         self.periodInMinutes = try values.decodeIfPresent(Double.self, forKey: .periodInMinutes)
-        self.lifespanInYears = try values.decodeIfPresent(Int.self, forKey: .lifespanInYears)
+        self.lifespanInYears = try values.decodeIfPresent(Double.self, forKey: .lifespanInYears)
         
         if let epochDateString = try values.decodeIfPresent(String.self, forKey: .epoch), let epoch = DateFormatter.ISO8601.date(from: epochDateString) {
             self.epoch = epoch

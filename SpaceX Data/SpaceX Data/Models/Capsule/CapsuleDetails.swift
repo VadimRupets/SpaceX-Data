@@ -28,7 +28,7 @@ struct CapsuleDetails: CustomStringConvertible {
     let id: String
     let status: CapsuleStatus
     let originalLaunchDate: Date?
-    let missions: [String]
+    let missions: [Mission]
     let landings: Int
     let type: CapsuleType
     let description: String
@@ -61,7 +61,7 @@ extension CapsuleDetails: Decodable {
             originalLaunchDate = nil
         }
         
-        self.missions = try values.decode([String].self, forKey: .missions)
+        self.missions = try values.decode([Mission].self, forKey: .missions)
         self.landings = try values.decode(Int.self, forKey: .landings)
         self.type = try values.decode(CapsuleType.self, forKey: .type)
         self.description = try values.decodeIfPresent(String.self, forKey: .description) ?? ""

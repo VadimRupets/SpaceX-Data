@@ -40,6 +40,7 @@
 		AC541AAB21661CA1002220FE /* MeasurementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541AAA21661CA1002220FE /* MeasurementTableViewCell.swift */; };
 		AC541AAF216654B3002220FE /* URLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC541AAE216654B3002220FE /* URLTableViewCell.swift */; };
 		AC6E46A92181F003002C8433 /* TableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E46A82181F003002C8433 /* TableViewData.swift */; };
+		AC6E46AB21820A27002C8433 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E46AA21820A27002C8433 /* Mission.swift */; };
 		AC750373211859D100AED17B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750372211859D100AED17B /* String+Extensions.swift */; };
 		AC75037521185DD500AED17B /* Engines.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75037421185DD500AED17B /* Engines.swift */; };
 		AC750377211866B300AED17B /* LandingLegs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750376211866B300AED17B /* LandingLegs.swift */; };
@@ -217,6 +218,7 @@
 		AC541AAA21661CA1002220FE /* MeasurementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementTableViewCell.swift; sourceTree = "<group>"; };
 		AC541AAE216654B3002220FE /* URLTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTableViewCell.swift; sourceTree = "<group>"; };
 		AC6E46A82181F003002C8433 /* TableViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewData.swift; sourceTree = "<group>"; };
+		AC6E46AA21820A27002C8433 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		AC750372211859D100AED17B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		AC75037421185DD500AED17B /* Engines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engines.swift; sourceTree = "<group>"; };
 		AC750376211866B300AED17B /* LandingLegs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingLegs.swift; sourceTree = "<group>"; };
@@ -580,6 +582,7 @@
 			isa = PBXGroup;
 			children = (
 				AC78D5312121BB1F00D0EED6 /* Capsule.swift */,
+				AC6E46AA21820A27002C8433 /* Mission.swift */,
 				AC78D5332121BD2C00D0EED6 /* HeatShield.swift */,
 				ACF750682122C39600AC3E11 /* Thruster.swift */,
 				ACF7506C2122CC8300AC3E11 /* Trunk.swift */,
@@ -1217,6 +1220,7 @@
 				ACF7506F2122CCC500AC3E11 /* Cargo.swift in Sources */,
 				AC88C8D8211DD4AF0093A813 /* CoreBoostersRequest.swift in Sources */,
 				ACF3F686211D9ED8007E738E /* LaunchpadDispatcher.swift in Sources */,
+				AC6E46AB21820A27002C8433 /* Mission.swift in Sources */,
 				AC1BDCD62122F95300148F31 /* CapsuleDetails.swift in Sources */,
 				ACA5D097215A415100198669 /* CompanyInfoViewController.swift in Sources */,
 				ACD76E332108C15C00F4CD14 /* PayloadWeight.swift in Sources */,

@@ -21,10 +21,10 @@ struct CoreBooster: CustomStringConvertible {
     let block: Int?
     let status: CoreBoosterStatus
     let originalLaunchDate: Date?
-    let missions: [String]
-    let rtlsAttempt: Bool
+    let missions: [Mission]
+    let rtlsAttempts: Int
     let rtlsLandings: Int
-    let asdsAttempt: Bool
+    let asdsAttempts: Int
     let asdsLandings: Int
     let waterLanding: Bool
     let description: String
@@ -38,9 +38,9 @@ extension CoreBooster: Decodable {
         status,
         originalLaunchDate = "original_launch",
         missions,
-        rtlsAttempt = "rtls_attempt",
+        rtlsAttempts = "rtls_attempts",
         rtlsLandings = "rtls_landings",
-        asdsAttempt = "asds_attempt",
+        asdsAttempts = "asds_attempts",
         asdsLandings = "asds_landings",
         waterLanding = "water_landing",
         description = "details"
@@ -63,10 +63,10 @@ extension CoreBooster: Decodable {
             self.originalLaunchDate = nil
         }
         
-        self.missions = try values.decode([String].self, forKey: .missions)
-        self.rtlsAttempt = try values.decode(Bool.self, forKey: .rtlsAttempt)
+        self.missions = try values.decode([Mission].self, forKey: .missions)
+        self.rtlsAttempts = try values.decode(Int.self, forKey: .rtlsAttempts)
         self.rtlsLandings = try values.decode(Int.self, forKey: .rtlsLandings)
-        self.asdsAttempt = try values.decode(Bool.self, forKey: .asdsAttempt)
+        self.asdsAttempts = try values.decode(Int.self, forKey: .asdsAttempts)
         self.asdsLandings = try values.decode(Int.self, forKey: .asdsLandings)
         self.waterLanding = try values.decode(Bool.self, forKey: .waterLanding)
         self.description = try values.decodeIfPresent(String.self, forKey: .description) ?? ""
