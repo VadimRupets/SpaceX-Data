@@ -17,6 +17,10 @@ extension DateFormatter {
         return dateFormatter(with: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
     }
     
+    static var ISO8601Millisecondless: DateFormatter {
+        return dateFormatter(with: "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    }
+    
     static var yyyyMMddHHmmss: DateFormatter {
         return dateFormatter(with: "yyyy-MM-dd HH:mm:ss")
     }
