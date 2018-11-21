@@ -85,6 +85,7 @@
 		ACA878172125C7A20020DE02 /* ReponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA878162125C7A20020DE02 /* ReponseTests.swift */; };
 		ACB5EBEE2165064C004D9CC6 /* PlacemarkBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5EBED2165064C004D9CC6 /* PlacemarkBlank.swift */; };
 		ACB5EBF1216509EC004D9CC6 /* RoadsterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5EBF0216509EC004D9CC6 /* RoadsterInfoViewController.swift */; };
+		ACB8E33D21A58B15005F0135 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8E33C21A58B15005F0135 /* LaunchesViewController.swift */; };
 		ACB97853212AC7B000645D0C /* CompanyInfoDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB97852212AC7B000645D0C /* CompanyInfoDispatcherTests.swift */; };
 		ACB97858212ACA3100645D0C /* LaunchpadDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB97857212ACA3100645D0C /* LaunchpadDispatcherTests.swift */; };
 		ACB9785A212ACDC800645D0C /* LaunchpadsDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB97859212ACDC800645D0C /* LaunchpadsDispatcherTests.swift */; };
@@ -270,6 +271,7 @@
 		ACA878162125C7A20020DE02 /* ReponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReponseTests.swift; sourceTree = "<group>"; };
 		ACB5EBED2165064C004D9CC6 /* PlacemarkBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkBlank.swift; sourceTree = "<group>"; };
 		ACB5EBF0216509EC004D9CC6 /* RoadsterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadsterInfoViewController.swift; sourceTree = "<group>"; };
+		ACB8E33C21A58B15005F0135 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		ACB97852212AC7B000645D0C /* CompanyInfoDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoDispatcherTests.swift; sourceTree = "<group>"; };
 		ACB97857212ACA3100645D0C /* LaunchpadDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadDispatcherTests.swift; sourceTree = "<group>"; };
 		ACB97859212ACDC800645D0C /* LaunchpadsDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadsDispatcherTests.swift; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 		ACA5D095215A413A00198669 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				ACB8E33B21A58B03005F0135 /* Launches */,
 				AC28445321639C7500DE335C /* More Section */,
 			);
 			path = ViewControllers;
@@ -756,6 +759,14 @@
 				ACB5EBF0216509EC004D9CC6 /* RoadsterInfoViewController.swift */,
 			);
 			path = "Roadster Info";
+			sourceTree = "<group>";
+		};
+		ACB8E33B21A58B03005F0135 /* Launches */ = {
+			isa = PBXGroup;
+			children = (
+				ACB8E33C21A58B15005F0135 /* LaunchesViewController.swift */,
+			);
+			path = Launches;
 			sourceTree = "<group>";
 		};
 		ACB97854212AC9D600645D0C /* Networking */ = {
@@ -1261,6 +1272,7 @@
 				AC03BDA521245C8C00FBA093 /* LaunchInfoLinks.swift in Sources */,
 				ACF3F689211DA2F9007E738E /* NetworkActivityIndicatorManager.swift in Sources */,
 				AC28444C2163861B00DE335C /* ActivityIndicator.swift in Sources */,
+				ACB8E33D21A58B15005F0135 /* LaunchesViewController.swift in Sources */,
 				AC750373211859D100AED17B /* String+Extensions.swift in Sources */,
 				AC88C8D0211DCD500093A813 /* CoreBoosterRequest.swift in Sources */,
 				ACD76E312108B8F700F4CD14 /* Measurement.swift in Sources */,

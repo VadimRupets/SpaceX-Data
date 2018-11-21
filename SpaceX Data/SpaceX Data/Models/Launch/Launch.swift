@@ -71,3 +71,11 @@ extension Launch: Decodable {
     }
     
 }
+
+extension Launch: TableViewCellDataEssentiallyRepresentable {
+    
+    var essentialData: TableViewCellData {
+        return .subtitle((title: rocket.name, subtitle: DateFormatter.yyyyMMdd.string(from: launchDate)))
+    }
+    
+}
