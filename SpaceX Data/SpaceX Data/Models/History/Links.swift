@@ -32,3 +32,23 @@ extension Links: Decodable {
     }
     
 }
+
+extension Links: TableViewCellDataFullyRepresentable {
+    var tableViewData: [TableViewCellData] {
+        var tableViewData = [TableViewCellData]()
+        
+        if let reddit = reddit {
+            tableViewData.append(.url((title: "Reddit", url: reddit)))
+        }
+        
+        if let article = article {
+            tableViewData.append(.url((title: "Article", url: article)))
+        }
+        
+        if let wikipedia = wikipedia {
+            tableViewData.append(.url((title: "Wikipedia", url: wikipedia)))
+        }
+        
+        return tableViewData
+    }
+}

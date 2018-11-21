@@ -49,3 +49,25 @@ extension Milestone: Decodable {
     }
     
 }
+
+extension Milestone: TableViewCellDataEssentiallyRepresentable {
+    var essentialData: TableViewCellData {
+        return .subtitle((title: title, subtitle: DateFormatter.yyyyMMdd.string(from: date)))
+    }
+}
+
+extension Milestone: TableViewCellDataFullyRepresentable {
+    var tableViewData: [TableViewCellData] {
+        var tableViewData = [TableViewCellData]()
+        
+        tableViewData.append(.subtitle((title: "Date", subtitle: DateFormatter.yyyyMMdd.string(from: date))))
+        
+        if let flightNumber = flightNumber {
+            tableViewData.append(.subtitle((title: "Flight number", subtitle: flightNumber.description)))
+        }
+        
+        tableViewData.append(contentsOf: links.tableViewData)
+        
+        return tableViewData
+    }
+}

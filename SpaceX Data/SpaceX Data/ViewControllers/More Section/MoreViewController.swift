@@ -9,6 +9,7 @@
 import UIKit
 
 fileprivate let aboutSpaceXSegueIdentifier = "AboutSpaceXSegue"
+fileprivate let historyAndMilestonesSegueIdentifier = "HistorySegue"
 fileprivate let launchpadsSegueIdentifier = "LaunchpadsSegue"
 fileprivate let roadsterInfoSegueIdentifier = "RoadsterInfoSegue"
 
@@ -20,7 +21,7 @@ class MoreViewController: UIViewController {
         }
     }
     
-    let segueIdentifiers = [aboutSpaceXSegueIdentifier, launchpadsSegueIdentifier, roadsterInfoSegueIdentifier]
+    let segueIdentifiers = [aboutSpaceXSegueIdentifier, historyAndMilestonesSegueIdentifier, launchpadsSegueIdentifier, roadsterInfoSegueIdentifier]
     
     // MARK: - View life cycle
     
@@ -54,6 +55,12 @@ class MoreViewController: UIViewController {
             }
             
             roadsterInfoViewController.roadsterInfo = roadsterInfo
+        case historyAndMilestonesSegueIdentifier:
+            guard let milestonesViewController = segue.destination as? MilestonesViewController, let milestones = sender as? [Milestone] else {
+                return
+            }
+            
+            milestonesViewController.milestones = milestones
         default:
             return
         }
@@ -127,6 +134,17 @@ extension MoreViewController: UITableViewDelegate {
                     }
                 }
             }
+        case historyAndMilestonesSegueIdentifier:
+            HistoryDispatcher().executeRequest(.allMilestones) { (response) in
+                DispatchQueue.main.async { [unowned self] in
+                    switch response {
+                    case .data(let milestones):
+                        self.performSegue(withIdentifier: segueIdentifier, sender: milestones)
+                    case .error(let error):
+                        self.presentAlertController(with: error)
+                    }
+                }
+            }
         default:
             performSegue(withIdentifier: segueIdentifier, sender: nil)
         }
@@ -141,6 +159,7 @@ extension MoreViewController: TableViewCellDataFullyRepresentable {
         var tableViewData: [TableViewCellData] = []
         
         tableViewData.append(.rightDisclosure("About SpaceX"))
+        tableViewData.append(.rightDisclosure("History and milestones"))
         tableViewData.append(.rightDisclosure("Launchpads"))
         tableViewData.append(.rightDisclosure("Starman Roadster orbital data"))
         

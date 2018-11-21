@@ -63,6 +63,8 @@
 		AC81809E21A2E7930057DF1A /* HistoryDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC81809D21A2E7930057DF1A /* HistoryDispatcher.swift */; };
 		AC8180A021A2E7AD0057DF1A /* HistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC81809F21A2E7AD0057DF1A /* HistoryRequest.swift */; };
 		AC8180A321A2F6260057DF1A /* HistoryDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8180A221A2F6260057DF1A /* HistoryDispatcherTests.swift */; };
+		AC8180A621A434590057DF1A /* MilestonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8180A521A434590057DF1A /* MilestonesViewController.swift */; };
+		AC8180A821A438A50057DF1A /* MilestoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8180A721A438A50057DF1A /* MilestoneViewController.swift */; };
 		AC88C8CC211DCB860093A813 /* DetailedItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88C8CB211DCB860093A813 /* DetailedItemRequest.swift */; };
 		AC88C8D0211DCD500093A813 /* CoreBoosterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88C8CF211DCD500093A813 /* CoreBoosterRequest.swift */; };
 		AC88C8D2211DCDBB0093A813 /* CoreBoosterDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88C8D1211DCDBB0093A813 /* CoreBoosterDispatcher.swift */; };
@@ -246,6 +248,8 @@
 		AC81809D21A2E7930057DF1A /* HistoryDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDispatcher.swift; sourceTree = "<group>"; };
 		AC81809F21A2E7AD0057DF1A /* HistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRequest.swift; sourceTree = "<group>"; };
 		AC8180A221A2F6260057DF1A /* HistoryDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDispatcherTests.swift; sourceTree = "<group>"; };
+		AC8180A521A434590057DF1A /* MilestonesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonesViewController.swift; sourceTree = "<group>"; };
+		AC8180A721A438A50057DF1A /* MilestoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneViewController.swift; sourceTree = "<group>"; };
 		AC88C8CB211DCB860093A813 /* DetailedItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedItemRequest.swift; sourceTree = "<group>"; };
 		AC88C8CF211DCD500093A813 /* CoreBoosterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBoosterRequest.swift; sourceTree = "<group>"; };
 		AC88C8D1211DCDBB0093A813 /* CoreBoosterDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBoosterDispatcher.swift; sourceTree = "<group>"; };
@@ -433,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				AC2844572163A0D900DE335C /* Company Info */,
+				AC8180A421A434250057DF1A /* History and Milestones */,
 				AC2844562163A0D000DE335C /* Launchpads */,
 				ACB5EBEF2165099D004D9CC6 /* Roadster Info */,
 				AC2844482163664700DE335C /* MoreViewController.swift */,
@@ -626,6 +631,15 @@
 				AC8180A221A2F6260057DF1A /* HistoryDispatcherTests.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		AC8180A421A434250057DF1A /* History and Milestones */ = {
+			isa = PBXGroup;
+			children = (
+				AC8180A521A434590057DF1A /* MilestonesViewController.swift */,
+				AC8180A721A438A50057DF1A /* MilestoneViewController.swift */,
+			);
+			path = "History and Milestones";
 			sourceTree = "<group>";
 		};
 		AC88C8CD211DCD340093A813 /* Core boosters */ = {
@@ -1253,6 +1267,7 @@
 				ACA878052125ABE90020DE02 /* LaunchRequest.swift in Sources */,
 				AC88C8CC211DCB860093A813 /* DetailedItemRequest.swift in Sources */,
 				AC2844492163664700DE335C /* MoreViewController.swift in Sources */,
+				AC8180A621A434590057DF1A /* MilestonesViewController.swift in Sources */,
 				AC93810521076C7400880E07 /* Distance.swift in Sources */,
 				ACF8C7892167A4FD0003E8FC /* SubtitleTableViewCell.swift in Sources */,
 				AC81809B21A2E0A90057DF1A /* Links.swift in Sources */,
@@ -1282,6 +1297,7 @@
 				AC78D5342121BD2C00D0EED6 /* HeatShield.swift in Sources */,
 				AC75037B2119B70D00AED17B /* RocketsRequest.swift in Sources */,
 				ACD76E372108C3F700F4CD14 /* RocketStage.swift in Sources */,
+				AC8180A821A438A50057DF1A /* MilestoneViewController.swift in Sources */,
 				ACD76E392108C62500F4CD14 /* RocketFirstStage.swift in Sources */,
 				AC1BDCE02122FE0C00148F31 /* CapsulesDetailsRequest.swift in Sources */,
 				AC78733A21242CF9000F0DFC /* LaunchedPayload.swift in Sources */,
