@@ -11,8 +11,8 @@ import Foundation
 struct LaunchedPayload {
     let id: String
     let noradIds: [Int]?
+    let reused: Bool?
     let capsuleSerialNumber: String?
-    let reused: Bool
     let customers: [String]
     let nationality: String?
     let manufacturer: String?
