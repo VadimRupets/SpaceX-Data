@@ -19,6 +19,7 @@ struct LaunchInfoLinks {
     let articleURL: URL?
     let wikipediaURL: URL?
     let videoLinkURL: URL?
+    let flickrImages: [URL]
 }
 
 extension LaunchInfoLinks: Decodable {
@@ -34,7 +35,8 @@ extension LaunchInfoLinks: Decodable {
         presskitURL = "presskit",
         articleURL = "article_link",
         wikipediaURL = "wikipedia",
-        videoLinkURL = "video_link"
+        videoLinkURL = "video_link",
+        flickrImages = "flickr_images"
     }
     
     init(from decoder: Decoder) throws {
@@ -50,6 +52,7 @@ extension LaunchInfoLinks: Decodable {
         self.articleURL = try values.decodeIfPresent(URL.self, forKey: .articleURL)
         self.wikipediaURL = try values.decodeIfPresent(URL.self, forKey: .wikipediaURL)
         self.videoLinkURL = try values.decodeIfPresent(URL.self, forKey: .videoLinkURL)
+        self.flickrImages = try values.decode([URL].self, forKey: .flickrImages)
     }
     
 }

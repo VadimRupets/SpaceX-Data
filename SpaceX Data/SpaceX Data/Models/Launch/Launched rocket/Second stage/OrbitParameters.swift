@@ -22,6 +22,8 @@ struct OrbitParameters {
     let epoch: Date?
     let meanMotion: Double?
     let raan: Double?
+    let argumentOfPericenter: Double?
+    let meanAnomaly: Double?
 }
 
 extension OrbitParameters: Decodable {
@@ -40,7 +42,9 @@ extension OrbitParameters: Decodable {
         lifespanInYears = "lifespan_years",
         epoch,
         meanMotion = "mean_motion",
-        raan
+        raan,
+        argumentOfPericenter = "arg_of_pericenter",
+        meanAnomaly = "mean_anomaly"
     }
     
     init(from decoder: Decoder) throws {
@@ -82,6 +86,8 @@ extension OrbitParameters: Decodable {
         
         self.meanMotion = try values.decodeIfPresent(Double.self, forKey: .meanMotion)
         self.raan = try values.decodeIfPresent(Double.self, forKey: .raan)
+        self.argumentOfPericenter = try values.decodeIfPresent(Double.self, forKey: .argumentOfPericenter)
+        self.meanAnomaly = try values.decodeIfPresent(Double.self, forKey: .meanAnomaly)
     }
     
 }
