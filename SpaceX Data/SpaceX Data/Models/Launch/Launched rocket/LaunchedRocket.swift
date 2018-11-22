@@ -14,7 +14,7 @@ struct LaunchedRocket {
     let type: String
     let firstStage: LaunchedRocketFirstStage
     let secondStage: LaunchedRocketSecondStage
-    let fairings: Fairings
+    let fairings: Fairings?
 }
 
 extension LaunchedRocket: Decodable {
@@ -37,7 +37,7 @@ extension LaunchedRocket: Decodable {
         self.type = try values.decode(String.self, forKey: .type)
         self.firstStage = try values.decode(LaunchedRocketFirstStage.self, forKey: .firstStage)
         self.secondStage = try values.decode(LaunchedRocketSecondStage.self, forKey: .secondStage)
-        self.fairings = try values.decode(Fairings.self, forKey: .fairings)
+        self.fairings = try values.decodeIfPresent(Fairings.self, forKey: .fairings)
     }
     
 }
