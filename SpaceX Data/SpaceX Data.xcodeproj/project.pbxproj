@@ -86,6 +86,8 @@
 		ACB5EBEE2165064C004D9CC6 /* PlacemarkBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5EBED2165064C004D9CC6 /* PlacemarkBlank.swift */; };
 		ACB5EBF1216509EC004D9CC6 /* RoadsterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5EBF0216509EC004D9CC6 /* RoadsterInfoViewController.swift */; };
 		ACB8E33D21A58B15005F0135 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8E33C21A58B15005F0135 /* LaunchesViewController.swift */; };
+		ACB8E33F21A6F304005F0135 /* Fairings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8E33E21A6F304005F0135 /* Fairings.swift */; };
+		ACB8E34121A6F46D005F0135 /* LaunchFailureDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8E34021A6F46D005F0135 /* LaunchFailureDetails.swift */; };
 		ACB97853212AC7B000645D0C /* CompanyInfoDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB97852212AC7B000645D0C /* CompanyInfoDispatcherTests.swift */; };
 		ACB97858212ACA3100645D0C /* LaunchpadDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB97857212ACA3100645D0C /* LaunchpadDispatcherTests.swift */; };
 		ACB9785A212ACDC800645D0C /* LaunchpadsDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB97859212ACDC800645D0C /* LaunchpadsDispatcherTests.swift */; };
@@ -272,6 +274,8 @@
 		ACB5EBED2165064C004D9CC6 /* PlacemarkBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkBlank.swift; sourceTree = "<group>"; };
 		ACB5EBF0216509EC004D9CC6 /* RoadsterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadsterInfoViewController.swift; sourceTree = "<group>"; };
 		ACB8E33C21A58B15005F0135 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
+		ACB8E33E21A6F304005F0135 /* Fairings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fairings.swift; sourceTree = "<group>"; };
+		ACB8E34021A6F46D005F0135 /* LaunchFailureDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFailureDetails.swift; sourceTree = "<group>"; };
 		ACB97852212AC7B000645D0C /* CompanyInfoDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoDispatcherTests.swift; sourceTree = "<group>"; };
 		ACB97857212ACA3100645D0C /* LaunchpadDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadDispatcherTests.swift; sourceTree = "<group>"; };
 		ACB97859212ACDC800645D0C /* LaunchpadsDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchpadsDispatcherTests.swift; sourceTree = "<group>"; };
@@ -431,6 +435,7 @@
 				AC03BD9E2124595B00FBA093 /* Telemetry.swift */,
 				AC03BDA221245BB300FBA093 /* LaunchSite.swift */,
 				AC03BDA421245C8C00FBA093 /* LaunchInfoLinks.swift */,
+				ACB8E34021A6F46D005F0135 /* LaunchFailureDetails.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -572,6 +577,7 @@
 				AC78733D212430AD000F0DFC /* Second stage */,
 				AC7873312124111E000F0DFC /* LaunchedRocket.swift */,
 				AC03BDA021245A1600FBA093 /* LaunchedRocketReusedParts.swift */,
+				ACB8E33E21A6F304005F0135 /* Fairings.swift */,
 			);
 			path = "Launched rocket";
 			sourceTree = "<group>";
@@ -1281,6 +1287,7 @@
 				AC2844492163664700DE335C /* MoreViewController.swift in Sources */,
 				AC8180A621A434590057DF1A /* MilestonesViewController.swift in Sources */,
 				AC93810521076C7400880E07 /* Distance.swift in Sources */,
+				ACB8E33F21A6F304005F0135 /* Fairings.swift in Sources */,
 				ACF8C7892167A4FD0003E8FC /* SubtitleTableViewCell.swift in Sources */,
 				AC81809B21A2E0A90057DF1A /* Links.swift in Sources */,
 				DD641EF3203192B90094B7A2 /* Address.swift in Sources */,
@@ -1340,6 +1347,7 @@
 				ACB5EBEE2165064C004D9CC6 /* PlacemarkBlank.swift in Sources */,
 				DD641EEA20318EFE0094B7A2 /* Request.swift in Sources */,
 				AC541AAB21661CA1002220FE /* MeasurementTableViewCell.swift in Sources */,
+				ACB8E34121A6F46D005F0135 /* LaunchFailureDetails.swift in Sources */,
 				AC1BDCDC2122FD8C00148F31 /* CapsuleDetailsRequest.swift in Sources */,
 				ACD76E3D2108C86600F4CD14 /* Payloads.swift in Sources */,
 				AC75037521185DD500AED17B /* Engines.swift in Sources */,
