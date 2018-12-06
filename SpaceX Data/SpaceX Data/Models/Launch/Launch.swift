@@ -87,10 +87,66 @@ extension Launch: Decodable {
     
 }
 
+// MARK: - TableViewCellDataEssentiallyRepresentable
+
 extension Launch: TableViewCellDataEssentiallyRepresentable {
     
     var essentialData: TableViewCellData {
-        return .subtitle((title: missionName, subtitle: DateFormatter.yyyyMMdd.string(from: launchDate)))
+        return .subtitle((title: missionName, subtitle: DateFormatter.yyyyMMddHHmmss.string(from: launchDate)))
+    }
+    
+}
+
+// MARK: - TableViewCellDataFullyRepresentable
+
+extension Launch: TableViewCellDataFullyRepresentable {
+    
+    var tableViewData: [TableViewCellData] {
+        var tableViewData = [TableViewCellData]()
+        
+        tableViewData.append(.subtitle((title: "Flight number", subtitle: flightNumber.description)))
+        
+        if missionIds.count > 0 {
+            tableViewData.append(.subtitle((title: "Mission identifiers", subtitle: missionIds.joined(separator: ", "))))
+        }
+        
+        tableViewData.append(.subtitle((title: "Launch date", subtitle: DateFormatter.yyyyMMddHHmmss.string(from: launchDate))))
+        
+        if tentative {
+            tableViewData.append(.subtitle((title: "Is tentative", subtitle: tentative.description)))
+            tableViewData.append(.subtitle((title: "Maximum tentative precision ", subtitle: tentativeMaxPrecision)))
+        }
+        
+        tableViewData.append(.rightDisclosure("Launched rocket"))
+        
+        if ships.count > 0 {
+            tableViewData.append(.subtitle((title: "Ships", subtitle: ships.joined(separator: ", "))))
+        }
+        
+        tableViewData.append(contentsOf: telemetry.tableViewData)
+        tableViewData.append(contentsOf: reusedParts.tableViewData)
+        tableViewData.append(contentsOf: launchSite.tableViewData)
+        
+        if let succeed = succeed {
+            tableViewData.append(.subtitle((title: "Mission outcome", subtitle: succeed ? "Success" : "Failure")))
+        }
+        
+        if let launchFailureDetails = launchFailureDetails {
+            tableViewData.append(contentsOf: launchFailureDetails.tableViewData)
+        }
+        
+        tableViewData.append(contentsOf: links.tableViewData)
+        tableViewData.append(.subtitle((title: "Is upcoming?", subtitle: upcoming.description)))
+        
+        if let staticFireDate = staticFireDate {
+            tableViewData.append(.subtitle((title: "Static fire date", subtitle: DateFormatter.yyyyMMddHHmmss.string(from: staticFireDate))))
+        }
+        
+        if description.count > 0 {
+            tableViewData.append(.subtitle((title: "Brief summary", subtitle: description)))
+        }
+        
+        return tableViewData
     }
     
 }

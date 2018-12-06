@@ -25,3 +25,17 @@ extension Telemetry: Decodable {
     }
     
 }
+
+// MARK: -
+
+extension Telemetry: TableViewCellDataFullyRepresentable {
+    
+    var tableViewData: [TableViewCellData] {
+        guard let flightClubURL = flightClubURL else {
+            return []
+        }
+        
+        return [TableViewCellData.url((title: "Flight club simultation", url: flightClubURL))]
+    }
+    
+}

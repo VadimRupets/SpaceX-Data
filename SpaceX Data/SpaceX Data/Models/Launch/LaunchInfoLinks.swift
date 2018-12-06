@@ -56,3 +56,36 @@ extension LaunchInfoLinks: Decodable {
     }
     
 }
+
+// MARK: - TableViewCellDataFullyRepresentable
+
+extension LaunchInfoLinks: TableViewCellDataFullyRepresentable {
+    
+    var tableViewData: [TableViewCellData] {
+        let links = [["Reddit campaign": redditCampaignURL], ["Reddit launch": redditLaunchURL], ["Reddit recovery": redditRecoveryURL], ["Reddit media": redditMediaURL], ["Presskit": presskitURL], ["Article": articleURL], ["Wikipedia": wikipediaURL], ["Video": videoLinkURL]]
+        
+        var filteredLinks = [[String: URL]]()
+        
+        links.forEach {
+            if let unwrappedLink = $0 as? [String: URL] {
+                filteredLinks.append(unwrappedLink)
+            }
+            
+        }
+        
+        guard filteredLinks.count > 0 else {
+            return []
+        }
+        
+        var linksCellData = [TableViewCellData]()
+        
+        filteredLinks.forEach {
+            if let key = $0.keys.first, let url = $0.values.first {
+                linksCellData.append(TableViewCellData.url((title: key, url: url)))
+            }
+        }
+        
+        return [TableViewCellData.expandable((title: "Launch info links", details: linksCellData))]
+    }
+    
+}

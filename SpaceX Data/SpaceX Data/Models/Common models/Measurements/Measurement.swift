@@ -14,3 +14,11 @@ protocol Measurement {
     var metric: MeasurementValue { get }
     var imperial: MeasurementValue  { get }
 }
+
+extension Measurement {
+    
+    func isEqual(to other: Measurement) -> Bool {
+        return self.metric == other.metric && self.imperial == other.imperial
+    }
+    
+}

@@ -38,3 +38,22 @@ extension LaunchedRocketReusedParts: Decodable {
     }
     
 }
+
+// MARK: - TableViewCellDataFullyRepresentable
+
+extension LaunchedRocketReusedParts: TableViewCellDataFullyRepresentable {
+    
+    var tableViewData: [TableViewCellData] {
+        let parts = [["Core": mainCoreBooster], ["First side core": sideCoreBooster1], ["Second side core": sideCoreBooster2], ["Fairings": fairings], ["Capsule": capsule]]
+        
+        let filteredReusedParts = parts.filter { return $0.values.first ?? false }
+        let reusedParts = filteredReusedParts.compactMap({ return $0.keys.first ?? "" })
+        
+        guard reusedParts.count > 0 else {
+            return []
+        }
+        
+        return [TableViewCellData.subtitle((title: "Reused parts", subtitle: reusedParts.joined(separator: ", ")))]
+    }
+    
+}

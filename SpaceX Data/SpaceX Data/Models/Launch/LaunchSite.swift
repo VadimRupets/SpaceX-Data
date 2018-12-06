@@ -28,7 +28,17 @@ extension LaunchSite: Decodable {
         
         self.id = try values.decode(String.self, forKey: .id)
         self.code = try values.decode(String.self, forKey: .code)
-        self.description = try values.decode(String.self, forKey: .description)
+        self.description = try values.decode(String.self, forKey: .code)
+    }
+    
+}
+
+// MARK: - TableViewCellDataFullyRepresentable
+
+extension LaunchSite: TableViewCellDataFullyRepresentable {
+    
+    var tableViewData: [TableViewCellData] {
+        return [TableViewCellData.subtitle((title: "Launch site", subtitle: description))]
     }
     
 }

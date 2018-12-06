@@ -32,3 +32,13 @@ extension LaunchFailureDetails: Decodable {
     }
     
 }
+
+// MARK: - TableViewCellDataFullyRepresentable
+
+extension LaunchFailureDetails: TableViewCellDataFullyRepresentable {
+    
+    var tableViewData: [TableViewCellData] {
+        return [TableViewCellData.subtitle((title: "Launch failure", subtitle: reason))]
+    }
+    
+}

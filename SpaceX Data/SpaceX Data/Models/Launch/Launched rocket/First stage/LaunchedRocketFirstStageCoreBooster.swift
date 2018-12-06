@@ -60,3 +60,14 @@ extension LaunchedRocketFirstStageCoreBooster: Decodable {
     }
     
 }
+
+
+// MARK: - TableViewCellDataFullyRepresentable
+
+extension LaunchedRocketFirstStage: TableViewCellDataFullyRepresentable {
+    var tableViewData: [TableViewCellData] {
+        var tableViewData = [TableViewCellData]()
+        
+        return tableViewData
+    }
+}

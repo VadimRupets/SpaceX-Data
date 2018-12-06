@@ -8,6 +8,8 @@
 
 import UIKit
 
+fileprivate let launchSegueIdentifier = "LaunchSegue"
+
 class LaunchesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView! {
@@ -30,6 +32,18 @@ class LaunchesViewController: UIViewController {
         fetchLaunches()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
+    }
+    
+    // MARK: - Fetching launches
+    
     private func fetchLaunches() {
         LaunchesDispatcher().executeRequest(.allLaunches) { (response) in
             DispatchQueue.main.async { [unowned self] in
@@ -41,7 +55,17 @@ class LaunchesViewController: UIViewController {
             }
         }
     }
-
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == launchSegueIdentifier, let launch = sender as? Launch, let launchesViewController = segue.destination as? LaunchViewController else {
+            return
+        }
+        
+        launchesViewController.launch = launch
+    }
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -71,7 +95,7 @@ extension LaunchesViewController: UITableViewDataSource {
 extension LaunchesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: launchSegueIdentifier, sender: launches[indexPath.row])
     }
     
 }
