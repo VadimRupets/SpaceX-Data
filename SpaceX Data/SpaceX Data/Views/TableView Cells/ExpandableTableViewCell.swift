@@ -9,8 +9,19 @@
 import UIKit
 
 class ExpandableTableViewCell: UITableViewCell {
-    
     static let identifier = "ExpandableTableViewCell"
+    
+    lazy var disclosureImageView: UIImageView? = {
+        guard
+            let button = subviews.first(where: { $0 is UIButton }) as? UIButton,
+            let imageView = button.subviews.first(where: { $0 is UIImageView }) as? UIImageView else {
+                return nil
+        }
+        
+        imageView.contentMode = .scaleAspectFit
+        
+        return imageView
+    }()
 
     var isExpanded: Bool = false
     
@@ -18,6 +29,11 @@ class ExpandableTableViewCell: UITableViewCell {
     
     func toggle() {
         isExpanded.toggle()
+        rotateDisclosureImageView()
+    }
+    
+    private func rotateDisclosureImageView() {
+        disclosureImageView?.transform = isExpanded ? CGAffineTransform(rotationAngle: CGFloat.pi / 2.0) : CGAffineTransform.identity
     }
     
 }
