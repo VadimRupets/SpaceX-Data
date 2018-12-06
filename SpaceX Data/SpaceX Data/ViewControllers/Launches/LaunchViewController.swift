@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class LaunchViewController: UIViewController {
     
@@ -65,32 +66,48 @@ extension LaunchViewController: UITableViewDelegate {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         
-        if let expandableCell = tableView.cellForRow(at: indexPath) as? ExpandableTableViewCell {
-            tableView.beginUpdates()
-            
-            expandableCell.toggle()
-            
-            if expandableCell.isExpanded {
-                var indices = [IndexPath]()
-                
-                for i in 0..<expandableCell.detailCellsData.count {
-                    indices.append(IndexPath(row: indexPath.row + i + 1, section: 0))
-                    tableViewCellData.insert(expandableCell.detailCellsData[i], at: indexPath.row + i + 1)
-                }
-                
-                tableView.insertRows(at: indices, with: .fade)
-            } else {
-                var indices = [IndexPath]()
-                
-                for i in 0..<expandableCell.detailCellsData.count {
-                    indices.append(IndexPath(row: indexPath.row + i + 1, section: 0))
-                    tableViewCellData.remove(at: indexPath.row + 1)
-                }
-                
-                tableView.deleteRows(at: indices, with: .fade)
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        switch cell {
+        case let urlCell as URLTableViewCell:
+            guard let url = urlCell.url else {
+                break
             }
             
-            tableView.endUpdates()
+            present(SFSafariViewController(url: url), animated: true)
+        case let expandableCell as ExpandableTableViewCell:
+            toggleExpandableCell(expandableCell, at: indexPath)
+        default:
+            break
         }
+
+    }
+    
+    fileprivate func toggleExpandableCell(_ expandableCell: ExpandableTableViewCell, at indexPath: IndexPath) {
+        tableView.beginUpdates()
+        
+        expandableCell.toggle()
+        
+        if expandableCell.isExpanded {
+            var indices = [IndexPath]()
+            
+            for i in 0..<expandableCell.detailCellsData.count {
+                indices.append(IndexPath(row: indexPath.row + i + 1, section: 0))
+                tableViewCellData.insert(expandableCell.detailCellsData[i], at: indexPath.row + i + 1)
+            }
+            
+            tableView.insertRows(at: indices, with: .fade)
+        } else {
+            var indices = [IndexPath]()
+            
+            for i in 0..<expandableCell.detailCellsData.count {
+                indices.append(IndexPath(row: indexPath.row + i + 1, section: 0))
+                tableViewCellData.remove(at: indexPath.row + 1)
+            }
+            
+            tableView.deleteRows(at: indices, with: .fade)
+        }
+        
+        tableView.endUpdates()
     }
 }

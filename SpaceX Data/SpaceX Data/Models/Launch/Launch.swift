@@ -113,8 +113,8 @@ extension Launch: TableViewCellDataFullyRepresentable {
         tableViewData.append(.subtitle((title: "Launch date", subtitle: DateFormatter.yyyyMMddHHmmss.string(from: launchDate))))
         
         if tentative {
-            tableViewData.append(.subtitle((title: "Is tentative", subtitle: tentative.description)))
-            tableViewData.append(.subtitle((title: "Maximum tentative precision ", subtitle: tentativeMaxPrecision)))
+            tableViewData.append(.subtitle((title: "Is tentative", subtitle: tentative.description.capitalized)))
+            tableViewData.append(.subtitle((title: "Maximum tentative precision ", subtitle: tentativeMaxPrecision.capitalized)))
         }
         
         tableViewData.append(.rightDisclosure("Launched rocket"))
@@ -136,7 +136,7 @@ extension Launch: TableViewCellDataFullyRepresentable {
         }
         
         tableViewData.append(contentsOf: links.tableViewData)
-        tableViewData.append(.subtitle((title: "Is upcoming?", subtitle: upcoming.description)))
+        tableViewData.append(.subtitle((title: "Is upcoming?", subtitle: upcoming.description.capitalized)))
         
         if let staticFireDate = staticFireDate {
             tableViewData.append(.subtitle((title: "Static fire date", subtitle: DateFormatter.yyyyMMddHHmmss.string(from: staticFireDate))))
